@@ -42,7 +42,7 @@ jobs:
       - name: Install TeX
         run: |
           sudo apt-get update
-          sudo apt-get install -y --no-install-recommends texlive-latex-extra texlive-science texlive-fonts-recommended texlive-fonts-extra
+          sudo apt-get install -y --no-install-recommends texlive-latex-extra texlive-science texlive-fonts-recommended texlive-fonts-extra texlive-plain-generic
       - name: Rebuild vector figures and manuscript
         run: python scripts/build.py --figures --paper
       - uses: actions/upload-artifact@v4

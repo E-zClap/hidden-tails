@@ -41,7 +41,7 @@ source .venv/bin/activate
 python -m pip install -r requirements.txt
 ```
 
-For LaTeX on Ubuntu, install `texlive-latex-extra texlive-science texlive-fonts-recommended texlive-fonts-extra` (the figures use the `newtx` fonts). A complete MiKTeX or TeX Live installation also works. Build logs go into ignored `build/` directories. Rebuilt PDFs may have different file hashes because of timestamps and TeX versions; run the checksum check on the unmodified checkout. `python scripts/verify_release.py --results-only` checks the saved numerical records after rebuilding.
+For LaTeX on Ubuntu, install `texlive-latex-extra texlive-science texlive-fonts-recommended texlive-fonts-extra texlive-plain-generic` (the figures use the `newtx` fonts). A complete MiKTeX or TeX Live installation also works. Build logs go into ignored `build/` directories. Rebuilt PDFs may have different file hashes because of timestamps and TeX versions; run the checksum check on the unmodified checkout. `python scripts/verify_release.py --results-only` checks the saved numerical records after rebuilding.
 
 ## What is included
 
