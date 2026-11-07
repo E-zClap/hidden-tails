@@ -104,6 +104,7 @@ The scientific estimators, learners, masks, split logic, aggregation, seeds, and
 - `verify_completed_run.py` normalizes historical Windows path separators for other platforms; it and `validate_optimization.py` show help and print reports without overwriting the frozen verification records.
 - `investigate_platform_variation.py` has an explicit CLI/main guard, external input path and preflight; importing it or requesting help cannot start GPU fitting.
 - The historical `real_data_evaluation/make_paper_figure.py` has argument help and creates the requested output directory; its plot calculations are unchanged.
+- `real_data_evaluation/run_gpu.sh` uses LF line endings so the historical launcher runs in Linux Bash; commands and scientific settings are unchanged.
 - Three CLI regression tests and the small unoptimized benchmark checkpoint/manifest complete the public verification paths. Host paths in historical JSON provenance were redacted; [provenance_adaptations.json](provenance_adaptations.json) records the affected hashes.
 
 Figure extraction/build portability changes are described in [figures.md](figures.md).
