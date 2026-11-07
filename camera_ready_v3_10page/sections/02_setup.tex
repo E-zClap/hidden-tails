@@ -19,7 +19,7 @@ Bounded loss gives a common risk scale and supports finite-sample error control.
 For every \(f\in\mathcal F\) and \(y\in\{0,1\}\), the map \(x\mapsto\ell(f(x),y)\) is measurable and takes values in \([0,1]\), and \(0<\pi_{\min}\le\pi(X)\le1\) almost surely.
 \end{assumption}
 
-Technical regularity and target-label conventions are in Appendix~\ref{app:compatibility}. Write \(z_+=\max\{z,0\}\) and \(L_f=\ell(f(X),Y)\). At level \(\alpha\in(0,1)\), \(\beta=1-\alpha\) is the upper-tail fraction. The threshold \(\eta\) is a candidate loss cutoff, and \((L_f-\eta)_+\) is the excess above it. At \(\alpha=.95\), CVaR averages the worst 5\% of population losses, allowing fractional mass at a tied cutoff:
+Technical regularity and target-label conventions are in Appendix~\ref{app:compatibility}. Write \(z_+=\max\{z,0\}\) and \(L_f=\ell(f(X),Y)\). At level \(\alpha\in(0,1)\), \(\beta=1-\alpha\) is the upper-tail fraction. The threshold \(\eta\) is a candidate loss cutoff, and \((L_f-\eta)_+\) is the excess above it. At \(\alpha=.95\), CVaR averages the worst 5\% of population losses, allowing fractional mass at a tied cutoff \citep{rockafellar2002conditional}:
 \begin{equation}
  \rho_{\alpha,P}(f)=\operatorname{CVaR}_{\alpha,P}(L_f)
  =\inf_{\eta\in[0,1]}\left\{\eta+\beta^{-1}\mathbb E_P[(L_f-\eta)_+]\right\}.
@@ -29,7 +29,7 @@ The expectation includes both observed and hidden cases.
 
 \subsection{Sensitivity model and certification objective}
 \label{sec:sensitivity}
-Outcome-dependent observation can change label prevalence even at fixed covariates. We use the observed outcome probability as a reference and express the allowed departure of hidden outcomes through a multiplicative bound on their odds. For a finite, externally specified \(\Gamma\ge1\), impose the outcome-odds restriction \citep{scharfstein1999adjusting,tan2006distributional,zhao2019sensitivity}:
+Outcome-dependent observation can change label prevalence even at fixed covariates. We use the observed outcome probability as a reference and express the allowed departure of hidden outcomes through a multiplicative bound on their odds. For a finite, externally specified \(\Gamma\ge1\), we impose the hidden-to-observed outcome-odds restriction \citep[Section~7.2]{zhao2019sensitivity}:
 \begin{equation}
 \begin{gathered}
  p_0(x)\in[\underline p_\Gamma(x),\overline p_\Gamma(x)]
