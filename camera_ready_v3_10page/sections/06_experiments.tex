@@ -8,8 +8,22 @@ of known outcomes permits direct checks of estimated risks and audit performance
 Appendix~\ref{app:experiments} provides the complete methods, results, and figure
 provenance.
 
+\begin{figure}[!b]
+\centering
+\includegraphics[width=\textwidth]{figures/fig02_learning.pdf}
+\caption{\textbf{Statistical uncertainty contracts around an identification floor.} (a) Mean
+oracle-calibrated outer width and mean exact population width; shading shows their
+difference. (b) Cross-fitted endpoint RMSE with learned nuisances; the faint line is an
+$n^{-1/2}$ guide. Each sample size uses 60 simulated populations and 80 datasets per
+population. The oracle coverage target is the entire sharp interval.
+Appendix~\ref{app:finite-sample-experiments} gives the design and complete results.}
+\label{fig:finite-sample}
+\end{figure}
+
 \subsection{Identification versus statistical uncertainty}
 \label{sec:empirical-uncertainty}
+
+
 We separate statistical uncertainty from population ambiguity in finite-cell populations
 with Brier loss $\ell(f(x),y)=(f(x)-y)^2$, $\Gamma=2$, and $\alpha=.75$. An oracle
 certificate uses the true outcome probability $p_1$ among historically observed cases and a
@@ -25,20 +39,8 @@ protection across thresholds is conservative. Upper- and lower-endpoint RMSE dec
 interval, while the original observation process leaves its identification width intact. The
 learned-nuisance experiment measures endpoint accuracy; coverage for learned fits requires
 the calibration conditions of Theorem~\ref{thm:learning}.
-Appendix~\ref{app:finite-sample-experiments} also reports the separate learning-bound
-scaling diagnostic.
 
-\begin{figure}[t]
-\centering
-\includegraphics[width=\textwidth]{figures/fig02_learning.pdf}
-\caption{\textbf{Statistical uncertainty contracts around an identification floor.} (a) Mean
-oracle-calibrated outer width and mean exact population width; shading shows their
-difference. (b) Cross-fitted endpoint RMSE with learned nuisances; the faint line is an
-$n^{-1/2}$ guide. Each sample size uses 60 simulated populations and 80 datasets per
-population. The oracle coverage target is the entire sharp interval.
-Appendix~\ref{app:finite-sample-experiments} gives the design and complete results.}
-\label{fig:finite-sample}
-\end{figure}
+
 
 \subsection{Historical applicant-level sensitivity analysis}
 \label{sec:historical}
@@ -65,17 +67,9 @@ regression: two of three pairwise orderings reverse. Figure~\ref{fig:lendingclub
 intervals at $\Gamma=2$; Appendix~\ref{app:historical-lending} reports complete sensitivity
 curves and approximate breakdown values.
 
-The constant forecast $f\equiv1/2$ has loss $1/4$ under either label. Its mean Brier loss
-and every CVaR therefore equal $1/4$, while identification width and TIV are zero. Its tail
-loss is below that of the reported fitted models. Table~\ref{tab:sequential-performance}
-shows the competing mean-loss advantage of the audited boosting models, whose mean Brier
-losses are near .135. The reference separates average prediction quality, extreme-tail loss,
-and certainty about that loss.
-
 \subsection{Validation with known repayment outcomes}
 \label{sec:known-outcomes}
-We impose 20 outcome-dependent masks on the mature issued loans, with sensitivity
-$\Gamma_0=3$ and approximately 45\% of labels observed. This study targets the issued-loan
+To check estimated intervals and model comparisons against known risks, we impose 20 outcome-dependent masks on the mature issued loans, with sensitivity $\Gamma_0=3$ and approximately 45\% of labels observed. This study targets the issued-loan
 reference population. Predictors are trained on observed labels using five-fold
 cross-fitting, and their full-outcome CVaRs provide reference risks.
 
@@ -107,12 +101,16 @@ Appendix~\ref{app:controlled-masking} provides the complete results.}
 \label{fig:lendingclub}
 \end{figure}
 
+\begin{samepage}
 \subsection{Fixed and sequential audits}
 \label{sec:empirical-revelation}
+We next evaluate how targeted revelation reduces the remaining ambiguity.
 In 120 synthetic finite-cell populations with heterogeneous costs, TIV per cost matches the
 exact fractional-knapsack frontier for fixed predictor and threshold
 (Appendix~\ref{app:frontier-experiments}). We then audit the masked issued-loan population
 using boosting, $\alpha=.95$, $\Gamma=3$, and unit cost per hidden label.
+
+\end{samepage}
 
 The fixed protocol freezes the initial predictor, historical nuisance estimates, and
 upper-endpoint threshold. Newly audited outcomes become known contributions, while the
@@ -137,6 +135,13 @@ changes the assessed losses, as the other trajectories illustrate
 for random, while mean Brier loss is .1362 and .1347, respectively
 (Table~\ref{tab:sequential-performance}). Relative to random acquisition, these runs show
 improved tail performance and precision alongside a small mean-loss trade-off.
+
+The constant forecast $f\equiv1/2$ has loss $1/4$ under either label. Its mean Brier loss
+and every CVaR therefore equal $1/4$, while identification width and TIV are zero. Its tail
+loss is below that of the reported fitted models. Table~\ref{tab:sequential-performance}
+shows the competing mean-loss advantage of the audited boosting models, whose mean Brier
+losses are near .135. The reference separates average prediction quality, extreme-tail loss,
+and certainty about that loss.
 Appendix~\ref{app:repayment-audits} gives all policies and both protocols.
 
 \begin{figure}[t]

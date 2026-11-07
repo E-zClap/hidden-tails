@@ -1,5 +1,7 @@
 \section{Resolving Tail Ambiguity through Revelation}
 \label{sec:revelation}
+We next choose which hidden outcomes to reveal to reduce ambiguity about population risk. We begin with a fixed predictor and a common loss cutoff for the lower and upper CVaR objectives. Under the information model below, their gap decomposes across the population, making ambiguity reduction per unit cost the basis for a minimum-cost allocation.
+
 \subsection{Tail identification value}
 \label{sec:tiv}
 Fix \(f,\Gamma\), and a cutoff \(\eta\in[0,1]\). Throughout this section, expectations are over the target covariate distribution \(P_X\). An audit reveals existing outcomes: its indicator \(A\le1-S\) and intensity \(\lambda(x)=P(A=1\mid X=x,S=0)\) specify the share of originally hidden outcomes recovered at \(x\).
@@ -56,7 +58,7 @@ Thus acquisition follows decreasing ambiguity reduction per unit cost until the 
 The hidden-population fraction cancels because the candidate is already known to be hidden.
 
 \label{sec:sequential}
-The retained endpoints minimize their cutoffs separately. Their optimized width satisfies
+We now connect the fixed-cutoff gap to the width of the optimized CVaR interval. The retained endpoints minimize their cutoffs separately, giving
 \begin{equation}
  I^{\mathrm{ret}}_{\Gamma,\lambda}(f)
  :=\min_{\eta\in[0,1]}U_{f,\eta}(\lambda)
@@ -66,8 +68,7 @@ The retained endpoints minimize their cutoffs separately. Their optimized width 
 \end{equation}
 Theorem~\ref{thm:cert-frontier} at \(\eta=0\) therefore minimizes cost for the sufficient requirement \(W_{f,0}(\lambda)\le\varepsilon\), which guarantees optimized width at most \(\varepsilon\). Appendix~\ref{app:optimized-width} proves this bound and formulates direct optimization of the optimized interval width.
 
-Our sequential audit procedure retrains the predictor after each batch, uses the current
-upper-endpoint minimizing cutoff in the retained plug-in objective, and refreshes TIV scores. Its
+For sequential acquisition, we use TIV as a ranking rule that adapts as labels accumulate. After each batch, the procedure retrains the predictor and refreshes TIV at the upper-endpoint minimizing cutoff of the retained plug-in objective. Its
 historical outcome fit remains fixed, preserving the original sensitivity bounds. Audited labels
 enter through their observed losses. Candidates are ranked by estimated
 \(s_\Gamma|d_{f,\eta}|/(\beta\kappa)\), a batch is revealed, and the procedure repeats.

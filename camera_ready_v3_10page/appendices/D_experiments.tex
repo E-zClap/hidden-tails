@@ -278,8 +278,7 @@ default-weighted logistic regression.}
 \subsection{Controlled masking: empirical coverage and model comparisons}
 \label{app:controlled-masking}\label{app:statistical-scope}
 
-For the 53,367 mature issued loans with known outcomes, independently draw 20
-masks from
+To evaluate coverage against known full-outcome risks, we use the 53,367 mature issued loans as the target population and independently draw 20 masks from
 \[
 \begin{aligned}
 \operatorname{logit}P(S=1\mid X,Y)&=c+g(X)-Y\log3,\\
@@ -360,10 +359,16 @@ logistic regression.}
 \label{fig:detailed-coverage}
 \end{figure}
 
+\FloatBarrier
 \begin{samepage}
 \subsection{Synthetic fixed-threshold cost--precision frontier}
 \label{app:frontier-experiments}
 
+We next evaluate the fixed-threshold cost--precision frontier of Theorem~\ref{thm:cert-frontier} in synthetic populations with known outcome probabilities and acquisition costs.
+
+\end{samepage}
+
+\begin{samepage}
 \paragraph{Generator.}
 Use 120 worlds of 120 cells, $\alpha=.85$, $\Gamma=12$, absolute loss,
 $f=p_1$, and $\eta=.5$. Masses are Dirichlet$(.75,\ldots,.75)$.
@@ -383,12 +388,13 @@ $V_j\sim U[.75,1.75]$. Primitive draws are mutually independent and independent
 of masses; hidden-cell membership induces the specified dependence of $\pi_j$
 and log-odds shifts on the normal scores.
 
+\end{samepage}
+
 The generated $p_{0j}$ specifies the hidden-outcome distribution in cell $j$. The
 fixed-threshold frontier follows from
 $W_{f,\eta}(\lambda)=\sum_j\mu_j(1-\lambda_j)\tau_{f,\eta}(j)$ and cost
 $\sum_j\mu_jc_j\lambda_j$. The frontier calculation uses $p_1,\pi,f,\eta,\Gamma,\mu,c$; the
 generated $p_0$ does not enter these formulas.
-\end{samepage}
 
 \paragraph{Allocations and equivalent baselines.}
 Here $c_j$ is population cost density: allocations cost
