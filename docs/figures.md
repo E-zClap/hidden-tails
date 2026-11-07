@@ -124,7 +124,7 @@ grayscale PNGs in `figures/previews/`, a four-page main-figure overview, and
 paper. The ingestion regression tests use temporary synthetic fixtures and
 never replace published experiment results.
 
-The public packaging check rebuilt all nine sources with MiKTeX `pdflatex`.
+The v1.0.0 public packaging check rebuilt all nine sources with MiKTeX `pdflatex`.
 The rebuilt pages matched the archived paper figures pixel-for-pixel at
 144 DPI, and passed the page-size, text-bound, and vector-only checks.
 Assessment, learning, and diagnostic extraction reproduced all 27 associated
@@ -143,3 +143,5 @@ or worlds, not confidence intervals. Fixed-audit percentages use the original
 hidden pool, while sequential percentages use the initially hidden training
 pool; both include integer batch rounding. Figure 1's surfaces and sleeve are
 schematic geometry, with no probability encoded by area or volume.
+
+In v1.0.3, the four secondary subtitles beneath panel headings in Figures 2 and 3 were removed. Panel titles, axes, vector plot geometry, figure dimensions, and all plotting CSVs are unchanged. Parameter settings and the issued-loan population remain specified in the manuscript captions.
