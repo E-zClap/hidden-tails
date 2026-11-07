@@ -1,0 +1,140 @@
+{
+  "identity": {
+    "prepared_sha256": "fcd06d383adff616699ab4a79130a38cd4e5ce1f7821867697b1679aff3d952e",
+    "pseudo_population_sha256": "9b252b44866f94f03fa74423595302e925495a24428f35011567c8991a2d6021",
+    "sources_sha256": {
+      "run.py": "5f05cf4e970e96efe68ad9c4ef371311fe77f166e2dfa39e6829549ba2e02163",
+      "aggregation.py": "6d52784894c87fe36af337de76e56164f2f02b539114442453b52a6d45b602e8",
+      "config.yaml": "2b5e2029408e313f3a93bec365b3c769dfebcded5c9baf99218f44163fd90dcc",
+      "requirements.txt": "3307cc4c2d21f7fb14cb108f35f181fcf7766b511015c650cbfb1701d908184a",
+      "real_cvar_plugin\\__init__.py": "1c3a0a5380def4dc46d79a5ec63a671403c97ea232ab1b29297e98da78a39116",
+      "real_cvar_plugin\\certificates.py": "d4e134fc63ed59b0f2d3a782177ad7b103a7f00f0eeaabdadbe4a2b4dc7ffd50",
+      "real_cvar_plugin\\config.py": "289c06e874f10c86d48ea22507d8fed0cc9925767402c64c21060a06f1913617",
+      "real_cvar_plugin\\data.py": "82373f46d42d77f0928c5768292b714cadbeda6afaf1ad023f91ee51b9f2c92e",
+      "real_cvar_plugin\\models.py": "248eaa4c5bf88f181de0bc965ca343f174a03767c1a9215616cd0f3f79275f7d",
+      "real_cvar_plugin\\part_b.py": "1dea307a52ce2478c4766219e22650e97b9c6e16667a3c9f2dc4ad38cfae5b16"
+    },
+    "config": {
+      "seed": 20260727,
+      "cohort_year": 2012,
+      "expected_counts": {
+        "accepted": 27157,
+        "rejected": 206161
+      },
+      "data": {
+        "accepted_path": "camera_ready_v3_10page\\revision_experiments\\sequential_plugin\\data\\accepted_2007_to_2018Q4.csv.gz",
+        "rejected_path": "camera_ready_v3_10page\\revision_experiments\\sequential_plugin\\data\\rejected_2007_to_2018Q4.csv.gz",
+        "prepared_path": "camera_ready_v3_10page\\revision_experiments\\sequential_plugin\\data\\accepted_2012_reconstructed.parquet",
+        "chunksize": 100000,
+        "features": {
+          "numeric": [
+            "requested_amount",
+            "dti",
+            "risk_score",
+            "employment_years"
+          ],
+          "categorical": [
+            "state",
+            "zip3",
+            "purpose"
+          ]
+        }
+      },
+      "evaluation": {
+        "n_folds": 5,
+        "alphas": [
+          0.9,
+          0.95
+        ],
+        "gamma_grid": [
+          1.0,
+          1.25,
+          1.5,
+          2.0,
+          3.0,
+          5.0,
+          8.0,
+          12.0
+        ],
+        "p1_clip": [
+          0.01,
+          0.99
+        ],
+        "propensity_clip": [
+          0.02,
+          0.98
+        ],
+        "confidence_level": 0.95,
+        "models": [
+          "logistic",
+          "gradient_boosting",
+          "conservative_logistic"
+        ],
+        "nuisance_outcome_model": "gradient_boosting",
+        "nuisance_propensity_model": "gradient_boosting",
+        "conservative_default_weight": 2.0
+      },
+      "xgboost": {
+        "n_estimators": 450,
+        "max_depth": 5,
+        "learning_rate": 0.04,
+        "min_child_weight": 10.0,
+        "subsample": 0.85,
+        "colsample_bytree": 0.85,
+        "reg_lambda": 2.0,
+        "device": "cuda",
+        "n_jobs": 8
+      },
+      "part_b": {
+        "gamma0": 3.0,
+        "target_selected_fraction": 0.45,
+        "repetitions": 20,
+        "adaptive_model": "gradient_boosting",
+        "adaptive_rounds": 8,
+        "batch_fraction_hidden": 0.02,
+        "test_fraction": 0.2,
+        "target_width": 0.1,
+        "policies": [
+          "tiv_per_cost",
+          "random",
+          "uncertainty",
+          "low_propensity",
+          "predicted_loss",
+          "sensitivity_width"
+        ],
+        "audit_cost_amount_weight": 0.0
+      },
+      "output": {
+        "directory": "camera_ready_v3_10page\\revision_experiments\\sequential_plugin\\results"
+      }
+    },
+    "runtime": {
+      "ready": true,
+      "errors": [],
+      "versions": {
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "pyarrow": "18.1.0",
+        "scipy": "1.13.1",
+        "scikit-learn": "1.6.1",
+        "xgboost": "2.1.4",
+        "PyYAML": "6.0.2",
+        "joblib": "1.4.2"
+      },
+      "python": "3.12.4 | packaged by Anaconda, Inc. | (main, Jun 18 2024, 15:03:56) [MSC v.1929 64 bit (AMD64)]",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "gpu": "NVIDIA GeForce RTX 3060, 12288 MiB",
+      "prepared": "camera_ready_v3_10page\\revision_experiments\\sequential_plugin\\data\\accepted_2012_reconstructed.parquet"
+    },
+    "estimator": "retained_plugin",
+    "orthogonal": false
+  },
+  "status": "running",
+  "started_utc": "2026-11-06T20:14:30.331036+00:00",
+  "completed_repetitions": [
+    0
+  ],
+  "repetition_seconds": {
+    "0": 257.05978789998335
+  }
+}

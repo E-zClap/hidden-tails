@@ -1,0 +1,51 @@
+name: Reproducibility checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Verify published files and saved results
+        run: python scripts/verify_release.py
+      - name: Install pinned experiment dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Original lightweight regression suite
+        working-directory: real_data_evaluation
+        env:
+          PYTHONPATH: src
+        run: python -m unittest discover -s tests -v
+      - name: Sequential retained-objective regression suite
+        run: python -m unittest discover -s camera_ready_v3_10page/revision_experiments/sequential_plugin/tests -v
+      - name: Figure ingestion regression suite
+        run: python -m unittest discover -s camera_ready_v3_10page/figures -p 'test_*.py' -v
+      - name: Validate figure inputs against the completed run
+        run: python camera_ready_v3_10page/figures/revelation_extract.py --check-only
+  manuscript:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install TeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends texlive-latex-extra texlive-science texlive-fonts-recommended texlive-fonts-extra
+      - name: Rebuild vector figures and manuscript
+        run: python scripts/build.py --figures --paper
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rebuilt-paper
+          path: camera_ready_v3_10page/main.pdf

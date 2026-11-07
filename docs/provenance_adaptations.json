@@ -1,0 +1,22 @@
+{
+  "camera_ready_v3_10page/revision_experiments/sequential_plugin/results/optimized/run_manifest.json": {
+    "historical_sha256": "f02b18a986dc523b705714ba91a910962b781a6e7fff0b9d3ebd14a0eca00658",
+    "public_sha256": "c7b29127ea117f4745383b90b0631345e66d3eafc030291ed48564e26d3b28fb",
+    "change": "Host-specific path strings replaced with repository-relative paths; scientific values and recorded hashes retained."
+  },
+  "camera_ready_v3_10page/revision_experiments/sequential_plugin/results/run_manifest.json": {
+    "historical_sha256": "fd54f0bbca7a8ce818f4388fef99f197c527fc407ccdf3711fa71137538c3dfa",
+    "public_sha256": "345a440583067dbd4312c881ac9a8c9d03384772d32797cbc657b935f41d0440",
+    "change": "Host-specific path strings replaced with repository-relative paths; scientific values and recorded hashes retained."
+  },
+  "camera_ready_v3_10page/revision_experiments/sequential_plugin/verification.json": {
+    "historical_sha256": "5db656a45dd07ee08368bf823a908800611ba15999b1a4487449eceb766f9ea7",
+    "public_sha256": "bbe133a9d47cd395faeda1c1c519e7b5d728b8fb1a2b69e46e91a8dde1345f3d",
+    "change": "Host-specific path strings replaced with repository-relative paths; scientific values and recorded hashes retained."
+  },
+  "experiments/results/finite_sample_config.json": {
+    "historical_sha256": "32561ef00864822d4243bd72a451edab22e88d0f1290028e028ecc2afda497d1",
+    "public_sha256": "8a8723b50e999c497aebd972240c756e646e117fda135409c11f28e5e64e613e",
+    "change": "Host-specific path strings replaced with repository-relative paths; scientific values and recorded hashes retained."
+  }
+}

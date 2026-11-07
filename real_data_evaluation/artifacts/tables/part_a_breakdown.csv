@@ -1,0 +1,7 @@
+alpha,accepted_preferred,comparator,accepted_preferred_cvar,comparator_cvar,dominance_holds_at_gamma_1,gamma_break,gamma_break_first_failed_grid,right_censored_above_grid
+0.9,gradient_boosting,logistic,0.7400190896025343,0.7412810436202972,True,1.4015128998811752,1.5,False
+0.9,conservative_logistic,logistic,0.5789981262385175,0.7412810436202972,True,1.0106039727481126,1.25,False
+0.9,conservative_logistic,gradient_boosting,0.5789981262385175,0.7400190896025343,False,1.0,1.0,False
+0.95,gradient_boosting,logistic,0.7950715961758251,0.8006198580145173,True,2.2378442936914706,3.0,False
+0.95,conservative_logistic,logistic,0.6609316526081616,0.8006198580145173,False,1.0,1.0,False
+0.95,conservative_logistic,gradient_boosting,0.6609316526081616,0.7950715961758251,False,1.0,1.0,False

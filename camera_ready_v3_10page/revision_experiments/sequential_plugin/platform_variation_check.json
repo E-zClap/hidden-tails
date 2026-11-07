@@ -1,0 +1,24 @@
+{
+  "repetition": 15,
+  "policy": "low_propensity",
+  "seconds": 41.69414469998446,
+  "unoptimized_replay_matches_optimized_at_atol_1e_12": true,
+  "maximum_absolute_differences": {
+    "repetition": 0.0,
+    "round": 0.0,
+    "alpha": 0.0,
+    "gamma": 0.0,
+    "audited_labels": 0.0,
+    "audited_fraction_hidden": 6.938893903907228e-17,
+    "cumulative_cost": 0.0,
+    "estimated_retained_lower": 0.0,
+    "estimated_retained_upper": 0.0,
+    "estimated_retained_width": 8.326672684688674e-17,
+    "true_test_cvar": 0.0,
+    "mean_test_brier": 8.326672684688674e-17,
+    "n_train": 0.0,
+    "n_test": 0.0,
+    "upper_eta": 0.0
+  },
+  "interpretation": "The unused-fit optimization does not explain this original-host difference. Exact historical audited row identities and fitted models were not retained, so the precise cross-platform divergence cannot be reconstructed from the original results-only archive."
+}

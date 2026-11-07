@@ -1,0 +1,37 @@
+% Editable PGFPlots master. Compile from camera_ready_v2.
+\documentclass[tikz,border=0pt]{standalone}
+\input{figures/figure_style.tex}
+\begin{document}
+\begin{tikzpicture}[x=1pt,y=1pt]
+\path[use as bounding box] (0,0) rectangle (397.48499,190);
+\node[anchor=north west,font=\figtitle] at (0,188) {(a)\quad Sampling uncertainty};
+\node[anchor=north west,font=\figsmall,text=figgray] at (0,173) {Oracle-calibrated outer intervals};
+\node[anchor=north west,font=\figtitle] at (210,188) {(b)\quad Endpoint estimation};
+\node[anchor=north west,font=\figsmall,text=figgray] at (210,173) {Cross-fitted, learned nuisances};
+\begin{axis}[paperaxis,at={(42pt,34pt)},anchor=south west,width=147pt,height=122pt,
+ xmode=log,log basis x=10,xmin=850,xmax=120000,ymin=0,ymax=.68,
+ xtick={1000,10000,100000},xticklabels={1k,10k,100k},
+ ytick={0,.2,.4,.6},yticklabel style={/pgf/number format/fixed,/pgf/number format/precision=1},
+ xlabel={Sample size $n$},ylabel={Mean interval width}]
+\addplot[fill=figpale,draw=none,forget plot] table[x=n,y=width,col sep=comma]{figures/learning_width_enlargement.csv} -- cycle;
+\addplot[primary] table[x=n,y=cert_width,col sep=comma]{figures/learning_summary.csv};
+\addplot[figink,line width=1pt,no marks] coordinates {(850,.09494406222838257) (120000,.09494406222838257)};
+\node[anchor=west,font=\figsmall,text=figblue] at (axis cs:2250,.565) {Outer certificate};
+\node[anchor=south west,font=\figsmall,inner sep=1pt] at (axis cs:1070,.109) {Mean identification width: 0.095};
+\end{axis}
+\begin{axis}[paperaxis,at={(251pt,34pt)},anchor=south west,width=141pt,height=122pt,
+ xmode=log,ymode=log,log basis x=10,log basis y=10,xmin=850,xmax=120000,ymin=.0018,ymax=.07,
+ xtick={1000,10000,100000},xticklabels={1k,10k,100k},
+ ytick={.002,.005,.01,.02,.05},yticklabels={.002,.005,.01,.02,.05},
+ xlabel={Sample size $n$},ylabel={Endpoint RMSE},
+ legend style={at={(.98,.98)},anchor=north east}]
+\addplot[figgray!50,densely dotted,line width=.8pt,no marks,forget plot] table[x=n,y=sqrt_n_ref,col sep=comma]{figures/learning_summary.csv};
+\addplot[primary] table[x=n,y=crossfit_rmse_upper,col sep=comma]{figures/learning_summary.csv};
+\addlegendentry{Upper endpoint}
+\addplot[baseline,mark options={fill=white,solid}] table[x=n,y=crossfit_rmse_lower,col sep=comma]{figures/learning_summary.csv};
+\addlegendentry{Lower endpoint}
+\node[anchor=south west,font=\figsmall,text=figgray,inner sep=1pt] at (axis cs:28000,.011) {$n^{-1/2}$};
+\end{axis}
+\end{tikzpicture}
+\end{document}
+

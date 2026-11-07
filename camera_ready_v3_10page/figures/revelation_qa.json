@@ -1,0 +1,44 @@
+[
+  {
+    "figure": "fig04_revelation",
+    "PDF_width_bp": 396.0,
+    "PDF_height_bp": 210.21200561523438,
+    "minimum_PDF_font_bp": 8.069700241088867,
+    "text_x_bounds_bp": [
+      3.187999963760376,
+      388.19970703125
+    ],
+    "text_y_bounds_bp": [
+      4.088728904724121,
+      205.98922729492188
+    ]
+  },
+  {
+    "figure": "supp_revelation",
+    "PDF_width_bp": 396.0,
+    "PDF_height_bp": 238.10699462890625,
+    "minimum_PDF_font_bp": 8.069700241088867,
+    "text_x_bounds_bp": [
+      3.187999963760376,
+      388.19970703125
+    ],
+    "text_y_bounds_bp": [
+      6.153716087341309,
+      231.835205078125
+    ]
+  },
+  {
+    "figure": "supp_frontier",
+    "PDF_width_bp": 396.0,
+    "PDF_height_bp": 229.14100646972656,
+    "minimum_PDF_font_bp": 8.069700241088867,
+    "text_x_bounds_bp": [
+      3.187999963760376,
+      370.81884765625
+    ],
+    "text_y_bounds_bp": [
+      5.084715843200684,
+      222.86822509765625
+    ]
+  }
+]

@@ -1,0 +1,232 @@
+{
+  "prepared_utc": "2026-11-06T20:14:10.077609+00:00",
+  "source_url": "https://www.kaggle.com/api/v1/datasets/download/wordsforthewise/lending-club/accepted_2007_to_2018Q4.csv.gz",
+  "source_bytes": 392582231,
+  "source_sha256": "55c16f75120f897683f02e7aabcf080d0e4a20c4832feb1d592cfa941bd62a2d",
+  "prepared_sha256": "fcd06d383adff616699ab4a79130a38cd4e5ce1f7821867697b1679aff3d952e",
+  "loader_sha256": "82373f46d42d77f0928c5768292b714cadbeda6afaf1ad023f91ee51b9f2c92e",
+  "accepted_mature_count": 53367,
+  "default_count": 8644,
+  "schema_mapping": {
+    "requested_amount": "loan_amnt",
+    "dti": "dti",
+    "risk_score_low": "fico_range_low",
+    "risk_score_high": "fico_range_high",
+    "employment_length": "emp_length",
+    "state": "addr_state",
+    "zip3": "zip_code",
+    "purpose": "purpose",
+    "policy_code": "policy_code",
+    "date": "issue_d",
+    "loan_status": "loan_status"
+  },
+  "mask_checks": [
+    {
+      "repetition": 0,
+      "matches_original_metadata": true,
+      "selection_sha256": "1be0410e2657f1fb19c0ceeb6c261d1754f9b29f338b76c87f2d0f6e87d518f9",
+      "gamma0": 3.0,
+      "delta": -1.0986122886681098,
+      "intercept": -0.042374437028803336,
+      "target_selected_fraction": 0.45,
+      "realized_selected_fraction": 0.4501283564749752
+    },
+    {
+      "repetition": 1,
+      "matches_original_metadata": true,
+      "selection_sha256": "0cf7cd923c693b9696b9d47277a4a7f890590e549e6c371b32e2bda46aa246d4",
+      "gamma0": 3.0,
+      "delta": -1.0986122886681098,
+      "intercept": -0.042374437028803336,
+      "target_selected_fraction": 0.45,
+      "realized_selected_fraction": 0.4496411640152154
+    },
+    {
+      "repetition": 2,
+      "matches_original_metadata": true,
+      "selection_sha256": "b0a8faf4bbe2916003118d93eef733e08f493bd001f8503ad7d58d1542d286e5",
+      "gamma0": 3.0,
+      "delta": -1.0986122886681098,
+      "intercept": -0.042374437028803336,
+      "target_selected_fraction": 0.45,
+      "realized_selected_fraction": 0.45093409785073174
+    },
+    {
+      "repetition": 3,
+      "matches_original_metadata": true,
+      "selection_sha256": "460a97ab7dec4858755784f39b59edd370f22eaeaba3aac52e74f076caeddf31",
+      "gamma0": 3.0,
+      "delta": -1.0986122886681098,
+      "intercept": -0.042374437028803336,
+      "target_selected_fraction": 0.45,
+      "realized_selected_fraction": 0.4475237506324133
+    },
+    {
+      "repetition": 4,
+      "matches_original_metadata": true,
+      "selection_sha256": "5ff142e7dbd1c3bd425077271f0628b043c5c9346a66a04987a71e459c1d80ff",
+      "gamma0": 3.0,
+      "delta": -1.0986122886681098,
+      "intercept": -0.042374437028803336,
+      "target_selected_fraction": 0.45,
+      "realized_selected_fraction": 0.45067176344932264
+    },
+    {
+      "repetition": 5,
+      "matches_original_metadata": true,
+      "selection_sha256": "8360c1f744546abb7893a81d9448a6a314de5fe56253c64e6f87cc1e5a1cd00a",
+      "gamma0": 3.0,
+      "delta": -1.0986122886681098,
+      "intercept": -0.042374437028803336,
+      "target_selected_fraction": 0.45,
+      "realized_selected_fraction": 0.4494725204714524
+    },
+    {
+      "repetition": 6,
+      "matches_original_metadata": true,
+      "selection_sha256": "3f7a5cc36d8b580d226d6b2e94c2ab233d4d16b7fcd12729c9c3151ce4317a14",
+      "gamma0": 3.0,
+      "delta": -1.0986122886681098,
+      "intercept": -0.042374437028803336,
+      "target_selected_fraction": 0.45,
+      "realized_selected_fraction": 0.4511589559090824
+    },
+    {
+      "repetition": 7,
+      "matches_original_metadata": true,
+      "selection_sha256": "4e38e8a1c1a52ac7c17752e75fbbe84136873a2424d7be084877de529d6851da",
+      "gamma0": 3.0,
+      "delta": -1.0986122886681098,
+      "intercept": -0.042374437028803336,
+      "target_selected_fraction": 0.45,
+      "realized_selected_fraction": 0.44784229954841004
+    },
+    {
+      "repetition": 8,
+      "matches_original_metadata": true,
+      "selection_sha256": "4db7d56b00e62f7734241433727c3bd075a301ce07ae2f22d131f0eb52f32402",
+      "gamma0": 3.0,
+      "delta": -1.0986122886681098,
+      "intercept": -0.042374437028803336,
+      "target_selected_fraction": 0.45,
+      "realized_selected_fraction": 0.4487979462964004
+    },
+    {
+      "repetition": 9,
+      "matches_original_metadata": true,
+      "selection_sha256": "9bda034c567535aba5876e3e3fac6a41967a283762f1965edf02bc62ed5b5f75",
+      "gamma0": 3.0,
+      "delta": -1.0986122886681098,
+      "intercept": -0.042374437028803336,
+      "target_selected_fraction": 0.45,
+      "realized_selected_fraction": 0.45466299398504695
+    },
+    {
+      "repetition": 10,
+      "matches_original_metadata": true,
+      "selection_sha256": "90a875437ac570e96681785dce3808b494b11ddb4296bafec921257bd88e6d29",
+      "gamma0": 3.0,
+      "delta": -1.0986122886681098,
+      "intercept": -0.042374437028803336,
+      "target_selected_fraction": 0.45,
+      "realized_selected_fraction": 0.4482920156651114
+    },
+    {
+      "repetition": 11,
+      "matches_original_metadata": true,
+      "selection_sha256": "4ad1f550bb4379af5b779d68771c264a7d1dca14613ed9f225b3b58d0507fa05",
+      "gamma0": 3.0,
+      "delta": -1.0986122886681098,
+      "intercept": -0.042374437028803336,
+      "target_selected_fraction": 0.45,
+      "realized_selected_fraction": 0.4506342871062642
+    },
+    {
+      "repetition": 12,
+      "matches_original_metadata": true,
+      "selection_sha256": "1955c6a87da0808c58db30a7f17c82ec8bc577d35c36c8b9860c49ecbb26f797",
+      "gamma0": 3.0,
+      "delta": -1.0986122886681098,
+      "intercept": -0.042374437028803336,
+      "target_selected_fraction": 0.45,
+      "realized_selected_fraction": 0.4530702494050631
+    },
+    {
+      "repetition": 13,
+      "matches_original_metadata": true,
+      "selection_sha256": "44bdbce4f193d033753573ddaafdd1b794db33e02c43f0e7877a2fac21953bd2",
+      "gamma0": 3.0,
+      "delta": -1.0986122886681098,
+      "intercept": -0.042374437028803336,
+      "target_selected_fraction": 0.45,
+      "realized_selected_fraction": 0.4522645080293065
+    },
+    {
+      "repetition": 14,
+      "matches_original_metadata": true,
+      "selection_sha256": "02f5082031c41af658c3c036eb8458fd3f3b0d81fbf3b080d65fac28fd9df7bf",
+      "gamma0": 3.0,
+      "delta": -1.0986122886681098,
+      "intercept": -0.042374437028803336,
+      "target_selected_fraction": 0.45,
+      "realized_selected_fraction": 0.44969737852980307
+    },
+    {
+      "repetition": 15,
+      "matches_original_metadata": true,
+      "selection_sha256": "8925f7510ae39e99056c80c37a33ba4510743e49811436699f5e61b5ddf203f3",
+      "gamma0": 3.0,
+      "delta": -1.0986122886681098,
+      "intercept": -0.042374437028803336,
+      "target_selected_fraction": 0.45,
+      "realized_selected_fraction": 0.44720520171641653
+    },
+    {
+      "repetition": 16,
+      "matches_original_metadata": true,
+      "selection_sha256": "b00046331a7034e3c4f5ee789c364931b3dc0681c880a55c47e44e780f1b377a",
+      "gamma0": 3.0,
+      "delta": -1.0986122886681098,
+      "intercept": -0.042374437028803336,
+      "target_selected_fraction": 0.45,
+      "realized_selected_fraction": 0.44825453932205295
+    },
+    {
+      "repetition": 17,
+      "matches_original_metadata": true,
+      "selection_sha256": "fda7cd510bfecf6a03cbdef20165ceeafe35066a4b4a6372f8f87f649cbd8b25",
+      "gamma0": 3.0,
+      "delta": -1.0986122886681098,
+      "intercept": -0.042374437028803336,
+      "target_selected_fraction": 0.45,
+      "realized_selected_fraction": 0.4529765585474169
+    },
+    {
+      "repetition": 18,
+      "matches_original_metadata": true,
+      "selection_sha256": "27c7e2476014ebe06cdd25ecd71f5a4fffe58b405a40adea40f1f25360425572",
+      "gamma0": 3.0,
+      "delta": -1.0986122886681098,
+      "intercept": -0.042374437028803336,
+      "target_selected_fraction": 0.45,
+      "realized_selected_fraction": 0.4504094290479135
+    },
+    {
+      "repetition": 19,
+      "matches_original_metadata": true,
+      "selection_sha256": "071c7dcc700583a5cd214073e0915365eb7e34407f1b2378f1b08ec8d69e6a9b",
+      "gamma0": 3.0,
+      "delta": -1.0986122886681098,
+      "intercept": -0.042374437028803336,
+      "target_selected_fraction": 0.45,
+      "realized_selected_fraction": 0.44900406618322186
+    }
+  ],
+  "original_selected_features_and_order_preserved": true,
+  "excluded_unused_columns": [
+    "subgroup_fico",
+    "subgroup_dti",
+    "subgroup_amount"
+  ],
+  "note": "Original accepted-loader output and A-prefixed row identifiers. Combined-cohort descriptive subgroups are not used by any sequential fit, mask, split or metric and are not reconstructed."
+}

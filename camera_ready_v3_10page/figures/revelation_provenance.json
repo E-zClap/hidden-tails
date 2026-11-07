@@ -1,0 +1,382 @@
+{
+  "sources": {
+    "real_data_evaluation/artifacts/tables/part_b_fixed_audits.csv": {
+      "sha256": "e935d3146e6c8d2b7c510d1c2bbf8ed7441d67ed7ea057f959c21698681990b8"
+    },
+    "real_data_evaluation/artifacts/tables/part_b_fixed_audit_summary.csv": {
+      "sha256": "e2725151e300b6ea2c5eb360948d582e89bdb1760868967fc0e722206ac25b05"
+    },
+    "experiments/results/experiment6_certification_frontier_curves.csv": {
+      "sha256": "856c6bc3fa8035123a45f7fb9d5f28f251706cf90e874791af5f9b0295d6690b"
+    },
+    "experiments/results/experiment6_cost_to_certify_ratios.csv": {
+      "sha256": "00d5991bbb249c374789d620e1161714835c00b77c1c66dc32cace24e75e1ec9"
+    },
+    "camera_ready_v3_10page/revision_experiments/sequential_plugin/results/optimized/run_manifest.json": {
+      "sha256": "c7b29127ea117f4745383b90b0631345e66d3eafc030291ed48564e26d3b28fb"
+    },
+    "camera_ready_v3_10page/revision_experiments/sequential_plugin/results/optimized/constant_reference.csv": {
+      "sha256": "1e38492b257eb8b6ff2910eb30db59ae2100e89752d54542250c2cbe46ea6a32"
+    },
+    "camera_ready_v3_10page/revision_experiments/sequential_plugin/results/optimized/sequential_plugin_runs.csv": {
+      "sha256": "bcbefbef8b6f3dd08636f333b69bcd3647669f47aae471e94fdb34f3a6d8530c"
+    },
+    "camera_ready_v3_10page/revision_experiments/sequential_plugin/results/optimized/terminal_comparison.csv": {
+      "sha256": "c4e0ef6e8dee42d4e0d9d74018450e707f7f27df07aa9c1c759241688a77a2c8"
+    },
+    "camera_ready_v3_10page/revision_experiments/sequential_plugin/results/optimized/terminal_pairs.csv": {
+      "sha256": "0ae2acfe4bfa916a7352d456d6aba29f29a2beb6a03fbaf0cdf104c3d4c168b9"
+    },
+    "camera_ready_v3_10page/revision_experiments/sequential_plugin/results/optimized/trajectory_summary.csv": {
+      "sha256": "c16a9311bd7b2498910b784ce0d014af562e99d18a5348dec3fa68d825eab195"
+    }
+  },
+  "sequential_run_identity": {
+    "prepared_sha256": "fcd06d383adff616699ab4a79130a38cd4e5ce1f7821867697b1679aff3d952e",
+    "pseudo_population_sha256": "9b252b44866f94f03fa74423595302e925495a24428f35011567c8991a2d6021",
+    "sources_sha256": {
+      "run.py": "5f05cf4e970e96efe68ad9c4ef371311fe77f166e2dfa39e6829549ba2e02163",
+      "aggregation.py": "6d52784894c87fe36af337de76e56164f2f02b539114442453b52a6d45b602e8",
+      "config.yaml": "2b5e2029408e313f3a93bec365b3c769dfebcded5c9baf99218f44163fd90dcc",
+      "requirements.txt": "3307cc4c2d21f7fb14cb108f35f181fcf7766b511015c650cbfb1701d908184a",
+      "real_cvar_plugin\\__init__.py": "1c3a0a5380def4dc46d79a5ec63a671403c97ea232ab1b29297e98da78a39116",
+      "real_cvar_plugin\\certificates.py": "d4e134fc63ed59b0f2d3a782177ad7b103a7f00f0eeaabdadbe4a2b4dc7ffd50",
+      "real_cvar_plugin\\config.py": "289c06e874f10c86d48ea22507d8fed0cc9925767402c64c21060a06f1913617",
+      "real_cvar_plugin\\data.py": "82373f46d42d77f0928c5768292b714cadbeda6afaf1ad023f91ee51b9f2c92e",
+      "real_cvar_plugin\\models.py": "248eaa4c5bf88f181de0bc965ca343f174a03767c1a9215616cd0f3f79275f7d",
+      "real_cvar_plugin\\part_b.py": "a822919d6e1302c8516becc15a375bbf1ebefd23772ad1bd4c8f452f24ae9544",
+      "real_cvar_plugin\\part_b_unoptimized.py": "1dea307a52ce2478c4766219e22650e97b9c6e16667a3c9f2dc4ad38cfae5b16"
+    },
+    "config": {
+      "seed": 20260727,
+      "cohort_year": 2012,
+      "expected_counts": {
+        "accepted": 27157,
+        "rejected": 206161
+      },
+      "data": {
+        "accepted_path": "camera_ready_v3_10page\\revision_experiments\\sequential_plugin\\data\\accepted_2007_to_2018Q4.csv.gz",
+        "rejected_path": "camera_ready_v3_10page\\revision_experiments\\sequential_plugin\\data\\rejected_2007_to_2018Q4.csv.gz",
+        "prepared_path": "camera_ready_v3_10page\\revision_experiments\\sequential_plugin\\data\\accepted_2012_reconstructed.parquet",
+        "chunksize": 100000,
+        "features": {
+          "numeric": [
+            "requested_amount",
+            "dti",
+            "risk_score",
+            "employment_years"
+          ],
+          "categorical": [
+            "state",
+            "zip3",
+            "purpose"
+          ]
+        }
+      },
+      "evaluation": {
+        "n_folds": 5,
+        "alphas": [
+          0.9,
+          0.95
+        ],
+        "gamma_grid": [
+          1.0,
+          1.25,
+          1.5,
+          2.0,
+          3.0,
+          5.0,
+          8.0,
+          12.0
+        ],
+        "p1_clip": [
+          0.01,
+          0.99
+        ],
+        "propensity_clip": [
+          0.02,
+          0.98
+        ],
+        "confidence_level": 0.95,
+        "models": [
+          "logistic",
+          "gradient_boosting",
+          "conservative_logistic"
+        ],
+        "nuisance_outcome_model": "gradient_boosting",
+        "nuisance_propensity_model": "gradient_boosting",
+        "conservative_default_weight": 2.0
+      },
+      "xgboost": {
+        "n_estimators": 450,
+        "max_depth": 5,
+        "learning_rate": 0.04,
+        "min_child_weight": 10.0,
+        "subsample": 0.85,
+        "colsample_bytree": 0.85,
+        "reg_lambda": 2.0,
+        "device": "cuda",
+        "n_jobs": 8
+      },
+      "part_b": {
+        "gamma0": 3.0,
+        "target_selected_fraction": 0.45,
+        "repetitions": 20,
+        "adaptive_model": "gradient_boosting",
+        "adaptive_rounds": 8,
+        "batch_fraction_hidden": 0.02,
+        "test_fraction": 0.2,
+        "target_width": 0.1,
+        "policies": [
+          "tiv_per_cost",
+          "random",
+          "uncertainty",
+          "low_propensity",
+          "predicted_loss",
+          "sensitivity_width"
+        ],
+        "audit_cost_amount_weight": 0.0
+      },
+      "output": {
+        "directory": "camera_ready_v3_10page\\revision_experiments\\sequential_plugin\\results\\optimized"
+      }
+    },
+    "runtime": {
+      "ready": true,
+      "errors": [],
+      "versions": {
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "pyarrow": "18.1.0",
+        "scipy": "1.13.1",
+        "scikit-learn": "1.6.1",
+        "xgboost": "2.1.4",
+        "PyYAML": "6.0.2",
+        "joblib": "1.4.2"
+      },
+      "python": "3.12.4 | packaged by Anaconda, Inc. | (main, Jun 18 2024, 15:03:56) [MSC v.1929 64 bit (AMD64)]",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "gpu": "NVIDIA GeForce RTX 3060, 12288 MiB",
+      "prepared": "camera_ready_v3_10page\\revision_experiments\\sequential_plugin\\data\\accepted_2012_reconstructed.parquet"
+    },
+    "estimator": "retained_plugin",
+    "orthogonal": false
+  },
+  "fixed_aggregation": "Normalize fixed_threshold_width by its round-0 value within each mask and policy; report medians and linear IQR across 20 masks at each recorded round.",
+  "budget": "100 times the median recorded audited_fraction_hidden. Final fractions are 16.0133541% (fixed) and 16.0176827% (sequential), including integer batch rounding.",
+  "sequential_aggregation": "Completed retained_plugin run with orthogonal=False. Medians and linear IQR across 20 masks; width uses estimated_retained_width, Brier uses mean_test_brier, and held-out CVaR uses true_test_cvar. All 1080 rows and source/output hashes are validated before export.",
+  "terminal_comparison": "TIV and random share each mask, split, terminal label count, and unit cost. Policy rows are medians across masks; the paired row is the median of the 20 within-mask TIV-minus-random differences, validated against terminal_pairs.csv and terminal_comparison.csv. The constant forecast is an exact predictor reference, not an acquisition policy.",
+  "frontier_aggregation": "Per-world relative_debt medians and linear IQR across 120 worlds; TIV and the exact oracle agree at every recorded coordinate. All nine raw and summary trajectories are exported.",
+  "cost_target": "First recorded cost reaching 25% of initial ambiguity divided by TIV cost within each world; report median and IQR across 120 worlds for all seven baselines.",
+  "initials": {
+    "tiv_per_cost": {
+      "round": 0,
+      "fixed_budget": 0.0,
+      "sequential_budget": 0.0,
+      "fixed_q25": 100.0,
+      "fixed_median": 100.0,
+      "fixed_q75": 100.0,
+      "width_q25": 0.09283675765937319,
+      "width_median": 0.09678488804954266,
+      "width_q75": 0.10108696945464588,
+      "brier_q25": 0.1385711957384732,
+      "brier_median": 0.13878879663853944,
+      "brier_q75": 0.13903827902622526,
+      "cvar_q25": 0.8996068080811901,
+      "cvar_median": 0.9025936263232388,
+      "cvar_q75": 0.9047406355508901
+    },
+    "random": {
+      "round": 0,
+      "fixed_budget": 0.0,
+      "sequential_budget": 0.0,
+      "fixed_q25": 100.0,
+      "fixed_median": 100.0,
+      "fixed_q75": 100.0,
+      "width_q25": 0.09283675765937319,
+      "width_median": 0.09678488804954266,
+      "width_q75": 0.10108696945464588,
+      "brier_q25": 0.1385711957384732,
+      "brier_median": 0.13878879663853944,
+      "brier_q75": 0.13903827902622526,
+      "cvar_q25": 0.8996068080811901,
+      "cvar_median": 0.9025936263232388,
+      "cvar_q75": 0.9047406355508901
+    },
+    "low_propensity": {
+      "round": 0,
+      "fixed_budget": 0.0,
+      "sequential_budget": 0.0,
+      "fixed_q25": 100.0,
+      "fixed_median": 100.0,
+      "fixed_q75": 100.0,
+      "width_q25": 0.09283675765937319,
+      "width_median": 0.09678488804954266,
+      "width_q75": 0.10108696945464588,
+      "brier_q25": 0.1385711957384732,
+      "brier_median": 0.13878879663853944,
+      "brier_q75": 0.13903827902622526,
+      "cvar_q25": 0.8996068080811901,
+      "cvar_median": 0.9025936263232388,
+      "cvar_q75": 0.9047406355508901
+    },
+    "predicted_loss": {
+      "round": 0,
+      "fixed_budget": 0.0,
+      "sequential_budget": 0.0,
+      "fixed_q25": 100.0,
+      "fixed_median": 100.0,
+      "fixed_q75": 100.0,
+      "width_q25": 0.09283675765937319,
+      "width_median": 0.09678488804954266,
+      "width_q75": 0.10108696945464588,
+      "brier_q25": 0.1385711957384732,
+      "brier_median": 0.13878879663853944,
+      "brier_q75": 0.13903827902622526,
+      "cvar_q25": 0.8996068080811901,
+      "cvar_median": 0.9025936263232388,
+      "cvar_q75": 0.9047406355508901
+    },
+    "uncertainty": {
+      "round": 0,
+      "fixed_budget": 0.0,
+      "sequential_budget": 0.0,
+      "fixed_q25": 100.0,
+      "fixed_median": 100.0,
+      "fixed_q75": 100.0,
+      "width_q25": 0.09283675765937319,
+      "width_median": 0.09678488804954266,
+      "width_q75": 0.10108696945464588,
+      "brier_q25": 0.1385711957384732,
+      "brier_median": 0.13878879663853944,
+      "brier_q75": 0.13903827902622526,
+      "cvar_q25": 0.8996068080811901,
+      "cvar_median": 0.9025936263232388,
+      "cvar_q75": 0.9047406355508901
+    },
+    "sensitivity_width": {
+      "round": 0,
+      "fixed_budget": 0.0,
+      "sequential_budget": 0.0,
+      "fixed_q25": 100.0,
+      "fixed_median": 100.0,
+      "fixed_q75": 100.0,
+      "width_q25": 0.09283675765937319,
+      "width_median": 0.09678488804954266,
+      "width_q75": 0.10108696945464588,
+      "brier_q25": 0.1385711957384732,
+      "brier_median": 0.13878879663853944,
+      "brier_q75": 0.13903827902622526,
+      "cvar_q25": 0.8996068080811901,
+      "cvar_median": 0.9025936263232388,
+      "cvar_q75": 0.9047406355508901
+    }
+  },
+  "endpoints": {
+    "tiv_per_cost": {
+      "round": 8,
+      "fixed_budget": 16.013354113301546,
+      "sequential_budget": 16.017682727305704,
+      "fixed_q25": 36.583156398664855,
+      "fixed_median": 38.88233054179942,
+      "fixed_q75": 41.46831247974467,
+      "width_q25": 0.033717851489547375,
+      "width_median": 0.0347775958964793,
+      "width_q75": 0.03523462419881762,
+      "brier_q25": 0.1359811715705591,
+      "brier_median": 0.13615888875376395,
+      "brier_q75": 0.13636091498300676,
+      "cvar_q25": 0.8519725005562223,
+      "cvar_median": 0.8540644686373535,
+      "cvar_q75": 0.8560434999188425
+    },
+    "random": {
+      "round": 8,
+      "fixed_budget": 16.013354113301546,
+      "sequential_budget": 16.017682727305704,
+      "fixed_q25": 83.9146398055134,
+      "fixed_median": 83.97703038012872,
+      "fixed_q75": 84.19373634423398,
+      "width_q25": 0.0659612969924506,
+      "width_median": 0.06706864578169544,
+      "width_q75": 0.06915491028564366,
+      "brier_q25": 0.13447076114326278,
+      "brier_median": 0.13470637294168225,
+      "brier_q75": 0.13486027394778805,
+      "cvar_q25": 0.8668214036149263,
+      "cvar_median": 0.8681665488466679,
+      "cvar_q75": 0.8712949480982091
+    },
+    "low_propensity": {
+      "round": 8,
+      "fixed_budget": 16.013354113301546,
+      "sequential_budget": 16.017682727305704,
+      "fixed_q25": 89.00271196082639,
+      "fixed_median": 90.9694846251847,
+      "fixed_q75": 92.26158271791256,
+      "width_q25": 0.08213682029818663,
+      "width_median": 0.0836375656066981,
+      "width_q75": 0.08630633043250716,
+      "brier_q25": 0.1343948684277142,
+      "brier_median": 0.1346900756706909,
+      "brier_q75": 0.13512472331286793,
+      "cvar_q25": 0.8764825978696378,
+      "cvar_median": 0.8790611986759116,
+      "cvar_q75": 0.88082888905944
+    },
+    "predicted_loss": {
+      "round": 8,
+      "fixed_budget": 16.013354113301546,
+      "sequential_budget": 16.017682727305704,
+      "fixed_q25": 100.0,
+      "fixed_median": 100.0,
+      "fixed_q75": 100.0,
+      "width_q25": 0.11123050249619443,
+      "width_median": 0.1157369319629583,
+      "width_q75": 0.11859041651426289,
+      "brier_q25": 0.1358794956843663,
+      "brier_median": 0.13633013425750423,
+      "brier_q75": 0.13668148872990518,
+      "cvar_q25": 0.8979419727862108,
+      "cvar_median": 0.8995512055108792,
+      "cvar_q75": 0.9033227190037716
+    },
+    "uncertainty": {
+      "round": 8,
+      "fixed_budget": 16.013354113301546,
+      "sequential_budget": 16.017682727305704,
+      "fixed_q25": 100.0,
+      "fixed_median": 100.0,
+      "fixed_q75": 100.0,
+      "width_q25": 0.11095308472275095,
+      "width_median": 0.11586255199807224,
+      "width_q75": 0.11889591721531698,
+      "brier_q25": 0.13605535382045147,
+      "brier_median": 0.13638204483968805,
+      "brier_q75": 0.13663760028600455,
+      "cvar_q25": 0.8973251851261189,
+      "cvar_median": 0.8999465947939502,
+      "cvar_q75": 0.9035705255897061
+    },
+    "sensitivity_width": {
+      "round": 8,
+      "fixed_budget": 16.013354113301546,
+      "sequential_budget": 16.017682727305704,
+      "fixed_q25": 100.0,
+      "fixed_median": 100.0,
+      "fixed_q75": 100.0,
+      "width_q25": 0.11171371032071192,
+      "width_median": 0.11647005462233301,
+      "width_q75": 0.11874100547521617,
+      "brier_q25": 0.13593845400274598,
+      "brier_median": 0.1362134158610255,
+      "brier_q75": 0.1365150357840746,
+      "cvar_q25": 0.8966398002724442,
+      "cvar_median": 0.8986795090746569,
+      "cvar_q75": 0.9027607947500188
+    }
+  },
+  "main_caption": "Targeted revelation and assessment precision. Fixed-gap reductions at the terminal recorded budget: TIV 61%, random 16%. Sequential median estimated retained width: initial TIV 0.09678, terminal TIV 0.03478, random 0.06707, lowest propensity 0.08364. Twenty controlled masks, gradient boosting, alpha=.95, Gamma=3, unit label costs; points are recorded rounds.",
+  "supp_revelation_caption": "Sequential outcomes across six acquisition rules. Lines are medians over 20 masks; light bands are IQR for TIV, random, and lowest propensity. Width uses retained plug-in objectives; predictive CVaR and mean Brier loss use the reserved 20% split. Alpha=.95 and Gamma=3.",
+  "supp_frontier_caption": "Revelation precision and audit cost across 120 synthetic finite-cell worlds. Median remaining fixed-threshold ambiguity is normalized within world. TIV per cost matches the exact fractional-knapsack frontier. Cost ratios compare first recorded cost reaching 25% of the initial gap to TIV within the same world; intervals are IQR."
+}

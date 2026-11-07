@@ -1,0 +1,3 @@
+predictor,observed_label_cvar,true_full_population_cvar,sharp_upper_envelope,sharp_lower_envelope
+f hidden-tail,0.06105316713304502,1.0,1.0,1.0
+g tail-safe,0.0,0.0,7.126663201961892e-07,2.850666862657815e-10

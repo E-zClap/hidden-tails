@@ -1,0 +1,101 @@
+{
+  "checked_utc": "2026-11-06T20:15:23Z",
+  "accepted_prepared_path": "camera_ready_v3_10page\\revision_experiments\\sequential_plugin\\data\\accepted_2012_reconstructed.parquet",
+  "accepted_prepared_sha256": "fcd06d383adff616699ab4a79130a38cd4e5ce1f7821867697b1679aff3d952e",
+  "accepted_source_sha256": "55c16f75120f897683f02e7aabcf080d0e4a20c4832feb1d592cfa941bd62a2d",
+  "accepted_source_bytes": 392582231,
+  "accepted_loader_sha256": "82373f46d42d77f0928c5768292b714cadbeda6afaf1ad023f91ee51b9f2c92e",
+  "accepted_count": 53367,
+  "accepted_defaults": 8644,
+  "accepted_count_and_defaults_match_saved_export": true,
+  "accepted_score_min": 662.0,
+  "accepted_score_max": 847.5,
+  "accepted_missing_scores": 0,
+  "accepted_below_660": 0,
+  "accepted_fico_counts": {
+    "fico_660_699": 29010,
+    "fico_700_739": 17177,
+    "fico_740_plus": 7180
+  },
+  "accepted_fico_counts_match_saved_export": true,
+  "combined_count": 390644,
+  "combined_numeric_missing_reconciliation": {
+    "requested_amount": {
+      "accepted": 0,
+      "rejected": 2,
+      "combined": 2,
+      "saved_export": 2,
+      "matches": true
+    },
+    "dti": {
+      "accepted": 0,
+      "rejected": 4226,
+      "combined": 4226,
+      "saved_export": 4226,
+      "matches": true
+    },
+    "risk_score": {
+      "accepted": 0,
+      "rejected": 23097,
+      "combined": 23097,
+      "saved_export": 23097,
+      "matches": true
+    },
+    "employment_years": {
+      "accepted": 1925,
+      "rejected": 3584,
+      "combined": 5509,
+      "saved_export": 5509,
+      "matches": true
+    }
+  },
+  "early_2012_excluded_state_counts": {
+    "ID": {
+      "accepted": 0,
+      "rejected": 1
+    },
+    "IN": {
+      "accepted": 26,
+      "rejected": 620
+    },
+    "IA": {
+      "accepted": 0,
+      "rejected": 0
+    },
+    "ME": {
+      "accepted": 0,
+      "rejected": 7
+    },
+    "MS": {
+      "accepted": 1,
+      "rejected": 32
+    },
+    "NE": {
+      "accepted": 1,
+      "rejected": 21
+    },
+    "ND": {
+      "accepted": 0,
+      "rejected": 6
+    },
+    "TN": {
+      "accepted": 0,
+      "rejected": 58
+    }
+  },
+  "accepted_amount_min": 1000.0,
+  "accepted_amount_max": 35000.0,
+  "accepted_dti_max": 34.99,
+  "accepted_dti_ge_35": 0,
+  "accepted_policy_code_counts": {
+    "1.0": 53367
+  },
+  "interpretation": [
+    "Direct source reconstruction confirms the prior aggregate FICO arithmetic, including zero accepted below 660.",
+    "Rare accepted records in IN, NE and MS conflict with a naive application of the dated exclusion lists; do not claim all state-listed records structurally excluded or define support from a blanket state filter.",
+    "The rejected snapshot has Policy Code=0.0 throughout 2012, whereas the generic dictionary describes codes 1/2. The feature was excluded from original modeling; do not use it as eligibility proof.",
+    "Actual accepted requested_amount is loan_amnt, potentially reduced in underwriting per the dictionary; it does not establish the rejected original amount under the same measurement.",
+    "Original July 2026 raw source hashes are unavailable: exact count/missingness/FICO reconciliation confirms compatibility, not bitwise identity or exact reproduction of original model predictions.",
+    "The explicitly specified extrapolation model remains the historical design; this audit does not introduce a supported cohort or new fitted models."
+  ]
+}

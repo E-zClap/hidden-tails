@@ -1,0 +1,4 @@
+# Numerical version recorded by finite_sample_config.json (Python 3.9.25).
+numpy==2.0.2
+# Release plotting dependency; the historical Matplotlib version was not recorded.
+matplotlib==3.9.4

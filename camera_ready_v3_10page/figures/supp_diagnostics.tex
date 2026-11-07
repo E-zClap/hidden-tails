@@ -1,0 +1,35 @@
+\documentclass[tikz,border=0pt]{standalone}
+\input{figures/figure_style.tex}
+\begin{document}
+\begin{tikzpicture}[x=1pt,y=1pt]
+  \path[use as bounding box] (0,0) rectangle (397.485,338);
+  \node[anchor=north west,font=\figtitle] at (0,336) {(a) Observed-tail information};
+  \begin{axis}[paperaxis,at={(42pt,216pt)},anchor=south west,
+    width=346pt,height=94pt,xmin=0,xmax=.31,ymin=0,ymax=.16,
+    xtick={0,.1,.2,.3},ytick={0,.05,.1,.15},
+    yticklabel style={/pgf/number format/fixed},
+    xlabel={Inverse square root of observed-tail sample size},
+    ylabel={Excess CVaR}]
+    \addplot[figgray,dashed,line width=1pt,no marks]
+      table[x=x,y=y,col sep=comma]{figures/data/diagnostics_fit.csv};
+    \addplot[only marks,mark=*,mark size=1.7pt,figblue,mark options={fill=figblue!65,draw=figblue!80}]
+      table[x=x,y=y,col sep=comma]{figures/data/diagnostics_learning.csv};
+  \end{axis}
+  \node[anchor=north west,font=\figtitle] at (0,165) {(b) Tail level};
+  \node[anchor=north west,font=\figtitle,align=left] at (218,165) {(c) Historical observation\\\phantom{(c) }probability};
+  \begin{axis}[paperaxis,at={(42pt,40pt)},anchor=south west,
+    width=134pt,height=99pt,xmin=.55,xmax=.95,ymin=0,ymax=.3,
+    xtick={.6,.7,.8,.9},ytick={0,.1,.2,.3},
+    xlabel={Tail level $\alpha$},ylabel={Identification width}]
+    \addplot[figblue,line width=1.5pt,no marks]
+      table[x=x,y=width,col sep=comma]{figures/data/diagnostics_alpha.csv};
+  \end{axis}
+  \begin{axis}[paperaxis,at={(258pt,40pt)},anchor=south west,
+    width=130pt,height=99pt,xmin=0,xmax=1,ymin=0,ymax=.5,
+    xtick={0,.25,.5,.75,1},ytick={0,.1,.2,.3,.4,.5},
+    xlabel={Historical observation\\probability $\pi$},xlabel style={align=center},ylabel={Identification width}]
+    \addplot[figblue,line width=1.5pt,no marks]
+      table[x=x,y=width,col sep=comma]{figures/data/diagnostics_pi.csv};
+  \end{axis}
+\end{tikzpicture}
+\end{document}

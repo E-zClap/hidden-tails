@@ -1,0 +1,31 @@
+% Complete full-population sensitivity estimates, all saved Gamma values.
+\documentclass[tikz,border=0pt]{standalone}
+\input{figures/figure_style.tex}
+\newcommand{\sensitivitypanel}[7]{%
+\node[anchor=north west,font=\figtitle] at (#1,#2) {#3};
+\begin{axis}[paperaxis,at={(#4pt,#5pt)},anchor=south west,width=145pt,height=90pt,
+ xmode=log,log basis x=10,xmin=.95,xmax=13.5,ymin=.33,ymax=.92,
+ xtick={1,2,3,5,12},xticklabels={1,2,3,5,12},ytick={.4,.6,.8},
+ yticklabels={0.4,0.6,0.8},xlabel={Assumed $\Gamma$},ylabel={Applicant CVaR}]
+\addplot[fill=figpale,draw=none,forget plot] table[x=gamma,y=risk,col sep=comma]{figures/assessment_sensitivity_polygon_#6_#7.csv} -- cycle;
+\addplot[figblue,line width=1.3pt,no marks] table[x=gamma,y=lower,col sep=comma]{figures/assessment_sensitivity_#6_#7.csv};
+\addplot[figblue,line width=1.3pt,no marks] table[x=gamma,y=upper,col sep=comma]{figures/assessment_sensitivity_#6_#7.csv};
+\addplot[figgray,dashed,line width=1.15pt,no marks] table[x=gamma,y=accepted,col sep=comma]{figures/assessment_sensitivity_#6_#7.csv};
+\end{axis}}
+\begin{document}
+\begin{tikzpicture}[x=1pt,y=1pt]
+\path[use as bounding box] (0,0) rectangle (397.48499,433);
+\sensitivitypanel{0}{431}{(a)\quad Gradient boosting, $\alpha=.90$}{42}{320}{gradient_boosting}{90}
+\sensitivitypanel{210}{431}{(b)\quad Gradient boosting, $\alpha=.95$}{247}{320}{gradient_boosting}{95}
+\sensitivitypanel{0}{296}{(c)\quad Logistic regression, $\alpha=.90$}{42}{185}{logistic}{90}
+\sensitivitypanel{210}{296}{(d)\quad Logistic regression, $\alpha=.95$}{247}{185}{logistic}{95}
+\sensitivitypanel{0}{161}{(e)\quad Default-weighted, $\alpha=.90$}{42}{50}{conservative_logistic}{90}
+\sensitivitypanel{210}{161}{(f)\quad Default-weighted, $\alpha=.95$}{247}{50}{conservative_logistic}{95}
+\draw[fill=figpale,draw=none] (46,7) rectangle (66,15);
+\draw[figblue,line width=1.1pt] (46,7) -- (66,7) (46,15) -- (66,15);
+\node[anchor=west,font=\figsmall] at (73,11) {Estimated applicant interval};
+\draw[figgray,dashed,line width=1.15pt] (250,11) -- (271,11);
+\node[anchor=west,font=\figsmall] at (278,11) {Accepted only};
+\end{tikzpicture}
+\end{document}
+

@@ -1,0 +1,22 @@
+{
+  "worlds": 60,
+  "reps": 80,
+  "cells": 30,
+  "alpha": 0.75,
+  "gamma": 2.0,
+  "pi_min": 0.2,
+  "delta": 0.05,
+  "n_grid": [
+    1000,
+    3000,
+    10000,
+    30000,
+    100000
+  ],
+  "seed": 20261103,
+  "out": "experiments",
+  "beta": 0.25,
+  "python": "3.9.25",
+  "numpy": "2.0.2",
+  "seconds": 7.9
+}

@@ -1,0 +1,158 @@
+{
+  "checked_utc": "2026-11-06T20:09:36.836647+00:00",
+  "full_experiments_run": true,
+  "commands": {
+    "repaired_suite": {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "camera_ready_v3_10page\\revision_experiments\\sequential_plugin\\tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_mismatched_label_budget_is_rejected (test_aggregation.AggregationTests.test_mismatched_label_budget_is_rejected) ... ok\ntest_missing_terminal_pair_is_rejected (test_aggregation.AggregationTests.test_missing_terminal_pair_is_rejected) ... ok\ntest_terminal_comparison_pairs_same_mask_before_aggregation (test_aggregation.AggregationTests.test_terminal_comparison_pairs_same_mask_before_aggregation) ... ok\ntest_missing_input_is_reported_without_starting_fits_or_creating_output (test_runner.RunnerTests.test_missing_input_is_reported_without_starting_fits_or_creating_output) ... ok\ntest_output_cannot_escape_isolated_results_directory (test_runner.RunnerTests.test_output_cannot_escape_isolated_results_directory) ... ok\ntest_constant_half_forecast_has_quarter_risk_zero_width_and_tiv (test_sequential.SequentialRegressionTests.test_constant_half_forecast_has_quarter_risk_zero_width_and_tiv) ... ok\ntest_each_round_records_held_out_mean_brier_and_cvar (test_sequential.SequentialRegressionTests.test_each_round_records_held_out_mean_brier_and_cvar) ... ok\ntest_full_revelation_trajectory_equals_full_data_empirical_cvar (test_sequential.SequentialRegressionTests.test_full_revelation_trajectory_equals_full_data_empirical_cvar) ... ok\ntest_initial_objective_uses_historical_bounds_and_actual_revealed_losses (test_sequential.SequentialRegressionTests.test_initial_objective_uses_historical_bounds_and_actual_revealed_losses) ... ok\ntest_plugin_endpoints_fully_revealed_with_historical_selection (test_sequential.SequentialRegressionTests.test_plugin_endpoints_fully_revealed_with_historical_selection) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 4.629s\n\nOK\n"
+    },
+    "original_suite": {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "real_data_evaluation/tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_fast_hinge_optimizer_matches_brute_force (test_certificates.CertificateTests.test_fast_hinge_optimizer_matches_brute_force) ... ok\ntest_fully_observed_certificate_collapses (test_certificates.CertificateTests.test_fully_observed_certificate_collapses) ... ok\ntest_sensitivity_endpoints (test_certificates.CertificateTests.test_sensitivity_endpoints) ... ok\ntest_tiv_hidden_pool_version_removes_hidden_mass_factor (test_certificates.CertificateTests.test_tiv_hidden_pool_version_removes_hidden_mass_factor) ... ok\ntest_employment_years_accepts_fractional_less_than_one (test_data.DataPreparationTests.test_employment_years_accepts_fractional_less_than_one) ... ok\ntest_minimal_accepted_chunk_standardizes_without_extension_dtype_error (test_data.DataPreparationTests.test_minimal_accepted_chunk_standardizes_without_extension_dtype_error) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.083s\n\nOK\n"
+    },
+    "original_regression": {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "camera_ready_v3_10page\\revision_experiments\\sequential_plugin\\tests",
+        "-p",
+        "test_sequential.py",
+        "-v"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "test_constant_half_forecast_has_quarter_risk_zero_width_and_tiv (test_sequential.SequentialRegressionTests.test_constant_half_forecast_has_quarter_risk_zero_width_and_tiv) ... ok\ntest_each_round_records_held_out_mean_brier_and_cvar (test_sequential.SequentialRegressionTests.test_each_round_records_held_out_mean_brier_and_cvar) ... FAIL\ntest_full_revelation_trajectory_equals_full_data_empirical_cvar (test_sequential.SequentialRegressionTests.test_full_revelation_trajectory_equals_full_data_empirical_cvar) ... FAIL\ntest_initial_objective_uses_historical_bounds_and_actual_revealed_losses (test_sequential.SequentialRegressionTests.test_initial_objective_uses_historical_bounds_and_actual_revealed_losses) ... FAIL\ntest_plugin_endpoints_fully_revealed_with_historical_selection (test_sequential.SequentialRegressionTests.test_plugin_endpoints_fully_revealed_with_historical_selection) ... ok\n\n======================================================================\nFAIL: test_each_round_records_held_out_mean_brier_and_cvar (test_sequential.SequentialRegressionTests.test_each_round_records_held_out_mean_brier_and_cvar)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"camera_ready_v3_10page\\revision_experiments\\sequential_plugin\\tests\\test_sequential.py\", line 81, in test_each_round_records_held_out_mean_brier_and_cvar\n    self.assertIn(\"mean_test_brier\", row)\nAssertionError: 'mean_test_brier' not found in {'repetition': 0, 'policy': 'random', 'round': 0, 'alpha': 0.7, 'gamma': 3.0, 'audited_labels': 0, 'audited_fraction_hidden': 0.0, 'cumulative_cost': 0.0, 'certificate_lower': 0.2093311493463531, 'certificate_upper': 0.575935906911244, 'certificate_width': 0.36660475756489086, 'true_test_cvar': 0.41468806424315624, 'upper_eta': 0.40191633803482657}\n\n======================================================================\nFAIL: test_full_revelation_trajectory_equals_full_data_empirical_cvar (test_sequential.SequentialRegressionTests.test_full_revelation_trajectory_equals_full_data_empirical_cvar)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"camera_ready_v3_10page\\revision_experiments\\sequential_plugin\\tests\\test_sequential.py\", line 99, in test_full_revelation_trajectory_equals_full_data_empirical_cvar\n    self.assertAlmostEqual(terminal[lower_key], truth, places=11)\nAssertionError: 0.04550021964824364 != 0.409947514176745 within 11 places (0.3644472945285014 difference)\n\n======================================================================\nFAIL: test_initial_objective_uses_historical_bounds_and_actual_revealed_losses (test_sequential.SequentialRegressionTests.test_initial_objective_uses_historical_bounds_and_actual_revealed_losses)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"camera_ready_v3_10page\\revision_experiments\\sequential_plugin\\tests\\test_sequential.py\", line 69, in test_initial_objective_uses_historical_bounds_and_actual_revealed_losses\n    self.assertAlmostEqual(rows[0][key], min(objectives), places=11)\nAssertionError: 0.2093311493463531 != 0.451637024327201 within 11 places (0.24230587498084788 difference)\n\n----------------------------------------------------------------------\nRan 5 tests in 0.148s\n\nFAILED (failures=3)\n"
+    },
+    "preflight": {
+      "command": [
+        "python",
+        "camera_ready_v3_10page\\revision_experiments\\sequential_plugin\\run.py",
+        "--prepared",
+        "real_data_evaluation/artifacts/prepared/lendingclub_2012.parquet",
+        "--check-only"
+      ],
+      "exit_code": 2,
+      "stdout": "{\n  \"ready\": false,\n  \"errors\": [\n    \"prepared cohort missing: real_data_evaluation\\\\artifacts\\\\prepared\\\\lendingclub_2012.parquet\",\n    \"pandas: require 2.2.3, installed 2.3.2\",\n    \"pyarrow: require 18.1.0, installed 19.0.0\",\n    \"scikit-learn: require 1.6.1, installed 1.7.1\",\n    \"xgboost: require 2.1.4, installed None\",\n    \"PyYAML: require 6.0.2, installed 6.0.1\"\n  ],\n  \"versions\": {\n    \"numpy\": \"1.26.4\",\n    \"pandas\": \"2.3.2\",\n    \"pyarrow\": \"19.0.0\",\n    \"scipy\": \"1.13.1\",\n    \"scikit-learn\": \"1.7.1\",\n    \"xgboost\": null,\n    \"PyYAML\": \"6.0.1\",\n    \"joblib\": \"1.4.2\"\n  },\n  \"python\": \"3.12.4 | packaged by Anaconda, Inc. | (main, Jun 18 2024, 15:03:56) [MSC v.1929 64 bit (AMD64)]\",\n  \"platform\": \"Windows-11-10.0.26200-SP0\",\n  \"gpu\": \"NVIDIA GeForce RTX 3060, 12288 MiB\",\n  \"prepared\": \"real_data_evaluation\\\\artifacts\\\\prepared\\\\lendingclub_2012.parquet\"\n}\n",
+      "stderr": ""
+    }
+  },
+  "original_source_unchanged": {
+    "real_data_evaluation\\src\\real_cvar\\certificates.py": true,
+    "real_data_evaluation\\src\\real_cvar\\models.py": true,
+    "real_data_evaluation\\src\\real_cvar\\config.py": true,
+    "real_data_evaluation\\src\\real_cvar\\part_b.py": true,
+    "real_data_evaluation\\config.yaml": true,
+    "real_data_evaluation\\requirements.txt": true,
+    "real_data_evaluation\\src\\real_cvar\\data.py": true
+  },
+  "original_directories_git_diff": "",
+  "python_source_syntax": {
+    "aggregation.py": true,
+    "run.py": true,
+    "real_cvar_plugin\\certificates.py": true,
+    "real_cvar_plugin\\config.py": true,
+    "real_cvar_plugin\\models.py": true,
+    "real_cvar_plugin\\part_b.py": true,
+    "real_cvar_plugin\\__init__.py": true,
+    "tests\\test_aggregation.py": true,
+    "tests\\test_runner.py": true,
+    "tests\\test_sequential.py": true
+  },
+  "completed_repetitions": 20,
+  "current_verification": {
+    "checked_utc": "2026-11-06T20:57:39.725848+00:00",
+    "commands": {
+      "repaired_suite": {
+        "command": [
+          "camera_ready_v3_10page\\revision_experiments\\sequential_plugin\\.venv\\Scripts\\python.exe",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "camera_ready_v3_10page\\revision_experiments\\sequential_plugin\\tests",
+          "-v"
+        ],
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": "test_mismatched_label_budget_is_rejected (test_aggregation.AggregationTests.test_mismatched_label_budget_is_rejected) ... ok\ntest_missing_terminal_pair_is_rejected (test_aggregation.AggregationTests.test_missing_terminal_pair_is_rejected) ... ok\ntest_terminal_comparison_pairs_same_mask_before_aggregation (test_aggregation.AggregationTests.test_terminal_comparison_pairs_same_mask_before_aggregation) ... ok\ntest_missing_input_is_reported_without_starting_fits_or_creating_output (test_runner.RunnerTests.test_missing_input_is_reported_without_starting_fits_or_creating_output) ... ok\ntest_output_cannot_escape_isolated_results_directory (test_runner.RunnerTests.test_output_cannot_escape_isolated_results_directory) ... ok\ntest_constant_half_forecast_has_quarter_risk_zero_width_and_tiv (test_sequential.SequentialRegressionTests.test_constant_half_forecast_has_quarter_risk_zero_width_and_tiv) ... ok\ntest_each_round_records_held_out_mean_brier_and_cvar (test_sequential.SequentialRegressionTests.test_each_round_records_held_out_mean_brier_and_cvar) ... ok\ntest_full_revelation_trajectory_equals_full_data_empirical_cvar (test_sequential.SequentialRegressionTests.test_full_revelation_trajectory_equals_full_data_empirical_cvar) ... ok\ntest_initial_objective_uses_historical_bounds_and_actual_revealed_losses (test_sequential.SequentialRegressionTests.test_initial_objective_uses_historical_bounds_and_actual_revealed_losses) ... ok\ntest_plugin_endpoints_fully_revealed_with_historical_selection (test_sequential.SequentialRegressionTests.test_plugin_endpoints_fully_revealed_with_historical_selection) ... ok\ntest_six_optimized_trajectories_equal_unoptimized_real_model_outputs (test_sequential.SequentialRegressionTests.test_six_optimized_trajectories_equal_unoptimized_real_model_outputs) ... ok\ntest_six_policies_avoid_fits_for_unused_baseline_nuisances (test_sequential.SequentialRegressionTests.test_six_policies_avoid_fits_for_unused_baseline_nuisances) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 4.941s\n\nOK\n"
+      },
+      "original_suite": {
+        "command": [
+          "camera_ready_v3_10page\\revision_experiments\\sequential_plugin\\.venv\\Scripts\\python.exe",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "real_data_evaluation/tests",
+          "-v"
+        ],
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": "test_fast_hinge_optimizer_matches_brute_force (test_certificates.CertificateTests.test_fast_hinge_optimizer_matches_brute_force) ... ok\ntest_fully_observed_certificate_collapses (test_certificates.CertificateTests.test_fully_observed_certificate_collapses) ... ok\ntest_sensitivity_endpoints (test_certificates.CertificateTests.test_sensitivity_endpoints) ... ok\ntest_tiv_hidden_pool_version_removes_hidden_mass_factor (test_certificates.CertificateTests.test_tiv_hidden_pool_version_removes_hidden_mass_factor) ... ok\ntest_employment_years_accepts_fractional_less_than_one (test_data.DataPreparationTests.test_employment_years_accepts_fractional_less_than_one) ... ok\ntest_minimal_accepted_chunk_standardizes_without_extension_dtype_error (test_data.DataPreparationTests.test_minimal_accepted_chunk_standardizes_without_extension_dtype_error) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.068s\n\nOK\n"
+      },
+      "preflight": {
+        "command": [
+          "camera_ready_v3_10page\\revision_experiments\\sequential_plugin\\.venv\\Scripts\\python.exe",
+          "camera_ready_v3_10page\\revision_experiments\\sequential_plugin\\run.py",
+          "--prepared",
+          "camera_ready_v3_10page\\revision_experiments\\sequential_plugin\\data\\accepted_2012_reconstructed.parquet",
+          "--check-only"
+        ],
+        "exit_code": 0,
+        "stdout": "{\n  \"ready\": true,\n  \"errors\": [],\n  \"versions\": {\n    \"numpy\": \"1.26.4\",\n    \"pandas\": \"2.2.3\",\n    \"pyarrow\": \"18.1.0\",\n    \"scipy\": \"1.13.1\",\n    \"scikit-learn\": \"1.6.1\",\n    \"xgboost\": \"2.1.4\",\n    \"PyYAML\": \"6.0.2\",\n    \"joblib\": \"1.4.2\"\n  },\n  \"python\": \"3.12.4 | packaged by Anaconda, Inc. | (main, Jun 18 2024, 15:03:56) [MSC v.1929 64 bit (AMD64)]\",\n  \"platform\": \"Windows-11-10.0.26200-SP0\",\n  \"gpu\": \"NVIDIA GeForce RTX 3060, 12288 MiB\",\n  \"prepared\": \"camera_ready_v3_10page\\\\revision_experiments\\\\sequential_plugin\\\\data\\\\accepted_2012_reconstructed.parquet\"\n}\n",
+        "stderr": ""
+      },
+      "completed_run_checks": {
+        "command": [
+          "camera_ready_v3_10page\\revision_experiments\\sequential_plugin\\.venv\\Scripts\\python.exe",
+          "camera_ready_v3_10page\\revision_experiments\\sequential_plugin\\verify_completed_run.py"
+        ],
+        "exit_code": 0,
+        "stdout": "{\n  \"checks_passed\": true,\n  \"rows\": 1080,\n  \"repetitions\": 20,\n  \"policies\": 6,\n  \"rounds_per_policy\": 9,\n  \"terminal_comparison\": {\n    \"estimated_retained_width\": {\n      \"tiv_median\": 0.0347775958964793,\n      \"random_median\": 0.06706864578169544,\n      \"paired_mean\": -0.03288704855797448,\n      \"paired_median\": -0.03316641002486185\n    },\n    \"mean_test_brier\": {\n      \"tiv_median\": 0.13615888875376395,\n      \"random_median\": 0.13470637294168225,\n      \"paired_mean\": 0.0014242455313757591,\n      \"paired_median\": 0.0014142662600171996\n    },\n    \"true_test_cvar\": {\n      \"tiv_median\": 0.8540644686373535,\n      \"random_median\": 0.8681665488466679,\n      \"paired_mean\": -0.014762947062435966,\n      \"paired_median\": -0.013757059802346483\n    }\n  },\n  \"output_hashes_match\": {\n    \"constant_reference.csv\": true,\n    \"sequential_plugin_runs.csv\": true,\n    \"terminal_comparison.csv\": true,\n    \"terminal_pairs.csv\": true,\n    \"trajectory_summary.csv\": true\n  },\n  \"original_sources_unchanged\": {\n    \"real_data_evaluation\\\\src\\\\real_cvar\\\\certificates.py\": true,\n    \"real_data_evaluation\\\\src\\\\real_cvar\\\\models.py\": true,\n    \"real_data_evaluation\\\\src\\\\real_cvar\\\\config.py\": true,\n    \"real_data_evaluation\\\\src\\\\real_cvar\\\\part_b.py\": true,\n    \"real_data_evaluation\\\\config.yaml\": true,\n    \"real_data_evaluation\\\\requirements.txt\": true,\n    \"real_data_evaluation\\\\src\\\\real_cvar\\\\data.py\": true\n  },\n  \"original_audited_labels_match\": true,\n  \"original_unaffected_cvar_max_abs_difference\": 0.001957624794841961,\n  \"total_fit_seconds\": 2137.6820915999997,\n  \"prepared_sha256\": \"fcd06d383adff616699ab4a79130a38cd4e5ce1f7821867697b1679aff3d952e\"\n}\n",
+        "stderr": ""
+      }
+    }
+  },
+  "completed_output_directory": "results/optimized",
+  "current_source_syntax": {
+    "aggregation.py": true,
+    "investigate_platform_variation.py": true,
+    "prepare_accepted.py": true,
+    "run.py": true,
+    "validate_optimization.py": true,
+    "verify_completed_run.py": true,
+    "real_cvar_plugin\\certificates.py": true,
+    "real_cvar_plugin\\config.py": true,
+    "real_cvar_plugin\\data.py": true,
+    "real_cvar_plugin\\models.py": true,
+    "real_cvar_plugin\\part_b.py": true,
+    "real_cvar_plugin\\part_b_unoptimized.py": true,
+    "real_cvar_plugin\\__init__.py": true,
+    "tests\\test_aggregation.py": true,
+    "tests\\test_runner.py": true,
+    "tests\\test_sequential.py": true
+  }
+}

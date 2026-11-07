@@ -1,0 +1,716 @@
+\section{Statistical Certificates and Learning Complexity}
+\label{app:b}
+
+This appendix proves the statistical results for a fixed tail level
+$\alpha\in(0,1)$ and a fixed finite sensitivity level $\Gamma\geq 1$.
+Write $\beta=1-\alpha$, $p=p_1$, and $P=P_{\mathrm{obs}}$; thus $Pg$
+denotes integration of an observed-data function $g$ against the common
+observed law. For brevity, set
+\[
+ \rho^L(f)=\underline{\rho}_{\alpha,\Gamma}(f),\qquad
+ \rho^U(f)=\overline{\rho}_{\alpha,\Gamma}(f),\qquad
+ I_\Gamma(f)=\rho^U(f)-\rho^L(f).
+\]
+The population characterization in Appendix~\ref{app:a} gives
+$\rho^\sigma(f)=\inf_{\eta\in[0,1]}
+\{\eta+\beta^{-1}m^\sigma_{f,\eta}\}$ for
+$\sigma\in\{L,U\}$. All $L_2$ norms below are with respect to $P_X$.
+
+For uniform empirical-process statements, assume the paired maps
+$x\mapsto(\ell(f(x),0),\ell(f(x),1))$, $f\in\mathcal F$, form a pointwise-separable
+class of measurable functions with the envelope supplied by
+Assumption~\ref{ass:regularity}. A countable pointwise-dense subclass and
+rational thresholds including $0,1$ determine the suprema below, since the
+score transformations are continuous. Measurable, pointwise-separable
+versions of the fitted score classes suffice as well.
+
+\subsection{Score regularity and exact nuisance-bias expansion}
+\label{app:score-bias}
+
+Recall $a^y_{f,\eta}(x)=(\ell(f(x),y)-\eta)_+$ and
+$d_{f,\eta}(x)=a^1_{f,\eta}(x)-a^0_{f,\eta}(x)$. For a real number $d$,
+write $d_+=\max(d,0)$ and $d_-=\max(-d,0)$. Define
+\begin{align}
+ H_p^U(d)&=q_+(p)d_+-q_-(p)d_-,&
+ H_p^L(d)&=q_-(p)d_+-q_+(p)d_-, \label{eq:b:H}\\
+ G_p^U(d)&=q_+'(p)d_+-q_-'(p)d_-,&
+ G_p^L(d)&=q_-'(p)d_+-q_+'(p)d_- . \label{eq:b:G}
+\end{align}
+Consequently,
+$b^\sigma_{f,\eta}(x;p)=a^0_{f,\eta}(x)+H_p^\sigma(d_{f,\eta}(x))$
+and $\dot b^\sigma_{f,\eta}(x;p)=G_p^\sigma(d_{f,\eta}(x))$.
+
+\begin{lemma}[Regularity of the endpoint maps]
+\label{lemma:b:regularity}
+For $p\in[0,1]$, the derivatives of the sensitivity endpoints satisfy
+\begin{align}
+ q_+'(p)&=\frac{\Gamma}{\{1+(\Gamma-1)p\}^2},&
+ q_-'(p)&=\frac{\Gamma}{\{\Gamma-(\Gamma-1)p\}^2},\label{eq:b:first-derivatives}\\
+ q_+''(p)&=-\frac{2\Gamma(\Gamma-1)}{\{1+(\Gamma-1)p\}^3},&
+ q_-''(p)&=\frac{2\Gamma(\Gamma-1)}{\{\Gamma-(\Gamma-1)p\}^3}.
+ \label{eq:b:second-derivatives}
+\end{align}
+In particular, $\Gamma^{-1}\leq q_\pm'(p)\leq\Gamma$ and
+$|q_\pm''(p)|\leq 2\Gamma(\Gamma-1)$. Uniformly in $(f,\eta,x,p,\sigma)$,
+\begin{equation}
+ \begin{gathered}
+ 0\leq b^\sigma_{f,\eta}(x;p)\leq1,\qquad
+ |\dot b^\sigma_{f,\eta}(x;p)|\leq\Gamma,\\
+ |\partial_p^2 b^\sigma_{f,\eta}(x;p)|\leq2\Gamma(\Gamma-1).
+ \end{gathered}
+ \label{eq:b:regularity-bounds}
+\end{equation}
+Moreover, $H_p^\sigma$ is $1$-Lipschitz and $G_p^\sigma$ is
+$\Gamma$-Lipschitz on the real line; both vanish at zero.
+\end{lemma}
+
+\begin{proof}
+Differentiating $q_+(p)=\Gamma p/\{1+(\Gamma-1)p\}$ and
+$q_-(p)=p/\{\Gamma-(\Gamma-1)p\}$ gives
+\eqref{eq:b:first-derivatives}--\eqref{eq:b:second-derivatives}.
+The denominators before taking powers lie in $[1,\Gamma]$, giving the
+derivative bounds. The value $a^0+H_p^\sigma(a^1-a^0)$ is a convex
+combination of $a^0,a^1\in[0,1]$; its derivatives are bounded by
+$\Gamma|a^1-a^0|$ and $2\Gamma(\Gamma-1)|a^1-a^0|$, respectively.
+This proves \eqref{eq:b:regularity-bounds}. On either half-line the slopes
+of $H_p^\sigma$ and $G_p^\sigma$ lie in $[0,1]$ and
+$[\Gamma^{-1},\Gamma]$, respectively. Both maps are continuous at zero,
+so these slope bounds also prove the Lipschitz bounds across loss ties.
+\end{proof}
+
+For candidate nuisance functions $p_c:\mathcal X\to[0,1]$ and
+$\pi_c:\mathcal X\to[\pi_{\min}/2,1]$, the score is
+\begin{align}
+ \phi^\sigma_{f,\eta}(O;p_c,\pi_c)
+ ={}&S a^{Y^{\mathrm{obs}}}_{f,\eta}(X)
+ +(1-S)b^\sigma_{f,\eta}(X;p_c(X)) \notag\\
+ &+S\frac{1-\pi_c(X)}{\pi_c(X)}
+ \dot b^\sigma_{f,\eta}(X;p_c(X))
+ \{Y^{\mathrm{obs}}-p_c(X)\}.
+ \label{eq:b:score}
+\end{align}
+The sum of its first two terms belongs to $[0,1]$, whereas its correction
+has absolute value at most $2\Gamma/\pi_{\min}$. Therefore
+\begin{equation}
+ \begin{split}
+ -\frac{2\Gamma}{\pi_{\min}}&\leq
+ \phi^\sigma_{f,\eta}(O;p_c,\pi_c)
+ \leq1+\frac{2\Gamma}{\pi_{\min}},\\
+ |\phi^\sigma_{f,\eta}(O;p_c,\pi_c)|&\leq
+ B:=1+\frac{2\Gamma}{\pi_{\min}}.
+ \end{split}
+ \label{eq:b:score-envelope}
+\end{equation}
+The score can be negative; the concentration argument below explicitly
+allows signed classes.
+
+\begin{lemma}[Exact conditional nuisance bias]
+\label{lemma:b:bias}
+Suppress $(f,\eta,\sigma,X)$ inside $b$ and its derivatives. With
+$e=p_c-p$, the conditional difference between the score expectation and
+the target excess-loss integrand is exactly
+\begin{equation}
+ (1-\pi)\{b(p_c)-b(p)-\dot b(p_c)e\}
+ +\frac{\pi_c-\pi}{\pi_c}\dot b(p_c)e.
+ \label{eq:b:conditional-bias}
+\end{equation}
+Taking $P_X$ expectations of \eqref{eq:b:conditional-bias} gives
+$P\phi^\sigma_{f,\eta}(\cdot;p_c,\pi_c)-m^\sigma_{f,\eta}$, and
+\begin{equation}
+ \begin{aligned}
+ &\left|P\phi^\sigma_{f,\eta}(\cdot;p_c,\pi_c)-m^\sigma_{f,\eta}\right|\\
+ &\quad\leq\Gamma(\Gamma-1)\|p_c-p\|_2^2
+ +\frac{2\Gamma}{\pi_{\min}}\|p_c-p\|_2\|\pi_c-\pi\|_2.
+ \end{aligned}
+ \label{eq:b:bias-bound}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Conditional on $X$, the observed excess-loss contribution has mean
+$\pi\{(1-p)a^0+pa^1\}$ and
+$\mathbb E[S(Y^{\mathrm{obs}}-p_c)\mid X]=\pi(p-p_c)$.
+Subtracting the target integrand
+$\pi\{(1-p)a^0+pa^1\}+(1-\pi)b(p)$ leaves
+\[
+ (1-\pi)\{b(p_c)-b(p)\}
+ +\frac{\pi(1-\pi_c)}{\pi_c}\dot b(p_c)(p-p_c).
+\]
+The identity
+$\pi(1-\pi_c)/\pi_c=(1-\pi)+(\pi-\pi_c)/\pi_c$
+reduces this expression to \eqref{eq:b:conditional-bias}.
+Taylor's theorem, expanded about $p_c$ along the segment joining $p_c$
+and $p$, and Lemma~\ref{lemma:b:regularity} give
+\[
+ |b(p_c)-b(p)-\dot b(p_c)(p_c-p)|
+ \leq\Gamma(\Gamma-1)(p_c-p)^2.
+\]
+Use $0\leq1-\pi\leq1$ for the first term, and
+$|\dot b(p_c)/\pi_c|\leq2\Gamma/\pi_{\min}$ followed by
+Cauchy--Schwarz for the second term. This yields \eqref{eq:b:bias-bound}
+uniformly over all score indices.
+\end{proof}
+
+The score is unbiased at the true nuisances and has $O(t^2)$ bias along
+admissible nuisance paths with $L_2$ perturbations of order $t$.
+The sign of $d_{f,\eta}(x)$ is independent of the nuisance argument, so
+endpoint selection adds no remainder. At $\Gamma=1$ the curvature term
+vanishes; for $\Gamma>1$, knowing $\pi$ alone generally leaves quadratic
+error in $p$. Thus the result is an orthogonal expansion, not generic
+double robustness. Its overlap premise and clipping ranges are substantive:
+clipping cannot supply labels or identification where overlap fails.
+
+\subsection{Cross-fitting and uniform empirical-process control}
+\label{app:empirical-process}
+
+Let $I_1,\ldots,I_K$ be a deterministic partition of the observation indices,
+with $n_k=|I_k|\geq1$, $n_{\min}=\min_k n_k$, and $w_k=n_k/n$.
+A random partition independent of the observations is also allowed by
+conditioning on that partition. Write $D_{-k}$ for the training observations
+outside $I_k$ and $P_{n,k}$ for the empirical measure on $I_k$.
+The clipped fits $\widehat p^{(-k)},\widehat\pi^{(-k)}$ are measurable
+functions of $D_{-k}$. Any independent fitting randomization can be included
+in this conditioning. Define
+\[
+ \phi^{\sigma,(k)}_{f,\eta}
+ =\phi^\sigma_{f,\eta}
+ (\cdot;\widehat p^{(-k)},\widehat\pi^{(-k)}),\qquad
+ \Phi_k^\sigma=\{\phi^{\sigma,(k)}_{f,\eta}:f\in\mathcal F,
+ \ \eta\in[0,1]\}.
+\]
+The empirical Rademacher complexities used here are
+\begin{equation}
+ \begin{split}
+ \widehat{\mathfrak R}^{\sigma,k}_{\mathrm{abs}}
+ &=\mathbb E_\varepsilon\!\left[
+ \sup_{f,\eta}\left|\frac1{n_k}
+ \sum_{i\in I_k}\varepsilon_i\phi^{\sigma,(k)}_{f,\eta}(O_i)\right|
+ \,\middle|\,D_n\right],\\
+ \widehat{\mathfrak R}_{n,\mathrm{abs}}^\sigma
+ &=\sum_{k=1}^K w_k\widehat{\mathfrak R}^{\sigma,k}_{\mathrm{abs}}.
+ \end{split}
+ \label{eq:b:empirical-rademacher}
+\end{equation}
+Here $D_n$ includes the observations, partition, and fitting seeds.
+The expectation averages only independent uniform signs in $\{-1,1\}$;
+the fitted functions and evaluation observations are fixed.
+
+\begin{lemma}[Empirical-complexity bound for a signed class]
+\label{lemma:b:empirical-rademacher}
+Let $Z_1,\ldots,Z_m$ be independent with law $Q$ and empirical measure $Q_m$,
+and let $\mathcal H$ be a fixed pointwise-separable class with $|h|\leq B$. For $0<\xi<1$,
+with probability at least $1-\xi$,
+\begin{equation}
+ \sup_{h\in\mathcal H}|(Q_m-Q)h|
+ \leq2\widehat{\mathfrak R}_{m,\mathrm{abs}}(\mathcal H)
+ +6B\sqrt{\frac{\log(2/\xi)}{2m}},
+ \label{eq:b:signed-concentration}
+\end{equation}
+where the empirical complexity uses the absolute supremum as in
+\eqref{eq:b:empirical-rademacher}.
+\end{lemma}
+
+\begin{proof}
+Put $Z=\sup_h|(Q_m-Q)h|$ and
+$R=\widehat{\mathfrak R}_{m,\mathrm{abs}}(\mathcal H)$.
+Symmetrization gives $\mathbb EZ\leq2\mathbb ER$
+\cite{bartlett2002rademacher,van1996weak}. Changing one observation changes
+each of $Z,R$ by at most $2B/m$. With
+$t=2B\sqrt{\log(2/\xi)/(2m)}$, McDiarmid's inequality bounds each of
+$\mathbb P(Z>\mathbb EZ+t)$ and $\mathbb P(\mathbb ER>R+t)$ by $\xi/2$.
+Thus $Z\leq2R+3t$ with probability at least $1-\xi$, proving
+\eqref{eq:b:signed-concentration} for signed classes with $|h|\leq B$.
+\end{proof}
+
+Conditional on $D_{-k}$, the observations in $I_k$ are independent with
+law $P$, and $\Phi_k^\sigma$ is fixed with envelope $B$.
+Apply Lemma~\ref{lemma:b:empirical-rademacher} with
+$m=n_k$ and $\xi=\delta/(2K)$. Its conditional failure probability is
+at most $\delta/(2K)$, so the same bound holds unconditionally.
+A union bound over the $2K$ fold--endpoint pairs yields an event
+$\mathcal E_{\mathrm{emp}}$ of probability at least $1-\delta$ on which
+\begin{align}
+ \sup_{f,\eta}\left|
+ \sum_{k=1}^K w_k(P_{n,k}-P)\phi^{\sigma,(k)}_{f,\eta}
+ \right|
+ &\leq2\widehat{\mathfrak R}_{n,\mathrm{abs}}^\sigma
+ +6B\sum_{k=1}^K w_k\sqrt{\frac{\log(4K/\delta)}{2n_k}}\notag\\
+ &\leq2\widehat{\mathfrak R}_{n,\mathrm{abs}}^\sigma
+ +6B\sqrt{\frac{\log(4K/\delta)}{2n_{\min}}}
+ \label{eq:b:fold-bound}
+\end{align}
+for both endpoints. Here $P\phi^{\sigma,(k)}_{f,\eta}$ integrates the
+fitted function against a fresh observation. The training sets overlap;
+no independence between folds or between their success events is used.
+In particular, the proof never conditions simultaneously on all fitted
+nuisances, which could destroy the needed held-out independence.
+
+\subsection{Uniform endpoint estimation and complexity rates}
+\label{app:uniform-estimation}
+
+Define the cross-fitted empirical objectives and their infima by
+\begin{equation}
+ \begin{aligned}
+ \widehat Q_f^\sigma(\eta)&=\eta+\frac1\beta
+ \sum_{k=1}^K w_kP_{n,k}\phi^{\sigma,(k)}_{f,\eta},\\
+ \widehat\rho^\sigma(f)&=\inf_{\eta\in[0,1]}\widehat Q_f^\sigma(\eta).
+ \end{aligned}
+ \label{eq:b:empirical-objectives}
+\end{equation}
+
+\begin{proof}[Proof of Theorem~\ref{thm:learning}]
+Under the theorem's assumptions and the measurability convention above,
+let $\mathcal E_\nu$ be the simultaneous nuisance event
+\begin{equation}
+ \max_k\|\widehat p^{(-k)}-p\|_2\leq r_p,\qquad
+ \max_k\|\widehat\pi^{(-k)}-\pi\|_2\leq r_\pi,
+ \label{eq:b:nuisance-event}
+\end{equation}
+with probability at least $1-\delta_\nu$. For
+$\delta\in(0,1)$ and $\delta_\nu\in[0,1-\delta)$, the
+explicit calibrated radius is
+\begin{equation}
+ \begin{aligned}
+ r_n(\delta)=\frac1\beta\Bigg[
+ &2\max_{\sigma\in\{L,U\}}\widehat{\mathfrak R}_{n,\mathrm{abs}}^\sigma
+ +6B\sqrt{\frac{\log(4K/\delta)}{2n_{\min}}}\\
+ &+\Gamma(\Gamma-1)r_p^2
+ +\frac{2\Gamma}{\pi_{\min}}r_pr_\pi\Bigg].
+ \end{aligned}
+ \label{eq:b:radius}
+\end{equation}
+On $\mathcal E_\nu$, Lemma~\ref{lemma:b:bias}, applied to each realized
+pair of clipped fits, implies
+\[
+ \sup_{f,\eta,\sigma}\left|
+ \sum_{k=1}^K w_kP\phi^{\sigma,(k)}_{f,\eta}
+ -m^\sigma_{f,\eta}\right|
+ \leq\Gamma(\Gamma-1)r_p^2+\frac{2\Gamma}{\pi_{\min}}r_pr_\pi.
+\]
+The intersection $\mathcal E=\mathcal E_\nu\cap\mathcal E_{\mathrm{emp}}$
+has probability at least $1-\delta-\delta_\nu$ by the union bound.
+On this event, \eqref{eq:b:fold-bound} and the last display give
+\[
+ \sup_{f,\eta,\sigma}\left|
+ \sum_{k=1}^K w_kP_{n,k}\phi^{\sigma,(k)}_{f,\eta}
+ -m^\sigma_{f,\eta}\right|\leq\beta r_n(\delta).
+\]
+Applying the infimum stability inequality \eqref{eq:a:infimum-stability}
+to $\widehat Q_f^\sigma$ and its population counterpart yields, on the same
+event of probability at least $1-\delta-\delta_\nu$,
+\begin{equation}
+ \sup_{f\in\mathcal F}\max_{\sigma\in\{L,U\}}
+ |\widehat\rho^\sigma(f)-\rho^\sigma(f)|\leq r_n(\delta).
+ \label{eq:b:uniform-endpoints}
+\end{equation}
+This requires neither convexity of the signed empirical objective nor a
+unique threshold or loss density there.
+\end{proof}
+
+For a total confidence level $1-\delta_{\mathrm{tot}}$, allocate
+$\delta+\delta_\nu\leq\delta_{\mathrm{tot}}$. The empirical complexity in
+\eqref{eq:b:radius} is an expectation over all Rademacher signs, conditional
+on the realized data. A Monte Carlo estimate is not automatically an upper
+bound for this expectation. Any random complexity or nuisance-error bound
+used instead must hold simultaneously on a specified validity event, whose
+failure probability is included in the confidence allocation.
+
+We next bound the score complexity. For a sample $x_1,\ldots,x_m$,
+let $\widehat{\mathfrak R}_{m,\mathrm{abs}}(\mathcal V)$ denote its
+absolute empirical complexity. Define
+\[
+ \mathcal L_y=\{x\mapsto\ell(f(x),y):f\in\mathcal F\},\qquad
+ \mathcal A_y=\{x\mapsto(\ell(f(x),y)-\eta)_+:
+ f\in\mathcal F,\ \eta\in[0,1]\}.
+\]
+Define the threshold-augmented loss-class complexity by
+\begin{equation}
+ \mathfrak C_n=\sum_{k=1}^K w_k\left\{
+ \widehat{\mathfrak R}_{n_k,\mathrm{abs}}(\mathcal L_0)
+ +\widehat{\mathfrak R}_{n_k,\mathrm{abs}}(\mathcal L_1)
+ +n_k^{-1/2}\right\},
+ \label{eq:b:loss-complexity}
+\end{equation}
+where each term uses the covariates in its evaluation fold.
+For fixed fitted nuisances and $o=(x,s,y^{\mathrm{obs}})$, put
+$p_c=\widehat p^{(-k)}(x)$ and $w=(1-\widehat\pi^{(-k)}(x)) /
+\widehat\pi^{(-k)}(x)$. The score is
+$\Psi_o^\sigma(a^0_{f,\eta}(x),a^1_{f,\eta}(x))$, where
+\begin{align}
+ \Psi_o^\sigma(u_0,u_1)
+ ={}&s\{(1-y^{\mathrm{obs}})u_0+y^{\mathrm{obs}}u_1\}\notag\\
+ &+(1-s)\{u_0+H_{p_c}^\sigma(u_1-u_0)\}\notag\\
+ &+swG_{p_c}^\sigma(u_1-u_0)(y^{\mathrm{obs}}-p_c).
+ \label{eq:b:composition}
+\end{align}
+It vanishes at $(0,0)$. Lemma~\ref{lemma:b:regularity},
+$w\leq2/\pi_{\min}$, and
+$|\Delta u_1-\Delta u_0|\leq2\|\Delta u\|_\infty$ show that it is
+$L_*=3+4\Gamma/\pi_{\min}$-Lipschitz in the maximum norm,
+and hence also in Euclidean norm.
+
+The vector-contraction inequality \cite{maurer2016vector} therefore gives,
+for a universal constant $C$,
+\begin{equation}
+ \begin{aligned}
+ \widehat{\mathfrak R}^{\sigma,k}_{\mathrm{abs}}
+ \leq C L_*\Big\{&
+ \widehat{\mathfrak R}_{n_k,\mathrm{abs}}(\mathcal L_0)
+ +\widehat{\mathfrak R}_{n_k,\mathrm{abs}}(\mathcal L_1)\\
+ &+n_k^{-1/2}\Big\}.
+ \end{aligned}
+ \label{eq:b:score-complexity}
+\end{equation}
+To handle the absolute supremum, use that the score class contains zero
+at $\eta=1$: the absolute supremum is at most the sum of the positive and
+negative suprema, whose expectations agree by sign symmetry. Vector
+contraction on the positive supremum, followed by separating the two
+coordinate suprema, bounds it by a universal multiple of
+$L_*\sum_y\widehat{\mathfrak R}_{n_k,\mathrm{abs}}(\mathcal A_y)$.
+Apply the same argument to the $\sqrt2$-Lipschitz hinge map
+$(z,t)\mapsto(z-t)_+$, adjoining zero to its input class if needed.
+Its coordinate complexities are those of $\mathcal L_y$ and the constant
+threshold class; the latter is
+$m^{-1}\mathbb E_\varepsilon|\sum_i\varepsilon_i|\leq m^{-1/2}$.
+This proves \eqref{eq:b:score-complexity}. All contraction maps are
+continuous endpoint values or derivatives, including at ties; no
+discontinuous selector class is introduced.
+
+If $\mathcal L_y$ has VC-subgraph dimension at most $d\geq1$, then
+$\log N(\epsilon,\mathcal L_y,L_2(Q))\leq C_0d\log(C_1/\epsilon)$
+for $0<\epsilon<1$ and every probability measure $Q$.
+After adjoining zero and the negative class, the standard entropy-to-complexity
+bound \cite{van1996weak,bartlett2002rademacher} gives, uniformly over samples,
+\begin{equation}
+ \widehat{\mathfrak R}_{m,\mathrm{abs}}(\mathcal L_y)
+ \leq C'\sqrt{\frac{d+1}{m}}.
+ \label{eq:b:VC-complexity}
+\end{equation}
+It therefore applies to the fixed fitted nuisances in each conditional argument.
+
+For fixed $K$ and balanced folds, $n_{\min}\geq c_Kn$ for a positive
+constant $c_K$ once all folds are nonempty. Equations
+\eqref{eq:b:score-complexity}--\eqref{eq:b:VC-complexity} give
+\begin{equation}
+ \begin{aligned}
+ &\frac1\beta\left[
+ 2\max_\sigma\widehat{\mathfrak R}_{n,\mathrm{abs}}^\sigma
+ +6B\sqrt{\frac{\log(4K/\delta)}{2n_{\min}}}\right]\\
+ &\qquad\leq \frac{C_{\Gamma,\pi_{\min},K}}{\beta}
+ \sqrt{\frac{d+\log(1/\delta)}{n}}.
+ \end{aligned}
+ \label{eq:b:VC-rate}
+\end{equation}
+For fixed $\Gamma,\pi_{\min},\beta$, nuisance rates $o(n^{-1/4})$ make
+the nuisance contribution in \eqref{eq:b:radius} $o(n^{-1/2})$.
+Joint high-probability nuisance bounds remain necessary; cross-fitting
+does not establish them. All uniformity is over $f,\eta$ at fixed
+$\alpha,\Gamma$.
+
+\begin{example}[Conditional sparse-nuisance specialization]
+\label{ex:b:sparse-nuisances}
+Suppose sparse logistic nuisance fits in $D$ covariates satisfy simultaneous
+$L_2(P_X)$ error bounds of orders
+\[
+ r_p\lesssim\sqrt{\frac{s_p\log(eD)}{n_{\mathrm{sel}}}},\qquad
+ r_\pi\lesssim\sqrt{\frac{s_\pi\log(eD)}{n_{\mathrm{tr}}}},
+\]
+where $s_p,s_\pi$ are sparsities, $n_{\mathrm{tr}}$ is the smallest training-fold
+size, and $n_{\mathrm{sel}}>0$ is a simultaneous lower bound for the number of
+revealed training labels in every fold. Substitution in the proved remainder
+gives, up to the constants in these assumed rates,
+\[
+ \frac1\beta\left\{
+ \Gamma(\Gamma-1)\frac{s_p\log(eD)}{n_{\mathrm{sel}}}
+ +\frac{2\Gamma}{\pi_{\min}}
+ \frac{\sqrt{s_ps_\pi}\log(eD)}{\sqrt{n_{\mathrm{sel}}n_{\mathrm{tr}}}}
+ \right\}.
+\]
+For a fixed number of balanced folds with nonempty training sets,
+$n_{\mathrm{tr}}\asymp n$. These substitutions
+require the stated model, design, tuning, and confidence conditions.
+A selected-population bound transfers to $P_X$ because, for every measurable $e$,
+\begin{equation}
+ \|e\|_{L_2(P_X)}^2
+ \leq\frac{P(S=1)}{\pi_{\min}}
+ \|e\|_{L_2(P_{X\mid S=1})}^2.
+ \label{eq:b:selected-norm-transfer}
+\end{equation}
+Indeed, $\mathbb E[\pi(X)e(X)^2]
+=P(S=1)\mathbb E[e(X)^2\mid S=1]$ and $\pi(X)\geq\pi_{\min}$.
+Learning $p$ from revealed outcomes must therefore control target-population error.
+\end{example}
+
+\begin{proposition}[Finite threshold search for the fitted objectives]
+\label{prop:b:threshold-search}
+For a fixed $f$ and realized nuisance fits, each objective in
+\eqref{eq:b:empirical-objectives} attains its minimum on
+\[
+ T_n(f)=\{0,1\}\cup
+ \{\ell(f(X_i),y):1\leq i\leq n,\ y\in\{0,1\}\}.
+\]
+\end{proposition}
+
+\begin{proof}
+Thresholding preserves the label-loss ordering at each $X_i$.
+Thus $H_{p_c}^\sigma(d_{f,\eta})$ and $G_{p_c}^\sigma(d_{f,\eta})$
+are fixed coefficients times $d_{f,\eta}$ throughout $[0,1]$; at
+$d_{f,\eta}=0$ both representations vanish. Each score is a fixed linear
+combination of the two label-specific hinges, making the objective continuous
+and affine between successive knots of $T_n(f)$. Each such interval has
+an endpoint minimizer, even if the objective is constant there.
+Signed correction coefficients may prevent convexity but preserve this result.
+\end{proof}
+
+An exact implementation can sort the at most $2n+2$ breakpoints once
+per predictor. Write the fitted score as
+$c_{i0}^\sigma(\ell(f(X_i),0)-\eta)_+
++c_{i1}^\sigma(\ell(f(X_i),1)-\eta)_+$, with coefficients fixed across
+$\eta$. Starting from the objective at zero, sweep the sorted breakpoints:
+the objective is updated by its current slope times the distance to the
+next breakpoint, and the slope increases by $c_{iy}^\sigma/(n\beta)$
+when the corresponding hinge vanishes. Combine all coefficients at a
+tied breakpoint and initialize the right slope using only losses above
+zero. Checking all knot values gives both global minima in
+$O(n\log n)$ time and $O(n)$ storage, after the fitted probabilities
+and label-specific losses have been evaluated.
+
+\subsection{Outer certificates, comparisons, and predictor selection}
+\label{app:decision-guarantees}
+
+\begin{proof}[Proof of the decision guarantees in Section~\ref{sec:uniform-certificates}]
+Work on the joint event \eqref{eq:b:uniform-endpoints}, of probability at
+least $1-\delta-\delta_\nu$, and use the certificate
+\eqref{eq:outer-certificate}. Since $0\leq\rho^L(f)\leq\rho^U(f)\leq1$,
+clipping preserves containment
+of the sharp interval and hence every compatible CVaR. Containment gives
+the lower width bound; clipping decreases width, while
+\[
+ \widehat\rho^U(f)-\widehat\rho^L(f)+2r_n
+ \leq\rho^U(f)-\rho^L(f)+4r_n,
+\]
+proving the upper bound. If
+$\widehat\rho^U(f)+r_n<\widehat\rho^L(g)-r_n$, then for every compatible law,
+\begin{align*}
+ \rho_{\alpha,P^\star}(f)&\leq\rho^U(f)
+ \leq\widehat\rho^U(f)+r_n\\
+ &<\widehat\rho^L(g)-r_n\leq\rho^L(g)
+ \leq\rho_{\alpha,P^\star}(g).
+\end{align*}
+Finally, any measurable $\varepsilon_{\mathrm{opt}}$-approximate minimizer
+$\widehat f\in\mathcal F$ of $\widehat\rho^U$ satisfies
+\begin{align*}
+ \rho^U(\widehat f)&\leq\inf_f\widehat\rho^U(f)+\varepsilon_{\mathrm{opt}}+r_n\\
+ &\leq\inf_f\rho^U(f)+\varepsilon_{\mathrm{opt}}+2r_n.
+\end{align*}
+The last inequality takes infima of the pointwise endpoint bound, so no
+exact minimizer is needed. Uniformity permits all predictors in these
+claims to be chosen using the same data.
+\end{proof}
+
+The selection benchmark is the smallest compatible upper endpoint in
+the class. For every compatible $P^\star$, the same argument gives
+$\rho_{\alpha,P^\star}(\widehat f)\leq
+\inf_f\rho^U(f)+2r_n+\varepsilon_{\mathrm{opt}}$.
+Clipped endpoint errors are at most $2r_n$ on the same event. Convergence
+in probability follows if $r_n\to0$ in probability and
+$\delta_n+\delta_{\nu,n}\to0$; a fixed failure probability remains fixed.
+
+\subsection{Oracle calibration for finite-cell experiments}
+\label{app:oracle-calibration}
+
+For the oracle coverage experiment, suppose $p=p_1$ is known and define
+\begin{equation}
+ \begin{split}
+ h^\sigma_{f,\eta}(O)&=S a^{Y^{\mathrm{obs}}}_{f,\eta}(X)
+ +(1-S)b^\sigma_{f,\eta}(X;p(X)),\\
+ \widehat\rho^\sigma_{\mathrm{or}}(f)&=
+ \inf_{\eta\in[0,1]}\{\eta+\beta^{-1}P_nh^\sigma_{f,\eta}\}.
+ \end{split}
+ \label{eq:b:oracle-score}
+\end{equation}
+This score lies in $[0,1]$ and has mean $m^\sigma_{f,\eta}$; estimating
+$\pi$ is unnecessary for this oracle construction.
+
+\begin{proposition}[Finite-cell oracle certificate]
+\label{prop:b:oracle-calibration}
+Fix a predictor $f$ independently of the evaluation observations.
+Suppose $P_X$ is supported on $J$ covariate values $x_1,\ldots,x_J$.
+Let
+\[
+ T(f)=\{0,1\}\cup\{\ell(f(x_j),y):1\leq j\leq J,
+ \ y\in\{0,1\}\},\qquad M=|T(f)|\leq2J+2.
+\]
+With probability at least $1-\delta$,
+\begin{equation}
+ \max_{\sigma\in\{L,U\}}
+ |\widehat\rho^\sigma_{\mathrm{or}}(f)-\rho^\sigma(f)|
+ \leq r_{\mathrm{or}}(\delta):=
+ \frac1\beta\sqrt{\frac{\log(4M/\delta)}{2n}}.
+ \label{eq:b:oracle-radius}
+\end{equation}
+Thus the clipped interval obtained from \eqref{eq:outer-certificate}
+using these oracle estimators and $r_{\mathrm{or}}$ contains the entire
+sharp population interval with probability at least $1-\delta$.
+\end{proposition}
+
+\begin{proof}
+By the piecewise-affine argument of Proposition~\ref{prop:b:threshold-search},
+both $h^\sigma_{f,\eta}(O)$ and its expectation have knots only in $T(f)$.
+The absolute empirical-minus-population difference is maximal at a knot:
+\[
+ \sup_{\eta\in[0,1]}|(P_n-P)h^\sigma_{f,\eta}|
+ =\max_{\eta\in T(f)}|(P_n-P)h^\sigma_{f,\eta}|.
+\]
+Hoeffding's inequality and a union bound over the $2M$ endpoint--threshold
+pairs bound the failure probability at tolerance $u$ by $4Me^{-2nu^2}$.
+Taking $u=\sqrt{\log(4M/\delta)/(2n)}$ and applying
+\eqref{eq:a:infimum-stability} proves \eqref{eq:b:oracle-radius};
+The containment argument in Appendix~\ref{app:decision-guarantees} gives
+whole-interval coverage.
+\end{proof}
+
+The population-support set $T(f)$ includes losses at cells absent from a
+particular sample; observed knots $T_n(f)$ suffice for empirical minimization
+but cannot replace $T(f)$ in this concentration argument.
+Conditioning covers a predictor trained on independent data. Selection using
+evaluation data requires a uniform bound: for a fixed finite family
+$\mathcal F_0$, replace $M$ by $\sum_{f\in\mathcal F_0}|T(f)|$.
+Known $p$ supplies the oracle experiment's premise; coverage for learned-nuisance
+estimators instead requires Theorem~\ref{thm:learning}'s controls.
+
+\subsection{Revealed-tail learning lower bound}
+\label{app:learning-lower-bound}
+
+Equal tail-cell masses and constant observation probability specify the lower-bound
+construction; the general model allows covariate-dependent observation and
+heterogeneous revelation costs.
+
+\begin{theorem}[Revealed-tail observation complexity]
+\label{thm:main:lower-bound}
+Fix $\alpha\in(0,1)$, $\beta=1-\alpha$, $\pi_0\in(0,1]$, and $n\geq1$.
+For every integer $1\leq d\leq n\pi_0\beta$, there exist a binary
+classification class $\mathcal F$ of VC dimension $d$ and a family
+$\mathcal P$ of full-data laws with $\Gamma=1$ and $\pi(X)=\pi_0$ such that
+\begin{equation}
+ \begin{aligned}
+ &\inf_{\widehat f}\sup_{P^\star\in\mathcal P}
+ \mathbb E_{(P^\star_{\mathrm{obs}})^{\otimes n}}
+ \left[\rho_{\alpha,P^\star}(\widehat f)
+       -\inf_{f\in\mathcal F}\rho_{\alpha,P^\star}(f)\right]\\
+ &\qquad\geq\frac1{16}\sqrt{\frac{d}{n\pi_0\beta}}.
+ \end{aligned}
+ \label{eq:b:learning-lower-bound}
+\end{equation}
+The infimum ranges over measurable learners taking values in $\mathcal F$,
+including randomized learners.
+\end{theorem}
+
+\begin{proof}
+We use a direct binary-testing form of the hypercube argument
+\cite{yu1997assouad}. Fix
+$\pi_0\in(0,1]$, $n\geq1$, and an integer
+$1\leq d\leq n\pi_0\beta$.
+Put
+\begin{equation}
+ \gamma=\frac18\sqrt{\frac{d}{n\pi_0\beta}}\leq\frac18.
+ \label{eq:b:lower-gamma}
+\end{equation}
+Let $\mathcal X=\{\star,1,\ldots,d\}$ with
+$P_X(\star)=1-\beta$ and $P_X(j)=\beta/d$.
+For $v\in\{-1,1\}^d$, define
+$f_v(\star)=0$ and $f_v(j)=(1+v_j)/2$, and set
+$\mathcal F=\{f_v:v\in\{-1,1\}^d\}$.
+The class shatters $\{1,\ldots,d\}$, and cannot shatter any larger set
+because its value at $\star$ is fixed. Its VC dimension is exactly $d$.
+Use ordinary zero-one loss $\ell(f(x),y)=\mathbf1\{f(x)\ne y\}$.
+
+For each $\theta\in\{-1,1\}^d$, construct a full-data law $P_\theta$
+with $Y=0$ at $\star$ and
+\[
+ P_\theta(Y=1\mid X=j)=\frac12+\gamma\theta_j,
+ \qquad j=1,\ldots,d.
+\]
+Let $S\sim\operatorname{Bernoulli}(\pi_0)$ independently of $(X,Y)$,
+and observe $(X,S,SY)$. These laws satisfy overlap with
+$\pi(X)=\pi_0$ and conditional ignorability, hence belong to the
+$\Gamma=1$ model.
+All losses vanish at $\star$. The conditional error within
+$\{1,\ldots,d\}$ is
+\begin{equation}
+ R_\theta(f_v)=\frac12-\gamma+
+ \frac{2\gamma}{d}\sum_{j=1}^d\mathbf1\{v_j\ne\theta_j\}.
+ \label{eq:b:hypercube-risk}
+\end{equation}
+The full-population loss is Bernoulli with parameter
+$q_{\theta,v}=\beta R_\theta(f_v)\leq\beta$; the Bernoulli identity
+\eqref{eq:a:bernoulli-cvar} gives
+\begin{equation}
+ \begin{split}
+ \rho_{\alpha,P_\theta}(f_v)&=R_\theta(f_v),\\
+ \rho_{\alpha,P_\theta}(f_v)-\inf_{f\in\mathcal F}
+ \rho_{\alpha,P_\theta}(f)
+ &=\frac{2\gamma}{d}\sum_{j=1}^d\mathbf1\{v_j\ne\theta_j\}.
+ \end{split}
+ \label{eq:b:CVaR-hamming}
+\end{equation}
+The minimizing predictor is $f_\theta$.
+
+Let $Q_\theta=P_{\theta,\mathrm{obs}}^{\otimes n}$ and let
+$\theta^{(j)}$ be obtained by reversing the $j$th coordinate.
+For one observation, the two distributions differ only on
+$\{X=j,S=1\}$, which has probability $\beta\pi_0/d$ under both laws.
+Conditioning on $(X,S)$ and using the chain rule for relative entropy
+therefore gives
+\begin{align}
+ D_{\mathrm{KL}}(Q_\theta\Vert Q_{\theta^{(j)}})
+ &=\frac{n\beta\pi_0}{d}
+ D_{\mathrm{KL}}\!\left(
+ \operatorname{Bernoulli}(1/2+\gamma)
+ \,\Vert\,\operatorname{Bernoulli}(1/2-\gamma)\right)\notag\\
+ &\leq\frac{16n\beta\pi_0\gamma^2}{d}=\frac14.
+ \label{eq:b:KL}
+\end{align}
+Here the symmetric Bernoulli divergences both equal
+$2\gamma\log\{(1+2\gamma)/(1-2\gamma)\}\leq16\gamma^2$ for
+$\gamma\leq1/4$, and independence supplies the factor $n$.
+Pinsker's inequality gives
+\begin{equation}
+ \operatorname{TV}(Q_\theta,Q_{\theta^{(j)}})
+ \leq\sqrt{D_{\mathrm{KL}}(Q_\theta\Vert Q_{\theta^{(j)}})/2}
+ \leq\frac1{2\sqrt2}\leq\frac12.
+ \label{eq:b:TV}
+\end{equation}
+
+Consider any measurable learner taking values in $\mathcal F$,
+written $\widehat f=f_{\widehat v}$. For a fixed coordinate $j$, pair
+each $\theta$ with $\theta_j=1$ with $\theta^{(j)}$, and write
+$A_j=\{\widehat v_j=1\}$. The sum of the two testing errors satisfies
+\begin{align*}
+ Q_\theta(\widehat v_j\ne\theta_j)
+ +Q_{\theta^{(j)}}(\widehat v_j\ne\theta_j^{(j)})
+ &=Q_\theta(A_j^c)+Q_{\theta^{(j)}}(A_j)\\
+ &\geq1-\operatorname{TV}(Q_\theta,Q_{\theta^{(j)}})\geq\frac12.
+\end{align*}
+There are $2^{d-1}$ such pairs. Averaging over all $2^d$ vertices gives
+$2^{-d}\sum_\theta Q_\theta(\widehat v_j\ne\theta_j)\geq1/4$.
+Sum this inequality over $j$ and use \eqref{eq:b:CVaR-hamming} to obtain
+\[
+ \frac1{2^d}\sum_\theta
+ \mathbb E_{Q_\theta}\left[
+ \rho_{\alpha,P_\theta}(\widehat f)-
+ \inf_{f\in\mathcal F}\rho_{\alpha,P_\theta}(f)\right]
+ \geq\frac{2\gamma}{d}\frac d4
+ =\frac1{16}\sqrt{\frac{d}{n\pi_0\beta}}.
+\]
+The supremum over $\theta$ is at least this average, for every learner.
+Taking the infimum over learners proves Theorem~\ref{thm:main:lower-bound}.
+Randomized learners satisfy the same bound: append their independent
+random seed to each experiment, which leaves the neighboring total
+variation unchanged, and apply the identical testing argument.
+\end{proof}
+
+Only the expected $n\pi_0\beta$ revealed observations in the tail stratum
+distinguish the vertices. This is an expected excess-CVaR lower bound for
+$\mathcal F$-valued learners, already with fully identified risks at $\Gamma=1$.
+

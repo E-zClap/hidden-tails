@@ -1,0 +1,3099 @@
+{
+  "experiment7": {
+    "cells": [
+      {
+        "cell": 0,
+        "n": 41,
+        "mass": 0.07205623901581722,
+        "mean_model_risk": 9.14064124547382e-06,
+        "reveal_probability": 0.8819307295084379,
+        "selected_malignancy_rate": 0.0,
+        "hidden_malignancy_rate": 0.0,
+        "full_malignancy_rate": 0.0,
+        "audit_cost": 0.8500105117374324,
+        "gamma_eval": 16.689677641391715
+      },
+      {
+        "cell": 1,
+        "n": 41,
+        "mass": 0.07205623901581722,
+        "mean_model_risk": 5.6684557858819e-05,
+        "reveal_probability": 0.8814645841177394,
+        "selected_malignancy_rate": 0.0,
+        "hidden_malignancy_rate": 0.0,
+        "full_malignancy_rate": 0.0,
+        "audit_cost": 0.6500651872415376,
+        "gamma_eval": 16.689677641391715
+      },
+      {
+        "cell": 2,
+        "n": 40,
+        "mass": 0.070298769771529,
+        "mean_model_risk": 0.0002013502022414503,
+        "reveal_probability": 0.879526267199098,
+        "selected_malignancy_rate": 0.0,
+        "hidden_malignancy_rate": 0.0,
+        "full_malignancy_rate": 0.0,
+        "audit_cost": 0.6502315527325777,
+        "gamma_eval": 16.689677641391715
+      },
+      {
+        "cell": 3,
+        "n": 41,
+        "mass": 0.07205623901581722,
+        "mean_model_risk": 0.0005798846312166936,
+        "reveal_probability": 0.8781469040528805,
+        "selected_malignancy_rate": 0.0,
+        "hidden_malignancy_rate": 0.0,
+        "full_malignancy_rate": 0.0,
+        "audit_cost": 0.8506668673258992,
+        "gamma_eval": 16.689677641391715
+      },
+      {
+        "cell": 4,
+        "n": 40,
+        "mass": 0.070298769771529,
+        "mean_model_risk": 0.001456904312467741,
+        "reveal_probability": 0.8791156024934974,
+        "selected_malignancy_rate": 0.0,
+        "hidden_malignancy_rate": 0.0,
+        "full_malignancy_rate": 0.0,
+        "audit_cost": 0.651675439959338,
+        "gamma_eval": 16.689677641391715
+      },
+      {
+        "cell": 5,
+        "n": 41,
+        "mass": 0.07205623901581722,
+        "mean_model_risk": 0.004527007583416949,
+        "reveal_probability": 0.8696921797894548,
+        "selected_malignancy_rate": 0.013187844419590393,
+        "hidden_malignancy_rate": 0.09915658723754522,
+        "full_malignancy_rate": 0.024390243902439025,
+        "audit_cost": 0.6552060587209295,
+        "gamma_eval": 16.689677641391715
+      },
+      {
+        "cell": 6,
+        "n": 41,
+        "mass": 0.07205623901581722,
+        "mean_model_risk": 0.013508220115411274,
+        "reveal_probability": 0.8745441111417749,
+        "selected_malignancy_rate": 0.0,
+        "hidden_malignancy_rate": 0.0,
+        "full_malignancy_rate": 0.0,
+        "audit_cost": 0.8655344531327229,
+        "gamma_eval": 16.689677641391715
+      },
+      {
+        "cell": 7,
+        "n": 40,
+        "mass": 0.070298769771529,
+        "mean_model_risk": 0.046922021898424676,
+        "reveal_probability": 0.8637035208476697,
+        "selected_malignancy_rate": 0.0,
+        "hidden_malignancy_rate": 0.0,
+        "full_malignancy_rate": 0.0,
+        "audit_cost": 0.7039603251831884,
+        "gamma_eval": 16.689677641391715
+      },
+      {
+        "cell": 8,
+        "n": 41,
+        "mass": 0.07205623901581722,
+        "mean_model_risk": 0.2569378517971949,
+        "reveal_probability": 0.6819569460050495,
+        "selected_malignancy_rate": 0.05892136066376844,
+        "hidden_malignancy_rate": 0.48716712438953813,
+        "full_malignancy_rate": 0.1951219512195122,
+        "audit_cost": 0.9454785295667741,
+        "gamma_eval": 16.689677641391715
+      },
+      {
+        "cell": 9,
+        "n": 40,
+        "mass": 0.070298769771529,
+        "mean_model_risk": 0.8965314722578583,
+        "reveal_probability": 0.035,
+        "selected_malignancy_rate": 1.0,
+        "hidden_malignancy_rate": 1.0,
+        "full_malignancy_rate": 1.0,
+        "audit_cost": 1.8810111930965372,
+        "gamma_eval": 16.689677641391715
+      },
+      {
+        "cell": 10,
+        "n": 41,
+        "mass": 0.07205623901581722,
+        "mean_model_risk": 0.9972315574455685,
+        "reveal_probability": 0.035,
+        "selected_malignancy_rate": 1.0,
+        "hidden_malignancy_rate": 1.0,
+        "full_malignancy_rate": 1.0,
+        "audit_cost": 1.7968162910624037,
+        "gamma_eval": 16.689677641391715
+      },
+      {
+        "cell": 11,
+        "n": 40,
+        "mass": 0.070298769771529,
+        "mean_model_risk": 0.9998811943871448,
+        "reveal_probability": 0.035,
+        "selected_malignancy_rate": 1.0,
+        "hidden_malignancy_rate": 1.0,
+        "full_malignancy_rate": 1.0,
+        "audit_cost": 1.7998633735452163,
+        "gamma_eval": 16.689677641391715
+      },
+      {
+        "cell": 12,
+        "n": 41,
+        "mass": 0.07205623901581722,
+        "mean_model_risk": 0.9999984245167826,
+        "reveal_probability": 0.035,
+        "selected_malignancy_rate": 1.0,
+        "hidden_malignancy_rate": 1.0,
+        "full_malignancy_rate": 1.0,
+        "audit_cost": 1.9999981881942996,
+        "gamma_eval": 16.689677641391715
+      },
+      {
+        "cell": 13,
+        "n": 41,
+        "mass": 0.07205623901581722,
+        "mean_model_risk": 0.9999999933537423,
+        "reveal_probability": 0.035,
+        "selected_malignancy_rate": 1.0,
+        "hidden_malignancy_rate": 1.0,
+        "full_malignancy_rate": 1.0,
+        "audit_cost": 1.7999999923568035,
+        "gamma_eval": 16.689677641391715
+      }
+    ],
+    "curves": [
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.0,
+        "debt": 0.04196045914096911,
+        "relative_debt": 1.0
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.02,
+        "debt": 0.030418826418832676,
+        "relative_debt": 0.7249402661834202
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.04,
+        "debt": 0.018877193696696236,
+        "relative_debt": 0.44988053236684034
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.06,
+        "debt": 0.007674461012364431,
+        "relative_debt": 0.18289745082582487
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.08,
+        "debt": 0.004978690893037332,
+        "relative_debt": 0.11865196413392594
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.1,
+        "debt": 0.002282920773710232,
+        "relative_debt": 0.054406477442027014
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.12,
+        "debt": 0.002177500630270604,
+        "relative_debt": 0.051894108759752554
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.14,
+        "debt": 0.002109140645869252,
+        "relative_debt": 0.05026495631955422
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.16,
+        "debt": 0.0020407806614678994,
+        "relative_debt": 0.048635803879355885
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.18,
+        "debt": 0.0019724206770665473,
+        "relative_debt": 0.047006651439157554
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.2,
+        "debt": 0.0019040606926651951,
+        "relative_debt": 0.04537749899895922
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.22,
+        "debt": 0.0018357420716004318,
+        "relative_debt": 0.04374933232815988
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.24,
+        "debt": 0.0017674978173784126,
+        "relative_debt": 0.042122937965010813
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.26,
+        "debt": 0.0016992535631563926,
+        "relative_debt": 0.040496543601861716
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.28,
+        "debt": 0.001631009308934373,
+        "relative_debt": 0.03887014923871263
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.3,
+        "debt": 0.0015627650547123538,
+        "relative_debt": 0.037243754875563556
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.32,
+        "debt": 0.0014945208004903338,
+        "relative_debt": 0.035617360512414466
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.34,
+        "debt": 0.0014262809847316832,
+        "relative_debt": 0.033991071926548565
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.36,
+        "debt": 0.0013580419102035245,
+        "relative_debt": 0.03236480100565838
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.38,
+        "debt": 0.0012898028356753653,
+        "relative_debt": 0.03073853008476819
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.4,
+        "debt": 0.0012215637611472064,
+        "relative_debt": 0.029112259163878
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.42,
+        "debt": 0.0011533246866190475,
+        "relative_debt": 0.027485988242987813
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.44,
+        "debt": 0.0010857275914157862,
+        "relative_debt": 0.02587501694793682
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.46,
+        "debt": 0.0010204274304811151,
+        "relative_debt": 0.024318786099382695
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.48,
+        "debt": 0.0009551272695464441,
+        "relative_debt": 0.02276255525082857
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.5,
+        "debt": 0.000889827108611773,
+        "relative_debt": 0.021206324402274445
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.52,
+        "debt": 0.0008245269476771018,
+        "relative_debt": 0.019650093553720317
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.54,
+        "debt": 0.000759226786742431,
+        "relative_debt": 0.018093862705166195
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.56,
+        "debt": 0.0006957522840166054,
+        "relative_debt": 0.016581140870722523
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.58,
+        "debt": 0.00063433706156582,
+        "relative_debt": 0.015117495722216007
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.6,
+        "debt": 0.0005729218391150341,
+        "relative_debt": 0.013653850573709474
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.62,
+        "debt": 0.0005115066166642482,
+        "relative_debt": 0.012190205425202947
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.64,
+        "debt": 0.0004500913942134623,
+        "relative_debt": 0.010726560276696417
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.66,
+        "debt": 0.0003886761717626765,
+        "relative_debt": 0.00926291512818989
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.68,
+        "debt": 0.00033479853302019783,
+        "relative_debt": 0.007978905376021236
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.7000000000000001,
+        "debt": 0.0003101543303300402,
+        "relative_debt": 0.0073915857137800845
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.72,
+        "debt": 0.00028556553260939793,
+        "relative_debt": 0.006805586460577575
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.74,
+        "debt": 0.00026195437856747555,
+        "relative_debt": 0.006242886372797338
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.76,
+        "debt": 0.00023834495977549338,
+        "relative_debt": 0.005680227639424934
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.78,
+        "debt": 0.0002147617646115826,
+        "relative_debt": 0.00511819386651789
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.8,
+        "debt": 0.0001912065475058051,
+        "relative_debt": 0.004556826865583936
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.8200000000000001,
+        "debt": 0.0001679968469757079,
+        "relative_debt": 0.0040036942019940885
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.84,
+        "debt": 0.00014497086862092653,
+        "relative_debt": 0.0034549399980082847
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.86,
+        "debt": 0.00012652135123985406,
+        "relative_debt": 0.003015251830653156
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.88,
+        "debt": 0.00010807183385878157,
+        "relative_debt": 0.0025755636632980266
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.9,
+        "debt": 8.96932271288403e-05,
+        "relative_debt": 0.0021375654357715583
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.92,
+        "debt": 7.146034315887917e-05,
+        "relative_debt": 0.001703040067288185
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.9400000000000001,
+        "debt": 5.322745918891822e-05,
+        "relative_debt": 0.0012685146988048162
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.96,
+        "debt": 3.5360703540148563e-05,
+        "relative_debt": 0.0008427148859680442
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 0.98,
+        "debt": 1.7680351770074305e-05,
+        "relative_debt": 0.0004213574429840227
+      },
+      {
+        "policy": "TIV/cost",
+        "budget_fraction": 1.0,
+        "debt": 1.7770188038844694e-19,
+        "relative_debt": 4.234984173825291e-18
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.0,
+        "debt": 0.04196045914096911,
+        "relative_debt": 1.0
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.02,
+        "debt": 0.030418826418832676,
+        "relative_debt": 0.7249402661834202
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.04,
+        "debt": 0.018877193696696236,
+        "relative_debt": 0.44988053236684034
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.06,
+        "debt": 0.007674461012364431,
+        "relative_debt": 0.18289745082582487
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.08,
+        "debt": 0.004978690893037332,
+        "relative_debt": 0.11865196413392594
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.1,
+        "debt": 0.002282920773710232,
+        "relative_debt": 0.054406477442027014
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.12,
+        "debt": 0.002177500630270604,
+        "relative_debt": 0.051894108759752554
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.14,
+        "debt": 0.002109140645869252,
+        "relative_debt": 0.05026495631955422
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.16,
+        "debt": 0.0020407806614678994,
+        "relative_debt": 0.048635803879355885
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.18,
+        "debt": 0.0019724206770665473,
+        "relative_debt": 0.047006651439157554
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.2,
+        "debt": 0.0019040606926651951,
+        "relative_debt": 0.04537749899895922
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.22,
+        "debt": 0.0018357420716004318,
+        "relative_debt": 0.04374933232815988
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.24,
+        "debt": 0.0017674978173784126,
+        "relative_debt": 0.042122937965010813
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.26,
+        "debt": 0.0016992535631563926,
+        "relative_debt": 0.040496543601861716
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.28,
+        "debt": 0.001631009308934373,
+        "relative_debt": 0.03887014923871263
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.3,
+        "debt": 0.0015627650547123538,
+        "relative_debt": 0.037243754875563556
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.32,
+        "debt": 0.0014945208004903338,
+        "relative_debt": 0.035617360512414466
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.34,
+        "debt": 0.0014262809847316832,
+        "relative_debt": 0.033991071926548565
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.36,
+        "debt": 0.0013580419102035245,
+        "relative_debt": 0.03236480100565838
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.38,
+        "debt": 0.0012898028356753653,
+        "relative_debt": 0.03073853008476819
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.4,
+        "debt": 0.0012215637611472064,
+        "relative_debt": 0.029112259163878
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.42,
+        "debt": 0.0011533246866190475,
+        "relative_debt": 0.027485988242987813
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.44,
+        "debt": 0.0010857275914157862,
+        "relative_debt": 0.02587501694793682
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.46,
+        "debt": 0.0010204274304811151,
+        "relative_debt": 0.024318786099382695
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.48,
+        "debt": 0.0009551272695464441,
+        "relative_debt": 0.02276255525082857
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.5,
+        "debt": 0.000889827108611773,
+        "relative_debt": 0.021206324402274445
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.52,
+        "debt": 0.0008245269476771018,
+        "relative_debt": 0.019650093553720317
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.54,
+        "debt": 0.000759226786742431,
+        "relative_debt": 0.018093862705166195
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.56,
+        "debt": 0.0006957522840166054,
+        "relative_debt": 0.016581140870722523
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.58,
+        "debt": 0.00063433706156582,
+        "relative_debt": 0.015117495722216007
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.6,
+        "debt": 0.0005729218391150341,
+        "relative_debt": 0.013653850573709474
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.62,
+        "debt": 0.0005115066166642482,
+        "relative_debt": 0.012190205425202947
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.64,
+        "debt": 0.0004500913942134623,
+        "relative_debt": 0.010726560276696417
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.66,
+        "debt": 0.0003886761717626765,
+        "relative_debt": 0.00926291512818989
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.68,
+        "debt": 0.00033479853302019783,
+        "relative_debt": 0.007978905376021236
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.7000000000000001,
+        "debt": 0.0003101543303300402,
+        "relative_debt": 0.0073915857137800845
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.72,
+        "debt": 0.00028556553260939793,
+        "relative_debt": 0.006805586460577575
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.74,
+        "debt": 0.00026195437856747555,
+        "relative_debt": 0.006242886372797338
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.76,
+        "debt": 0.00023834495977549338,
+        "relative_debt": 0.005680227639424934
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.78,
+        "debt": 0.0002147617646115826,
+        "relative_debt": 0.00511819386651789
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.8,
+        "debt": 0.0001912065475058051,
+        "relative_debt": 0.004556826865583936
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.8200000000000001,
+        "debt": 0.0001679968469757079,
+        "relative_debt": 0.0040036942019940885
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.84,
+        "debt": 0.00014497086862092653,
+        "relative_debt": 0.0034549399980082847
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.86,
+        "debt": 0.00012652135123985406,
+        "relative_debt": 0.003015251830653156
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.88,
+        "debt": 0.00010807183385878157,
+        "relative_debt": 0.0025755636632980266
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.9,
+        "debt": 8.96932271288403e-05,
+        "relative_debt": 0.0021375654357715583
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.92,
+        "debt": 7.146034315887917e-05,
+        "relative_debt": 0.001703040067288185
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.9400000000000001,
+        "debt": 5.322745918891822e-05,
+        "relative_debt": 0.0012685146988048162
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.96,
+        "debt": 3.5360703540148563e-05,
+        "relative_debt": 0.0008427148859680442
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 0.98,
+        "debt": 1.7680351770074305e-05,
+        "relative_debt": 0.0004213574429840227
+      },
+      {
+        "policy": "Oracle frontier",
+        "budget_fraction": 1.0,
+        "debt": 1.7770188038844694e-19,
+        "relative_debt": 4.234984173825291e-18
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.0,
+        "debt": 0.04196045914096911,
+        "relative_debt": 1.0
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.02,
+        "debt": 0.04189222006644095,
+        "relative_debt": 0.9983737290791098
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.04,
+        "debt": 0.04182398099191279,
+        "relative_debt": 0.9967474581582196
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.06,
+        "debt": 0.04175574191738463,
+        "relative_debt": 0.9951211872373295
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.08,
+        "debt": 0.04168750284285648,
+        "relative_debt": 0.9934949163164394
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.1,
+        "debt": 0.04161926376832832,
+        "relative_debt": 0.9918686453955492
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.12,
+        "debt": 0.04155349181781168,
+        "relative_debt": 0.9903011708763673
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.14,
+        "debt": 0.04149207659536089,
+        "relative_debt": 0.9888375257278607
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.16,
+        "debt": 0.0414306613729101,
+        "relative_debt": 0.987373880579354
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.18,
+        "debt": 0.04136924615045932,
+        "relative_debt": 0.9859102354308477
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.2,
+        "debt": 0.04130783092800853,
+        "relative_debt": 0.984446590282341
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.22,
+        "debt": 0.041246415705557746,
+        "relative_debt": 0.9829829451338346
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.24,
+        "debt": 0.041184329626602026,
+        "relative_debt": 0.9815033121596782
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.26,
+        "debt": 0.04111596964220067,
+        "relative_debt": 0.9798741597194798
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.28,
+        "debt": 0.04104760965779932,
+        "relative_debt": 0.9782450072792815
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.3,
+        "debt": 0.040979249673397965,
+        "relative_debt": 0.9766158548390831
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.32,
+        "debt": 0.040910889688996616,
+        "relative_debt": 0.9749867023988849
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.34,
+        "debt": 0.04084252970459526,
+        "relative_debt": 0.9733575499586864
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.36,
+        "debt": 0.03540334755260337,
+        "relative_debt": 0.8437311763835409
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.38,
+        "debt": 0.023861714830466906,
+        "relative_debt": 0.5686714425669605
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.4,
+        "debt": 0.012320082108330455,
+        "relative_debt": 0.2936117087503803
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.42,
+        "debt": 0.006614108182917286,
+        "relative_debt": 0.15762716419991318
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.44,
+        "debt": 0.006595658665536214,
+        "relative_debt": 0.15718747603255806
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.46,
+        "debt": 0.006577209148155141,
+        "relative_debt": 0.1567477878652029
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.48,
+        "debt": 0.004429855419824482,
+        "relative_debt": 0.10557213887822514
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.5,
+        "debt": 0.0017340853004973785,
+        "relative_debt": 0.04132665218632611
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.52,
+        "debt": 0.001027043434383897,
+        "relative_debt": 0.024476458442303322
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.54,
+        "debt": 0.0010088105504139357,
+        "relative_debt": 0.024041933073819948
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.56,
+        "debt": 0.0009901892148260294,
+        "relative_debt": 0.023598150141766066
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.58,
+        "debt": 0.0009669795142959324,
+        "relative_debt": 0.023045017478176222
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.6,
+        "debt": 0.0009440006031189898,
+        "relative_debt": 0.022497384977308126
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.62,
+        "debt": 0.0009263202513489156,
+        "relative_debt": 0.022076027534324104
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.64,
+        "debt": 0.0009086398995788413,
+        "relative_debt": 0.02165467009134008
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.66,
+        "debt": 0.000871790676323848,
+        "relative_debt": 0.020776480862495
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.68,
+        "debt": 0.0008035464221018284,
+        "relative_debt": 0.019150086499345912
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.7000000000000001,
+        "debt": 0.0007353021678798088,
+        "relative_debt": 0.01752369213619683
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.72,
+        "debt": 0.0006670579136577894,
+        "relative_debt": 0.015897297773047752
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.74,
+        "debt": 0.0005988136594357696,
+        "relative_debt": 0.014270903409898662
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.76,
+        "debt": 0.0005305694052137502,
+        "relative_debt": 0.012644509046749583
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.78,
+        "debt": 0.00046491179281822755,
+        "relative_debt": 0.011079759429140747
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.8,
+        "debt": 0.00039961163188355635,
+        "relative_debt": 0.009523528580586619
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.8200000000000001,
+        "debt": 0.0003343114709488852,
+        "relative_debt": 0.007967297732032492
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.84,
+        "debt": 0.0002690113100142144,
+        "relative_debt": 0.006411066883478371
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.86,
+        "debt": 0.00020371114907954315,
+        "relative_debt": 0.004854836034924242
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.88,
+        "debt": 0.0001436994424393201,
+        "relative_debt": 0.0034246394196153036
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.9,
+        "debt": 0.0001190552397491626,
+        "relative_debt": 0.0028373197573741543
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.92,
+        "debt": 9.441103705900485e-05,
+        "relative_debt": 0.002250000095133
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.9400000000000001,
+        "debt": 7.077790348754983e-05,
+        "relative_debt": 0.0016867761920756515
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.96,
+        "debt": 4.7166749445627555e-05,
+        "relative_debt": 0.0011240761042954164
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 0.98,
+        "debt": 2.358319516391081e-05,
+        "relative_debt": 0.0005620337729070459
+      },
+      {
+        "policy": "High density",
+        "budget_fraction": 1.0,
+        "debt": 5.202891004680563e-20,
+        "relative_debt": 1.2399509231300556e-18
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.0,
+        "debt": 0.04196045914096911,
+        "relative_debt": 1.0
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.02,
+        "debt": 0.04189222006644095,
+        "relative_debt": 0.9983737290791098
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.04,
+        "debt": 0.04182398099191279,
+        "relative_debt": 0.9967474581582196
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.06,
+        "debt": 0.04175574191738463,
+        "relative_debt": 0.9951211872373295
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.08,
+        "debt": 0.04168750284285648,
+        "relative_debt": 0.9934949163164394
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.1,
+        "debt": 0.04161926376832832,
+        "relative_debt": 0.9918686453955492
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.12,
+        "debt": 0.04155349181781168,
+        "relative_debt": 0.9903011708763673
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.14,
+        "debt": 0.04149207659536089,
+        "relative_debt": 0.9888375257278607
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.16,
+        "debt": 0.0414306613729101,
+        "relative_debt": 0.987373880579354
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.18,
+        "debt": 0.04136924615045932,
+        "relative_debt": 0.9859102354308477
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.2,
+        "debt": 0.04130783092800853,
+        "relative_debt": 0.984446590282341
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.22,
+        "debt": 0.041246415705557746,
+        "relative_debt": 0.9829829451338346
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.24,
+        "debt": 0.04118434080601237,
+        "relative_debt": 0.9815035785869426
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.26,
+        "debt": 0.04111609655179035,
+        "relative_debt": 0.9798771842237934
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.28,
+        "debt": 0.04104785229756833,
+        "relative_debt": 0.9782507898606444
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.3,
+        "debt": 0.040979608043346306,
+        "relative_debt": 0.9766243954974952
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.32,
+        "debt": 0.04091136378912429,
+        "relative_debt": 0.9749980011343463
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.34,
+        "debt": 0.04084311953490227,
+        "relative_debt": 0.9733716067711973
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.36,
+        "debt": 0.040774806295780015,
+        "relative_debt": 0.9717435683626385
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.38,
+        "debt": 0.04070644631137866,
+        "relative_debt": 0.9701144159224401
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.4,
+        "debt": 0.04063808632697731,
+        "relative_debt": 0.9684852634822418
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.42,
+        "debt": 0.04056972634257596,
+        "relative_debt": 0.9668561110420435
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.44,
+        "debt": 0.040501366358174605,
+        "relative_debt": 0.9652269586018452
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.46,
+        "debt": 0.040433006373773256,
+        "relative_debt": 0.9635978061616469
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.48,
+        "debt": 0.040367607077552,
+        "relative_debt": 0.96203921272487
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.5,
+        "debt": 0.04030230691661733,
+        "relative_debt": 0.9604829818763159
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.52,
+        "debt": 0.040237006755682654,
+        "relative_debt": 0.9589267510277617
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.54,
+        "debt": 0.04017170659474798,
+        "relative_debt": 0.9573705201792075
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.56,
+        "debt": 0.040106406433813316,
+        "relative_debt": 0.9558142893306536
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.58,
+        "debt": 0.0375267304280625,
+        "relative_debt": 0.8943355529544808
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.6,
+        "debt": 0.025985097705926045,
+        "relative_debt": 0.6192758191379004
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.62,
+        "debt": 0.01444346498378959,
+        "relative_debt": 0.3442160853213201
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.64,
+        "debt": 0.0058663509266279135,
+        "relative_debt": 0.13980664289014322
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.66,
+        "debt": 0.005841706723937756,
+        "relative_debt": 0.13921932322790206
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.68,
+        "debt": 0.0055337912368857755,
+        "relative_debt": 0.13188109353843377
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.7000000000000001,
+        "debt": 0.002838021117558672,
+        "relative_debt": 0.06763560684653475
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.72,
+        "debt": 0.0002858423640270969,
+        "relative_debt": 0.006812183895957606
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.74,
+        "debt": 0.0002673928466460245,
+        "relative_debt": 0.006372495728602478
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.76,
+        "debt": 0.00024894332926495206,
+        "relative_debt": 0.005932807561247351
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.78,
+        "debt": 0.0002305679800251091,
+        "relative_debt": 0.005494886966095861
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.8,
+        "debt": 0.00021233509605514807,
+        "relative_debt": 0.00506036159761249
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.8200000000000001,
+        "debt": 0.000194102212085187,
+        "relative_debt": 0.004625836229129119
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.84,
+        "debt": 0.0001722246145730863,
+        "relative_debt": 0.004104450191893412
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.86,
+        "debt": 0.00014861346053116393,
+        "relative_debt": 0.003541750104113174
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.88,
+        "debt": 0.0001250214892383793,
+        "relative_debt": 0.0029795071788504706
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.9,
+        "debt": 0.00010143829407446872,
+        "relative_debt": 0.0024174734059434298
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.92,
+        "debt": 7.811615310719342e-05,
+        "relative_debt": 0.0018616610663090391
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.9400000000000001,
+        "debt": 5.490645257709632e-05,
+        "relative_debt": 0.0013085284027191941
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.96,
+        "debt": 3.536070354014854e-05,
+        "relative_debt": 0.0008427148859680438
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 0.98,
+        "debt": 1.7680351770074244e-05,
+        "relative_debt": 0.00042135744298402123
+      },
+      {
+        "policy": "Low reveal prob.",
+        "budget_fraction": 1.0,
+        "debt": 2.6132629468889256e-20,
+        "relative_debt": 6.227917902684251e-19
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.0,
+        "debt": 0.04196045914096911,
+        "relative_debt": 1.0
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.02,
+        "debt": 0.030418826418832676,
+        "relative_debt": 0.7249402661834202
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.04,
+        "debt": 0.018877193696696236,
+        "relative_debt": 0.44988053236684034
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.06,
+        "debt": 0.007674461012364431,
+        "relative_debt": 0.18289745082582487
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.08,
+        "debt": 0.004978690893037332,
+        "relative_debt": 0.11865196413392594
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.1,
+        "debt": 0.002282920773710232,
+        "relative_debt": 0.054406477442027014
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.12,
+        "debt": 0.0022205997919112724,
+        "relative_debt": 0.052921246272616115
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.14,
+        "debt": 0.002195955589221115,
+        "relative_debt": 0.05233392661037497
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.16,
+        "debt": 0.0021764811005109117,
+        "relative_debt": 0.051869811366907846
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.18,
+        "debt": 0.0021580315831298395,
+        "relative_debt": 0.05143012319955272
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.2,
+        "debt": 0.0021389457661824818,
+        "relative_debt": 0.05097527076614065
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.22,
+        "debt": 0.002115334612140559,
+        "relative_debt": 0.050412570678360406
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.24,
+        "debt": 0.0020924318119954085,
+        "relative_debt": 0.04986675205258686
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.26,
+        "debt": 0.002074198928025447,
+        "relative_debt": 0.04943222668410348
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.28,
+        "debt": 0.002055966044055486,
+        "relative_debt": 0.04899770131562011
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.3,
+        "debt": 0.002035234492263628,
+        "relative_debt": 0.04850362779458907
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.32,
+        "debt": 0.0020116512970997174,
+        "relative_debt": 0.04794159402168202
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.34,
+        "debt": 0.00198824732634227,
+        "relative_debt": 0.0473838315177299
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.36,
+        "debt": 0.0019650376258121727,
+        "relative_debt": 0.046830698854140054
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.38,
+        "debt": 0.0019442804391591028,
+        "relative_debt": 0.04633601440411212
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.4,
+        "debt": 0.0019266000873890288,
+        "relative_debt": 0.045914656961128106
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.42,
+        "debt": 0.0019089197356189544,
+        "relative_debt": 0.045493299518144084
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.44,
+        "debt": 0.0018517576868365862,
+        "relative_debt": 0.04413101583601543
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.46,
+        "debt": 0.001783518612308427,
+        "relative_debt": 0.04250474491512524
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.48,
+        "debt": 0.0017152795377802683,
+        "relative_debt": 0.040878473994235054
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.5,
+        "debt": 0.0016470404632521092,
+        "relative_debt": 0.039252203073344864
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.52,
+        "debt": 0.0015788013887239503,
+        "relative_debt": 0.037625932152454675
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.54,
+        "debt": 0.0015115343849104036,
+        "relative_debt": 0.036022827582326916
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.56,
+        "debt": 0.0014501191624596177,
+        "relative_debt": 0.03455918243382039
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.58,
+        "debt": 0.0013887039400088323,
+        "relative_debt": 0.03309553728531387
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.6,
+        "debt": 0.0013272887175580462,
+        "relative_debt": 0.03163189213680733
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.62,
+        "debt": 0.0012658734951072604,
+        "relative_debt": 0.030168246988300805
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.64,
+        "debt": 0.0012044582726564745,
+        "relative_debt": 0.028704601839794276
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.66,
+        "debt": 0.0011430430502056886,
+        "relative_debt": 0.02724095669128775
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.68,
+        "debt": 0.0010756353070169077,
+        "relative_debt": 0.02563449802594474
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.7000000000000001,
+        "debt": 0.001007391052794888,
+        "relative_debt": 0.024008103662795658
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.72,
+        "debt": 0.0009391467985728687,
+        "relative_debt": 0.02238170929964658
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.74,
+        "debt": 0.0008709025443508491,
+        "relative_debt": 0.020755314936497498
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.76,
+        "debt": 0.0008026582901288299,
+        "relative_debt": 0.01912892057334842
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.78,
+        "debt": 0.0007343704065952034,
+        "relative_debt": 0.017501486438173484
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.8,
+        "debt": 0.0006660104221938511,
+        "relative_debt": 0.01587233399797515
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.8200000000000001,
+        "debt": 0.0005976504377924987,
+        "relative_debt": 0.014243181557776811
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.84,
+        "debt": 0.0005292904533911466,
+        "relative_debt": 0.012614029117578484
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.86,
+        "debt": 0.00046093046898979434,
+        "relative_debt": 0.010984876677380151
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.88,
+        "debt": 0.0003925704845884419,
+        "relative_debt": 0.009355724237181813
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.9,
+        "debt": 0.00032650080467335575,
+        "relative_debt": 0.007781154242770637
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.92,
+        "debt": 0.00026120064373868427,
+        "relative_debt": 0.006224923394216502
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.9400000000000001,
+        "debt": 0.00019590048280401342,
+        "relative_debt": 0.004668692545662382
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.96,
+        "debt": 0.00013060032186934257,
+        "relative_debt": 0.0031124616971082613
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 0.98,
+        "debt": 6.530016093467107e-05,
+        "relative_debt": 0.0015562308485541254
+      },
+      {
+        "policy": "High pred. loss",
+        "budget_fraction": 1.0,
+        "debt": 2.500523410101669e-19,
+        "relative_debt": 5.959237485226234e-18
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.0,
+        "debt": 0.04196045914096911,
+        "relative_debt": 1.0
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.02,
+        "debt": 0.030418826418832676,
+        "relative_debt": 0.7249402661834202
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.04,
+        "debt": 0.018877193696696236,
+        "relative_debt": 0.44988053236684034
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.06,
+        "debt": 0.007674461012364431,
+        "relative_debt": 0.18289745082582487
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.08,
+        "debt": 0.004978690893037332,
+        "relative_debt": 0.11865196413392594
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.1,
+        "debt": 0.002282920773710232,
+        "relative_debt": 0.054406477442027014
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.12,
+        "debt": 0.0022205997919112724,
+        "relative_debt": 0.052921246272616115
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.14,
+        "debt": 0.002195955589221115,
+        "relative_debt": 0.05233392661037497
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.16,
+        "debt": 0.0021764811005109117,
+        "relative_debt": 0.051869811366907846
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.18,
+        "debt": 0.0021580315831298395,
+        "relative_debt": 0.05143012319955272
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.2,
+        "debt": 0.0021389457661824818,
+        "relative_debt": 0.05097527076614065
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.22,
+        "debt": 0.002115334612140559,
+        "relative_debt": 0.050412570678360406
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.24,
+        "debt": 0.0020924318119954085,
+        "relative_debt": 0.04986675205258686
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.26,
+        "debt": 0.002074198928025447,
+        "relative_debt": 0.04943222668410348
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.28,
+        "debt": 0.002055966044055486,
+        "relative_debt": 0.04899770131562011
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.3,
+        "debt": 0.002035234492263628,
+        "relative_debt": 0.04850362779458907
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.32,
+        "debt": 0.0020116512970997174,
+        "relative_debt": 0.04794159402168202
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.34,
+        "debt": 0.00198824732634227,
+        "relative_debt": 0.0473838315177299
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.36,
+        "debt": 0.0019650376258121727,
+        "relative_debt": 0.046830698854140054
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.38,
+        "debt": 0.0019442804391591028,
+        "relative_debt": 0.04633601440411212
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.4,
+        "debt": 0.0019266000873890288,
+        "relative_debt": 0.045914656961128106
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.42,
+        "debt": 0.0019089197356189544,
+        "relative_debt": 0.045493299518144084
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.44,
+        "debt": 0.0018517576868365862,
+        "relative_debt": 0.04413101583601543
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.46,
+        "debt": 0.001783518612308427,
+        "relative_debt": 0.04250474491512524
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.48,
+        "debt": 0.0017152795377802683,
+        "relative_debt": 0.040878473994235054
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.5,
+        "debt": 0.0016470404632521092,
+        "relative_debt": 0.039252203073344864
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.52,
+        "debt": 0.0015788013887239503,
+        "relative_debt": 0.037625932152454675
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.54,
+        "debt": 0.0015115343849104036,
+        "relative_debt": 0.036022827582326916
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.56,
+        "debt": 0.0014501191624596177,
+        "relative_debt": 0.03455918243382039
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.58,
+        "debt": 0.0013887039400088323,
+        "relative_debt": 0.03309553728531387
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.6,
+        "debt": 0.0013272887175580462,
+        "relative_debt": 0.03163189213680733
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.62,
+        "debt": 0.0012658734951072604,
+        "relative_debt": 0.030168246988300805
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.64,
+        "debt": 0.0012044582726564745,
+        "relative_debt": 0.028704601839794276
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.66,
+        "debt": 0.0011430430502056886,
+        "relative_debt": 0.02724095669128775
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.68,
+        "debt": 0.0010756353070169077,
+        "relative_debt": 0.02563449802594474
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.7000000000000001,
+        "debt": 0.001007391052794888,
+        "relative_debt": 0.024008103662795658
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.72,
+        "debt": 0.0009391467985728687,
+        "relative_debt": 0.02238170929964658
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.74,
+        "debt": 0.0008709025443508491,
+        "relative_debt": 0.020755314936497498
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.76,
+        "debt": 0.0008026582901288299,
+        "relative_debt": 0.01912892057334842
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.78,
+        "debt": 0.0007343704065952034,
+        "relative_debt": 0.017501486438173484
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.8,
+        "debt": 0.0006660104221938511,
+        "relative_debt": 0.01587233399797515
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.8200000000000001,
+        "debt": 0.0005976504377924987,
+        "relative_debt": 0.014243181557776811
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.84,
+        "debt": 0.0005292904533911466,
+        "relative_debt": 0.012614029117578484
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.86,
+        "debt": 0.00046093046898979434,
+        "relative_debt": 0.010984876677380151
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.88,
+        "debt": 0.0003925704845884419,
+        "relative_debt": 0.009355724237181813
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.9,
+        "debt": 0.00032650080467335575,
+        "relative_debt": 0.007781154242770637
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.92,
+        "debt": 0.00026120064373868427,
+        "relative_debt": 0.006224923394216502
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.9400000000000001,
+        "debt": 0.00019590048280401342,
+        "relative_debt": 0.004668692545662382
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.96,
+        "debt": 0.00013060032186934257,
+        "relative_debt": 0.0031124616971082613
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 0.98,
+        "debt": 6.530016093467107e-05,
+        "relative_debt": 0.0015562308485541254
+      },
+      {
+        "policy": "Uncertainty",
+        "budget_fraction": 1.0,
+        "debt": 2.500523410101669e-19,
+        "relative_debt": 5.959237485226234e-18
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.0,
+        "debt": 0.04196045914096911,
+        "relative_debt": 1.0
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.02,
+        "debt": 0.030418826418832676,
+        "relative_debt": 0.7249402661834202
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.04,
+        "debt": 0.018877193696696236,
+        "relative_debt": 0.44988053236684034
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.06,
+        "debt": 0.007674461012364431,
+        "relative_debt": 0.18289745082582487
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.08,
+        "debt": 0.004978690893037332,
+        "relative_debt": 0.11865196413392594
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.1,
+        "debt": 0.002282920773710232,
+        "relative_debt": 0.054406477442027014
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.12,
+        "debt": 0.0022205997919112724,
+        "relative_debt": 0.052921246272616115
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.14,
+        "debt": 0.002195955589221115,
+        "relative_debt": 0.05233392661037497
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.16,
+        "debt": 0.0021764811005109117,
+        "relative_debt": 0.051869811366907846
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.18,
+        "debt": 0.0021580315831298395,
+        "relative_debt": 0.05143012319955272
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.2,
+        "debt": 0.0021389457661824818,
+        "relative_debt": 0.05097527076614065
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.22,
+        "debt": 0.002115334612140559,
+        "relative_debt": 0.050412570678360406
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.24,
+        "debt": 0.0020924318119954085,
+        "relative_debt": 0.04986675205258686
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.26,
+        "debt": 0.002074198928025447,
+        "relative_debt": 0.04943222668410348
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.28,
+        "debt": 0.002055966044055486,
+        "relative_debt": 0.04899770131562011
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.3,
+        "debt": 0.002035234492263628,
+        "relative_debt": 0.04850362779458907
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.32,
+        "debt": 0.0020116512970997174,
+        "relative_debt": 0.04794159402168202
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.34,
+        "debt": 0.00198824732634227,
+        "relative_debt": 0.0473838315177299
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.36,
+        "debt": 0.0019650376258121727,
+        "relative_debt": 0.046830698854140054
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.38,
+        "debt": 0.0019442804391591028,
+        "relative_debt": 0.04633601440411212
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.4,
+        "debt": 0.0019266000873890288,
+        "relative_debt": 0.045914656961128106
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.42,
+        "debt": 0.0019089197356189544,
+        "relative_debt": 0.045493299518144084
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.44,
+        "debt": 0.0018517576868365862,
+        "relative_debt": 0.04413101583601543
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.46,
+        "debt": 0.001783518612308427,
+        "relative_debt": 0.04250474491512524
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.48,
+        "debt": 0.0017152795377802683,
+        "relative_debt": 0.040878473994235054
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.5,
+        "debt": 0.0016470404632521092,
+        "relative_debt": 0.039252203073344864
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.52,
+        "debt": 0.0015788013887239503,
+        "relative_debt": 0.037625932152454675
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.54,
+        "debt": 0.0015115343849104036,
+        "relative_debt": 0.036022827582326916
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.56,
+        "debt": 0.0014501191624596177,
+        "relative_debt": 0.03455918243382039
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.58,
+        "debt": 0.0013887039400088323,
+        "relative_debt": 0.03309553728531387
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.6,
+        "debt": 0.0013272887175580462,
+        "relative_debt": 0.03163189213680733
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.62,
+        "debt": 0.0012658734951072604,
+        "relative_debt": 0.030168246988300805
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.64,
+        "debt": 0.0012044582726564745,
+        "relative_debt": 0.028704601839794276
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.66,
+        "debt": 0.0011430430502056886,
+        "relative_debt": 0.02724095669128775
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.68,
+        "debt": 0.0010756353070169077,
+        "relative_debt": 0.02563449802594474
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.7000000000000001,
+        "debt": 0.001007391052794888,
+        "relative_debt": 0.024008103662795658
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.72,
+        "debt": 0.0009391467985728687,
+        "relative_debt": 0.02238170929964658
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.74,
+        "debt": 0.0008709025443508491,
+        "relative_debt": 0.020755314936497498
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.76,
+        "debt": 0.0008026582901288299,
+        "relative_debt": 0.01912892057334842
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.78,
+        "debt": 0.0007343704065952034,
+        "relative_debt": 0.017501486438173484
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.8,
+        "debt": 0.0006660104221938511,
+        "relative_debt": 0.01587233399797515
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.8200000000000001,
+        "debt": 0.0005976504377924987,
+        "relative_debt": 0.014243181557776811
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.84,
+        "debt": 0.0005292904533911466,
+        "relative_debt": 0.012614029117578484
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.86,
+        "debt": 0.00046093046898979434,
+        "relative_debt": 0.010984876677380151
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.88,
+        "debt": 0.0003925704845884419,
+        "relative_debt": 0.009355724237181813
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.9,
+        "debt": 0.00032650080467335575,
+        "relative_debt": 0.007781154242770637
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.92,
+        "debt": 0.00026120064373868427,
+        "relative_debt": 0.006224923394216502
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.9400000000000001,
+        "debt": 0.00019590048280401342,
+        "relative_debt": 0.004668692545662382
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.96,
+        "debt": 0.00013060032186934257,
+        "relative_debt": 0.0031124616971082613
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 0.98,
+        "debt": 6.530016093467107e-05,
+        "relative_debt": 0.0015562308485541254
+      },
+      {
+        "policy": "Width only",
+        "budget_fraction": 1.0,
+        "debt": 2.500523410101669e-19,
+        "relative_debt": 5.959237485226234e-18
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.0,
+        "debt": 0.04196045914096911,
+        "relative_debt": 1.0
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.02,
+        "debt": 0.04189222006644095,
+        "relative_debt": 0.9983737290791098
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.04,
+        "debt": 0.04182398099191279,
+        "relative_debt": 0.9967474581582196
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.06,
+        "debt": 0.04175574191738463,
+        "relative_debt": 0.9951211872373295
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.08,
+        "debt": 0.04168750284285648,
+        "relative_debt": 0.9934949163164394
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.1,
+        "debt": 0.04161926376832832,
+        "relative_debt": 0.9918686453955492
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.12,
+        "debt": 0.04155349181781168,
+        "relative_debt": 0.9903011708763673
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.14,
+        "debt": 0.04149207659536089,
+        "relative_debt": 0.9888375257278607
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.16,
+        "debt": 0.0414306613729101,
+        "relative_debt": 0.987373880579354
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.18,
+        "debt": 0.04136924615045932,
+        "relative_debt": 0.9859102354308477
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.2,
+        "debt": 0.04130783092800853,
+        "relative_debt": 0.984446590282341
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.22,
+        "debt": 0.041246415705557746,
+        "relative_debt": 0.9829829451338346
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.24,
+        "debt": 0.04118434080601237,
+        "relative_debt": 0.9815035785869426
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.26,
+        "debt": 0.04111609655179035,
+        "relative_debt": 0.9798771842237934
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.28,
+        "debt": 0.04104785229756833,
+        "relative_debt": 0.9782507898606444
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.3,
+        "debt": 0.040979608043346306,
+        "relative_debt": 0.9766243954974952
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.32,
+        "debt": 0.04091136378912429,
+        "relative_debt": 0.9749980011343463
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.34,
+        "debt": 0.04084311953490227,
+        "relative_debt": 0.9733716067711973
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.36,
+        "debt": 0.040774806295780015,
+        "relative_debt": 0.9717435683626385
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.38,
+        "debt": 0.04070644631137866,
+        "relative_debt": 0.9701144159224401
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.4,
+        "debt": 0.04063808632697731,
+        "relative_debt": 0.9684852634822418
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.42,
+        "debt": 0.04056972634257596,
+        "relative_debt": 0.9668561110420435
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.44,
+        "debt": 0.040501366358174605,
+        "relative_debt": 0.9652269586018452
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.46,
+        "debt": 0.040433006373773256,
+        "relative_debt": 0.9635978061616469
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.48,
+        "debt": 0.040367607077552,
+        "relative_debt": 0.96203921272487
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.5,
+        "debt": 0.04030230691661733,
+        "relative_debt": 0.9604829818763159
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.52,
+        "debt": 0.040237006755682654,
+        "relative_debt": 0.9589267510277617
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.54,
+        "debt": 0.04017170659474798,
+        "relative_debt": 0.9573705201792075
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.56,
+        "debt": 0.040106406433813316,
+        "relative_debt": 0.9558142893306536
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.58,
+        "debt": 0.04005001367938788,
+        "relative_debt": 0.9544703394411641
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.6,
+        "debt": 0.04002536947669773,
+        "relative_debt": 0.953883019778923
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.62,
+        "debt": 0.040001144887702074,
+        "relative_debt": 0.9533057003336264
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.64,
+        "debt": 0.039982695370321,
+        "relative_debt": 0.9528660121662713
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.66,
+        "debt": 0.03996424585293993,
+        "relative_debt": 0.9524263239989161
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.68,
+        "debt": 0.03994395635531378,
+        "relative_debt": 0.9519427854952505
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.7000000000000001,
+        "debt": 0.03992034520127186,
+        "relative_debt": 0.9513800854074704
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.72,
+        "debt": 0.03989869660017176,
+        "relative_debt": 0.9508641568036538
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.74,
+        "debt": 0.0398804637162018,
+        "relative_debt": 0.9504296314351703
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.76,
+        "debt": 0.03986223083223184,
+        "relative_debt": 0.949995106066687
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.78,
+        "debt": 0.03984025160133492,
+        "relative_debt": 0.9494712979066505
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.8,
+        "debt": 0.039816668406171006,
+        "relative_debt": 0.9489092641337434
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.8200000000000001,
+        "debt": 0.03979335153342217,
+        "relative_debt": 0.9483535773460823
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.84,
+        "debt": 0.03977014183289208,
+        "relative_debt": 0.9478004446824925
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.86,
+        "debt": 0.039750674076453885,
+        "relative_debt": 0.9473364898822652
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.88,
+        "debt": 0.039732993724683814,
+        "relative_debt": 0.9469151324392813
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.9,
+        "debt": 0.0396775383672589,
+        "relative_debt": 0.9455935225579736
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.92,
+        "debt": 0.036981768247931784,
+        "relative_debt": 0.8813480358660742
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.9400000000000001,
+        "debt": 0.0342859981286047,
+        "relative_debt": 0.8171025491741757
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.96,
+        "debt": 0.023083265444272996,
+        "relative_debt": 0.5501194676331626
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 0.98,
+        "debt": 0.011541632722136487,
+        "relative_debt": 0.275059733816581
+      },
+      {
+        "policy": "Contrast only",
+        "budget_fraction": 1.0,
+        "debt": 3.415539710205912e-17,
+        "relative_debt": 8.139900706832513e-16
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.0,
+        "debt": 0.041960459140969124,
+        "relative_debt": 1.0000000000000002
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.02,
+        "debt": 0.041133014422982825,
+        "relative_debt": 0.9802803702598576
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.04,
+        "debt": 0.04030429788003457,
+        "relative_debt": 0.9605304304376043
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.06,
+        "debt": 0.03928459461631911,
+        "relative_debt": 0.9362289026518933
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.08,
+        "debt": 0.03867639098805507,
+        "relative_debt": 0.9217342178768593
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.1,
+        "debt": 0.03796421691597702,
+        "relative_debt": 0.9047617136035991
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.12,
+        "debt": 0.037379146542394916,
+        "relative_debt": 0.89081833963773
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.14,
+        "debt": 0.0366615591065944,
+        "relative_debt": 0.8737168242946847
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.16,
+        "debt": 0.03582379362275276,
+        "relative_debt": 0.8537512304715306
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.18,
+        "debt": 0.03439576893906955,
+        "relative_debt": 0.8197186027806452
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.2,
+        "debt": 0.03272460773506408,
+        "relative_debt": 0.7798915551692002
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.22,
+        "debt": 0.031423661311600654,
+        "relative_debt": 0.7488874515417159
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.24,
+        "debt": 0.03083337345545033,
+        "relative_debt": 0.7348197347379696
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.26,
+        "debt": 0.030419408124321232,
+        "relative_debt": 0.7249541293655795
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.28,
+        "debt": 0.029714807332135513,
+        "relative_debt": 0.7081621111987009
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.3,
+        "debt": 0.02885713026653959,
+        "relative_debt": 0.6877219853479686
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.32,
+        "debt": 0.02784693962922906,
+        "relative_debt": 0.6636471620979005
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.34,
+        "debt": 0.026913401450613782,
+        "relative_debt": 0.6413991172068999
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.36,
+        "debt": 0.026235864833063515,
+        "relative_debt": 0.6252520913777965
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.38,
+        "debt": 0.02543865782963676,
+        "relative_debt": 0.6062530856531813
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.4,
+        "debt": 0.02462336123434812,
+        "relative_debt": 0.5868229694919259
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.42,
+        "debt": 0.023655672693033595,
+        "relative_debt": 0.5637610545099304
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.44,
+        "debt": 0.0227422128170097,
+        "relative_debt": 0.5419915149308934
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.46,
+        "debt": 0.021824375197158803,
+        "relative_debt": 0.5201176451343938
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.48,
+        "debt": 0.02101977361699452,
+        "relative_debt": 0.5009424121499032
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.5,
+        "debt": 0.02045954653417525,
+        "relative_debt": 0.48759110250533644
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.52,
+        "debt": 0.01999711616023018,
+        "relative_debt": 0.47657048015248027
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.54,
+        "debt": 0.01963362527897299,
+        "relative_debt": 0.46790777986991144
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.56,
+        "debt": 0.019178561652962178,
+        "relative_debt": 0.4570627215619937
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.58,
+        "debt": 0.018710025007251614,
+        "relative_debt": 0.44589657478232
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.6,
+        "debt": 0.017786789191629567,
+        "relative_debt": 0.42389405539804986
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.62,
+        "debt": 0.016788537218323324,
+        "relative_debt": 0.40010375391558645
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.64,
+        "debt": 0.015552863689856158,
+        "relative_debt": 0.37065523133589223
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.66,
+        "debt": 0.01457107836191714,
+        "relative_debt": 0.3472573622935006
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.68,
+        "debt": 0.013714231746828476,
+        "relative_debt": 0.32683702770635925
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.7000000000000001,
+        "debt": 0.013070224268009972,
+        "relative_debt": 0.31148906698326717
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.72,
+        "debt": 0.01254594063477659,
+        "relative_debt": 0.29899436020534526
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.74,
+        "debt": 0.011856625149755544,
+        "relative_debt": 0.28256662087329354
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.76,
+        "debt": 0.010903025906447988,
+        "relative_debt": 0.259840481483258
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.78,
+        "debt": 0.009946821790398006,
+        "relative_debt": 0.23705226286921596
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.8,
+        "debt": 0.009153869890944738,
+        "relative_debt": 0.2181546646139326
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.8200000000000001,
+        "debt": 0.008521591203225855,
+        "relative_debt": 0.2030862239756951
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.84,
+        "debt": 0.007633392553914665,
+        "relative_debt": 0.18191870895096135
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.86,
+        "debt": 0.006517100902101499,
+        "relative_debt": 0.15531529052641777
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.88,
+        "debt": 0.0051607353724551965,
+        "relative_debt": 0.12299044095578991
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.9,
+        "debt": 0.004211852447697801,
+        "relative_debt": 0.10037670068260661
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.92,
+        "debt": 0.0033648236315870065,
+        "relative_debt": 0.08019034349177746
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.9400000000000001,
+        "debt": 0.0027597424609105223,
+        "relative_debt": 0.06577007300227516
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.96,
+        "debt": 0.0016577118518672632,
+        "relative_debt": 0.03950652318407823
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 0.98,
+        "debt": 0.000827528503008432,
+        "relative_debt": 0.019721626501471107
+      },
+      {
+        "policy": "Random",
+        "budget_fraction": 1.0,
+        "debt": 2.9680167046207936e-18,
+        "relative_debt": 7.073365652767366e-17
+      }
+    ],
+    "models": [
+      {
+        "role": "Observed-selected",
+        "observed_cvar": 0.08021707880920578,
+        "true_cvar": 0.12930738381907714,
+        "upper_certificate": 0.14182502526058888
+      },
+      {
+        "role": "Certificate",
+        "observed_cvar": 0.379834335246948,
+        "true_cvar": 0.33908858888910826,
+        "upper_certificate": 0.3482491884485452
+      },
+      {
+        "role": "Oracle",
+        "observed_cvar": 0.15470101854658339,
+        "true_cvar": 0.1743209555088802,
+        "upper_certificate": 0.18573044744651845
+      }
+    ],
+    "bridge": [
+      {
+        "budget_fraction": 0.0,
+        "optimized_width": 0.08392091828193829,
+        "uniform_bound": 0.08392091828193822,
+        "relative_optimized_width": 1.0000000000000009,
+        "relative_uniform_bound": 1.0
+      },
+      {
+        "budget_fraction": 0.05,
+        "optimized_width": 0.026212754671256097,
+        "uniform_bound": 0.026212754671256038,
+        "relative_optimized_width": 0.31235066545855117,
+        "relative_uniform_bound": 0.3123506654585505
+      },
+      {
+        "budget_fraction": 0.1,
+        "optimized_width": 0.0045658415474205405,
+        "uniform_bound": 0.004565841547420464,
+        "relative_optimized_width": 0.05440647744202792,
+        "relative_uniform_bound": 0.054406477442027014
+      },
+      {
+        "budget_fraction": 0.15000000000000002,
+        "optimized_width": 0.004149921307337212,
+        "uniform_bound": 0.004149921307337151,
+        "relative_optimized_width": 0.04945038009945577,
+        "relative_uniform_bound": 0.04945038009945505
+      },
+      {
+        "budget_fraction": 0.2,
+        "optimized_width": 0.0038081213853304596,
+        "uniform_bound": 0.0038081213853303902,
+        "relative_optimized_width": 0.04537749899896005,
+        "relative_uniform_bound": 0.04537749899895922
+      },
+      {
+        "budget_fraction": 0.25,
+        "optimized_width": 0.0034667513805348715,
+        "uniform_bound": 0.0034667513805348047,
+        "relative_optimized_width": 0.041309740783437056,
+        "relative_uniform_bound": 0.04130974078343626
+      },
+      {
+        "budget_fraction": 0.30000000000000004,
+        "optimized_width": 0.0031255301094247623,
+        "uniform_bound": 0.0031255301094247068,
+        "relative_optimized_width": 0.03724375487556421,
+        "relative_uniform_bound": 0.03724375487556355
+      },
+      {
+        "budget_fraction": 0.35000000000000003,
+        "optimized_width": 0.002784322894935215,
+        "uniform_bound": 0.002784322894935207,
+        "relative_optimized_width": 0.033177936466103564,
+        "relative_uniform_bound": 0.033177936466103466
+      },
+      {
+        "budget_fraction": 0.4,
+        "optimized_width": 0.002443127522294447,
+        "uniform_bound": 0.002443127522294413,
+        "relative_optimized_width": 0.02911225916387841,
+        "relative_uniform_bound": 0.029112259163878
+      },
+      {
+        "budget_fraction": 0.45,
+        "optimized_width": 0.002106155021896927,
+        "uniform_bound": 0.002106155021896901,
+        "relative_optimized_width": 0.025096901523660065,
+        "relative_uniform_bound": 0.025096901523659756
+      },
+      {
+        "budget_fraction": 0.5,
+        "optimized_width": 0.0017796542172235363,
+        "uniform_bound": 0.0017796542172235459,
+        "relative_optimized_width": 0.02120632440227433,
+        "relative_uniform_bound": 0.02120632440227444
+      },
+      {
+        "budget_fraction": 0.55,
+        "optimized_width": 0.001453153412550201,
+        "uniform_bound": 0.001453153412550191,
+        "relative_optimized_width": 0.017315747280889256,
+        "relative_uniform_bound": 0.017315747280889134
+      },
+      {
+        "budget_fraction": 0.6000000000000001,
+        "optimized_width": 0.001145843678230063,
+        "uniform_bound": 0.001145843678230067,
+        "relative_optimized_width": 0.013653850573709414,
+        "relative_uniform_bound": 0.013653850573709462
+      },
+      {
+        "budget_fraction": 0.65,
+        "optimized_width": 0.0008387675659761451,
+        "uniform_bound": 0.0008387675659761383,
+        "relative_optimized_width": 0.009994737702443229,
+        "relative_uniform_bound": 0.009994737702443147
+      },
+      {
+        "budget_fraction": 0.7000000000000001,
+        "optimized_width": 0.0006203086606600683,
+        "uniform_bound": 0.0006203086606600804,
+        "relative_optimized_width": 0.00739158571377994,
+        "relative_uniform_bound": 0.0073915857137800845
+      },
+      {
+        "budget_fraction": 0.75,
+        "optimized_width": 0.0005002976030930029,
+        "uniform_bound": 0.0005002976030930289,
+        "relative_optimized_width": 0.005961536328906911,
+        "relative_uniform_bound": 0.005961536328907221
+      },
+      {
+        "budget_fraction": 0.8,
+        "optimized_width": 0.0003824130950116078,
+        "uniform_bound": 0.0003824130950116102,
+        "relative_optimized_width": 0.004556826865583907,
+        "relative_uniform_bound": 0.004556826865583936
+      },
+      {
+        "budget_fraction": 0.8500000000000001,
+        "optimized_width": 0.00027149221986078054,
+        "uniform_bound": 0.0002714922198607803,
+        "relative_optimized_width": 0.0032350959143307195,
+        "relative_uniform_bound": 0.003235095914330717
+      },
+      {
+        "budget_fraction": 0.9,
+        "optimized_width": 0.00017938645425766286,
+        "uniform_bound": 0.0001793864542576806,
+        "relative_optimized_width": 0.002137565435771347,
+        "relative_uniform_bound": 0.0021375654357715583
+      },
+      {
+        "budget_fraction": 0.9500000000000001,
+        "optimized_width": 8.840175885038715e-05,
+        "uniform_bound": 8.840175885037126e-05,
+        "relative_optimized_width": 0.0010533936074602428,
+        "relative_uniform_bound": 0.0010533936074600535
+      },
+      {
+        "budget_fraction": 1.0,
+        "optimized_width": 0.0,
+        "uniform_bound": 3.554037607768939e-19,
+        "relative_optimized_width": 0.0,
+        "relative_uniform_bound": 4.234984173825291e-18
+      }
+    ]
+  }
+}

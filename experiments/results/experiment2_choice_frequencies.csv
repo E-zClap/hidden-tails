@@ -1,0 +1,5 @@
+learner,chosen_predictor,count,frequency
+Conservative envelope,high-B conservative learner,250,1.0
+Full-label oracle CVaR,high-B conservative learner,250,1.0
+IPW CVaR,mild-B robust learner,250,1.0
+Observed-label CVaR,mild-B robust learner,250,1.0

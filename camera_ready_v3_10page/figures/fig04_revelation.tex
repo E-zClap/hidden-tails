@@ -1,0 +1,36 @@
+% Editable PGFPlots source. Data provenance: revelation_provenance.json.
+% Compile from camera_ready_v3_10page with -output-directory=figures/build.
+\documentclass[tikz,border=0pt]{standalone}
+\input{figures/figure_style.tex}
+\begin{document}
+\begin{tikzpicture}[x=1pt,y=1pt]
+\path[use as bounding box] (0,0) rectangle (397.48499,211);
+\begin{axis}[paperaxis,at={(39pt,52pt)},anchor=south west,width=145pt,height=132pt,
+ xmin=0,xmax=16.5,ymin=0,ymax=105,xtick={0,4,8,12,16},ytick={0,25,50,75,100},
+ ylabel={Remaining fixed gap (\%)},ylabel style={at={(axis description cs:-.15,.5)},anchor=south},
+ tick label style={font=\figsmall},clip=true]
+\addplot[scarcity,mark repeat=2] table[x=fixed_budget,y=fixed_median,col sep=comma]{figures/revelation_low_propensity.csv};
+\addplot[baseline,mark repeat=2] table[x=fixed_budget,y=fixed_median,col sep=comma]{figures/revelation_random.csv};
+\addplot[primary,mark repeat=2] table[x=fixed_budget,y=fixed_median,col sep=comma]{figures/revelation_tiv_per_cost.csv};
+\node[align=center,text=figblue,font=\figfont] at (axis cs:8.1,15) {61\% removed\\at 16\% budget};
+\end{axis}
+\begin{axis}[paperaxis,at={(245pt,52pt)},anchor=south west,width=145pt,height=132pt,
+ xmin=0,xmax=16.5,ymin=0,ymax=.105,xtick={0,4,8,12,16},ytick={0,.025,.05,.075,.1},
+ yticklabels={0,.025,.050,.075,.100},ylabel={Estimated retained width},
+ ylabel style={at={(axis description cs:-.27,.5)},anchor=south}]
+\addplot[scarcity,mark repeat=2] table[x=sequential_budget,y=width_median,col sep=comma]{figures/revelation_low_propensity.csv};
+\addplot[baseline,mark repeat=2] table[x=sequential_budget,y=width_median,col sep=comma]{figures/revelation_random.csv};
+\addplot[primary,mark repeat=2] table[x=sequential_budget,y=width_median,col sep=comma]{figures/revelation_tiv_per_cost.csv};
+\end{axis}
+\node[anchor=west,font=\figtitle,inner sep=0] at (3,202) {(a) Fixed predictor and threshold};
+\node[anchor=west,font=\figtitle,inner sep=0] at (222,202) {(b) Sequential retraining};
+\node[font=\figfont,align=center] at (111.5,27) {Initial hidden pool\\revealed (\%)};
+\node[font=\figfont,align=center] at (317.5,27) {Initial hidden training pool\\revealed (\%)};
+\draw[figblue,line width=1.6pt] (42,9)--(59,9);\fill[figblue] (50.5,9) circle(2pt);
+\node[anchor=west,font=\figsmall,inner sep=0] at (63,9) {TIV / label cost};
+\draw[figgray,dashed,line width=1.15pt] (154,9)--(171,9);\fill[figgray] (160.5,7) rectangle(164.5,11);
+\node[anchor=west,font=\figsmall,inner sep=0] at (175,9) {Random};
+\draw[figorange,dashdotted,line width=1.15pt] (244,9)--(261,9);\fill[figorange] (250.5,7.4)--(254.5,7.4)--(252.5,11.2)--cycle;
+\node[anchor=west,font=\figsmall,inner sep=0] at (265,9) {Lowest propensity};
+\end{tikzpicture}
+\end{document}

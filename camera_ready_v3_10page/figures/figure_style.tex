@@ -1,0 +1,40 @@
+\usepackage[T1]{fontenc}
+\usepackage{newtxtext,newtxmath}
+\usepackage{helvet}
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots,fillbetween}
+\usetikzlibrary{arrows.meta,calc,positioning,backgrounds,fit}
+\pgfplotsset{compat=1.18}
+\definecolor{figblue}{HTML}{0072B2}
+\definecolor{figorange}{HTML}{D55E00}
+\definecolor{figgray}{HTML}{777777}
+\definecolor{figink}{HTML}{222222}
+\definecolor{figgrid}{HTML}{E5E9EC}
+\definecolor{figpale}{HTML}{E5F1F8}
+\definecolor{figlight}{HTML}{F4F7F9}
+\newcommand{\figfont}{\sffamily\fontsize{8.5}{10}\selectfont}
+\newcommand{\figsmall}{\sffamily\fontsize{8.1}{9.6}\selectfont}
+\newcommand{\figtitle}{\sffamily\bfseries\fontsize{9.5}{11}\selectfont}
+\tikzset{every node/.style={font=\figfont,text=figink},
+  figarrow/.style={-{Stealth[length=4pt,width=3pt]},draw=figgray!65,line width=.65pt}}
+\pgfplotsset{
+  paperaxis/.style={
+    scale only axis,axis lines=left,axis line style={figgray!70,line width=.45pt},
+    tick align=outside,tick style={figgray!65,line width=.45pt},
+    major tick length=2pt,minor tick length=0pt,
+    tick label style={font=\figsmall,text=figink},
+    label style={font=\figfont,text=figink},
+    title style={font=\figtitle,text=figink},
+    legend style={font=\figsmall,draw=none,fill=none,inner sep=0pt,
+      cells={anchor=west},row sep=2pt},
+    grid=major,xmajorgrids=false,ymajorgrids=true,
+    grid style={draw=figgrid,line width=.4pt},
+    scaled ticks=false,clip=true,
+    every axis plot/.append style={line width=1.3pt,mark size=2pt},
+    unbounded coords=jump,
+  },
+  primary/.style={figblue,solid,line width=1.6pt,mark=*},
+  baseline/.style={figgray,dashed,line width=1.15pt,mark=square*},
+  scarcity/.style={figorange,dashdotted,line width=1.15pt,mark=triangle*}
+}

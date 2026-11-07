@@ -1,0 +1,13 @@
+{
+  "source_url": "https://www.kaggle.com/api/v1/datasets/download/wordsforthewise/lending-club/rejected_2007_to_2018Q4.csv.gz?datasetVersionNumber=3",
+  "source_dataset": "wordsforthewise/lending-club",
+  "filename": "rejected_2007_to_2018Q4.csv.gz",
+  "retrieval_started_utc": "2026-11-06T20:12:35Z",
+  "retrieval_completed_utc": "2026-11-06T20:13:06Z",
+  "bytes": 255470782,
+  "http_content_length": "255470782",
+  "http_content_type": "application/gzip",
+  "sha256": "c1f9f2a4ec5537ef0af44b24b2fb2f41f58fcaec45363ef32c6a2fb27347f6c5",
+  "leading_magic_hex": "1f8b08082f25ae5c",
+  "purpose": "Read-only historical support/measurement audit; no model fitting"
+}

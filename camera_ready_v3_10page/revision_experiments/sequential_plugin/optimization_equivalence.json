@@ -1,0 +1,48 @@
+{
+  "rows_compared": 54,
+  "policies_compared": [
+    "tiv_per_cost",
+    "random",
+    "uncertainty",
+    "low_propensity",
+    "predicted_loss",
+    "sensitivity_width"
+  ],
+  "rounds_compared": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "all_columns_equal_at_atol_1e_12": true,
+  "numeric_maximum_absolute_differences": {
+    "repetition": 0.0,
+    "round": 0.0,
+    "alpha": 0.0,
+    "gamma": 0.0,
+    "audited_labels": 0.0,
+    "audited_fraction_hidden": 0.0,
+    "cumulative_cost": 0.0,
+    "estimated_retained_lower": 0.0,
+    "estimated_retained_upper": 0.0,
+    "estimated_retained_width": 0.0,
+    "true_test_cvar": 0.0,
+    "mean_test_brier": 0.0,
+    "n_train": 0.0,
+    "n_test": 0.0,
+    "upper_eta": 0.0
+  },
+  "unoptimized_checkpoint_sha256": "75bd7627ee16dee265bdc8b2fe78aed3e396b610e62b52408e8faa6538058bd4",
+  "optimized_checkpoint_sha256": "75bd7627ee16dee265bdc8b2fe78aed3e396b610e62b52408e8faa6538058bd4",
+  "unoptimized_source_matches_benchmark_manifest": true,
+  "unoptimized_repetition_seconds": 257.05978789998335,
+  "optimized_repetition_seconds": 112.85855319999973,
+  "original_unaffected_policy_cvar_max_abs_difference": 4.058378522131534e-09,
+  "original_audited_label_counts_match": true,
+  "original_initial_cvar_max_abs_difference": 0.0
+}

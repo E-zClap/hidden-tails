@@ -1,0 +1,312 @@
+\section{Revelation Theory and Algorithms}
+\label{app:c}
+Fix $f$, $\alpha\in(0,1)$, $\beta=1-\alpha$, and finite $\Gamma\geq1$. Use the
+historical $\pi,p_1$, sensitivity bounds $[\underline p_\Gamma,\overline p_\Gamma]$,
+and $s_\Gamma=\overline p_\Gamma-\underline p_\Gamma$. Write $\mu=P_X$ and
+$\mathbb E=\mathbb E_\mu$. All kernels and policies are measurable; conditional
+statements apply on components of positive population mass.
+
+\subsection{Retained-information model and compatible laws}
+\label{app:retained-class}\label{app:audit-information}
+Additional revelation $A\in\{0,1\}$ satisfies $A\leq1-S$, with intensity
+$\lambda(x)=P(A=1\mid X=x,S=0)\in[0,1]$. The audited population law has known
+$p_A(x)=P(Y=1\mid X=x,A=1)$ satisfying
+\begin{equation}
+ \underline p_\Gamma\leq p_A\leq\overline p_\Gamma
+ \quad\text{on }\{(1-\pi)\lambda>0\}.
+ \label{eq:c-audit-bounds}
+\end{equation}
+Extend $p_A$ within these bounds on its zero-mass region; this has no effect on risks.
+
+\begin{definition}[Retained-sensitivity compatibility]\label{def:c-retained-class}
+The class $\mathcal P^{\mathrm{ret}}_{\Gamma,\lambda}$ consists of laws of
+$(X,S,A,Y)$ with $X$-marginal $\mu$ and conditional components
+\[
+\begin{array}{c|c|c}
+(S,A)&P(S,A\mid X=x)&P(Y=1\mid X=x,S,A)\\\hline
+(1,0)&\pi(x)&p_1(x)\\
+(0,1)&(1-\pi(x))\lambda(x)&p_A(x)\\
+(0,0)&(1-\pi(x))(1-\lambda(x))&q(x).
+\end{array}
+\]
+The residual kernel ranges freely over
+$q\in[\underline p_\Gamma,\overline p_\Gamma]$; $(S,A)=(1,1)$ has zero mass.
+\end{definition}
+
+\begin{lemma}[Historical compatibility]\label{lem:c-compatible-laws}
+Every admissible $q$ defines a retained law whose marginal belongs to
+$\mathcal P_\Gamma(P_{\rm obs})$, with original hidden kernel
+\begin{equation}
+ p_0=\lambda p_A+(1-\lambda)q\quad\text{on }\{\pi<1\}.
+ \label{eq:c-original-kernel}
+\end{equation}
+The retained class is nonempty.
+\end{lemma}
+\begin{proof}
+Apply the kernel construction of Appendix~\ref{app:compatibility} to the table.
+Its masses sum to one and its selected component is unchanged. Conditional total
+probability gives \eqref{eq:c-original-kernel}; convexity of the sensitivity interval
+proves compatibility. Taking $q=\underline p_\Gamma$ proves nonemptiness.
+\end{proof}
+At $\lambda=0$ the historical class is recovered; at $\lambda=1$ no residual
+kernel remains. Membership requires the audited and residual bounds separately:
+a bound on their mixture $p_0$ alone does not imply either component bound.
+
+Known randomization $A\perp Y\mid(X,S=0)$ supplies extra information: $p_A=p_0$
+on the audited support, and $q=p_0$ wherever residual mass remains. Thus the
+population audited law identifies $p_0$ wherever originally hidden cases have
+positive audit probability. The retained class instead keeps its residual kernel
+free within the displayed bounds. Finite audits additionally require estimation
+and uncertainty control for the audited contribution; a positive population audit
+probability alone supplies no finite-sample precision guarantee.
+
+\subsection{Post-revelation endpoints and tail identification value}
+\label{app:tiv}
+Use $a^y_{f,\eta},d_{f,\eta},b^\sigma_{f,\eta}$ from Section~\ref{sec:population},
+write $s_\Gamma=\overline p_\Gamma-\underline p_\Gamma$, and set
+$w_\lambda=(1-\pi)(1-\lambda)$. The known contribution and a residual
+kernel's threshold objective are
+\begin{align}
+ K_{f,\eta}(\lambda)
+ &=\mathbb E[\pi(a^0_{f,\eta}+p_1d_{f,\eta})
+ +(1-\pi)\lambda(a^0_{f,\eta}+p_Ad_{f,\eta})],
+ \label{eq:c-known-contribution}\\
+ G_q(\eta)&=\eta+\beta^{-1}\{K_{f,\eta}(\lambda)
+ +\mathbb E[w_\lambda(a^0_{f,\eta}+q d_{f,\eta})]\}.
+ \label{eq:c-objective-q}
+\end{align}
+Conditioning on the table and optimizing the affine residual term give
+\begin{equation}
+ \begin{split}
+ L_{f,\eta}(\lambda)&=\eta+\beta^{-1}
+ \{K_{f,\eta}(\lambda)+\mathbb E[w_\lambda b^L_{f,\eta}]\},\\
+ U_{f,\eta}(\lambda)&=\eta+\beta^{-1}
+ \{K_{f,\eta}(\lambda)+\mathbb E[w_\lambda b^U_{f,\eta}]\}.
+ \end{split}\label{eq:c-retained-objectives}
+\end{equation}
+\begin{proposition}[Sharp retained-sensitivity interval]\label{prop:c-sharp-endpoints}
+The attainable population risks are exactly
+\[
+ \{\rho_{\alpha,Q}(f):Q\in\mathcal P^{\mathrm{ret}}_{\Gamma,\lambda}\}
+ =[\min_{\eta\in[0,1]}L_{f,\eta}(\lambda),
+   \min_{\eta\in[0,1]}U_{f,\eta}(\lambda)].
+\]
+Both threshold minima and endpoint laws are attained.
+\end{proposition}
+\begin{proof}
+On $H=\{x:\pi(x)<1\}$, the common kernels $q_f^L,q_f^U$ of
+Appendix~\ref{app:extremal} satisfy
+$a^0_{f,\eta}+q_f^\sigma d_{f,\eta}=b^\sigma_{f,\eta}$ for every $\eta\in[0,1]$.
+On $H^c$, the residual weight $w_\lambda=(1-\pi)(1-\lambda)$ is zero.
+Thus $L_{f,\eta}(\lambda)\leq G_q(\eta)\leq U_{f,\eta}(\lambda)$ for every
+admissible $q$, with equality at the corresponding common kernel.
+Taking minima proves the endpoint claims;
+continuity of each hinge objective on $[0,1]$ gives attainment. For
+$q_t=(1-t)q_f^L+tq_f^U$,
+\[
+ \sup_\eta|G_{q_t}(\eta)-G_{q_s}(\eta)|
+ \leq |t-s|\beta^{-1}\mathbb E[w_\lambda s_\Gamma].
+\]
+The infimum inequality \eqref{eq:a:infimum-stability} makes the optimized risk
+continuous in $t$. This admissible path joins the endpoints and fills their interval.
+\end{proof}
+
+\begin{proposition}[Exact revelation value]\label{prop:c-tiv}
+With
+\begin{align}
+ \tau_{f,\eta}&=(1-\pi)s_\Gamma|d_{f,\eta}|/\beta,
+ \label{eq:c-tiv}\\
+ W_{f,\eta}(\lambda)&:=U_{f,\eta}(\lambda)-L_{f,\eta}(\lambda)
+ =\mathbb E[(1-\lambda)\tau_{f,\eta}]
+ =W_{f,\eta}(0)-\mathbb E[\lambda\tau_{f,\eta}],
+ \label{eq:c-linear-gap}
+\end{align}
+every bounded measurable $h$ and feasible $t$ satisfy
+\begin{equation}
+ W_{f,\eta}(\lambda+th)-W_{f,\eta}(\lambda)
+ =-t\mathbb E[h\tau_{f,\eta}].\label{eq:c-feasible-derivative}
+\end{equation}
+\end{proposition}
+\begin{proof}
+Subtract \eqref{eq:c-retained-objectives}: $K$ cancels and
+$b^U-b^L=s_\Gamma|d|$. Substitution gives the perturbation identity, including
+one-sided feasible directions. Since $0\leq\tau\leq\beta^{-1}$, all terms are
+integrable. The fixed-threshold reduction is independent of $p_A$, even when
+that law varies with the policy.
+\end{proof}
+
+\subsection{Minimum-cost precision and the exact frontier}
+\label{app:frontier}
+Fix $f,\eta,\Gamma$, abbreviate $\tau=\tau_{f,\eta}$, and let $c\geq0$ be
+measurable with $\mathbb E[c]<\infty$. Set $T=\mathbb E[\tau]=W_{f,\eta}(0)$,
+$a=(T-\varepsilon)_+$ for $\varepsilon\geq0$, and
+$F=\mathbb E[\tau\mathbf1_{\{c=0\}}]$. By \eqref{eq:c-linear-gap}, the
+precision constraint is $\mathbb E[\tau\lambda]\geq a$.
+
+\begin{proof}[Proof of Theorem~\ref{thm:cert-frontier}]
+We establish attainment and the primal--dual identity
+\begin{equation}
+ \operatorname{Cert}_{f,\eta}(\varepsilon)
+ =\min_{0\leq\lambda\leq1}\{\mathbb E[c\lambda]:\mathbb E[\tau\lambda]\geq a\}
+ =\sup_{u\geq0}\{ua-\mathbb E[(u\tau-c)_+]\}.
+ \label{eq:c-primal-dual}
+\end{equation}
+Pointwise, $(c-u\tau)\lambda\geq-(u\tau-c)_+$, so every feasible policy obeys
+\begin{equation}
+ \mathbb E[c\lambda]\geq u\mathbb E[\tau\lambda]-\mathbb E[(u\tau-c)_+]
+ \geq ua-\mathbb E[(u\tau-c)_+].\label{eq:c-weak-duality}
+\end{equation}
+The following four cases attain this lower bound, or its limit.
+
+\emph{No reduction ($a=0$).} Take $\lambda=0,u=0$, giving zero cost; this includes $T=0$.
+
+\emph{Free reduction ($0<a\leq F$).} Take
+$\lambda=(a/F)\mathbf1_{\{c=0,\tau>0\}}$ and $u=0$. The reduction is exactly
+$a$ at zero cost, including when the free component has atoms.
+
+\emph{Interior reduction ($F<a<T$).} On $D=\{c>0,\tau>0\}$, use the finite
+measure $\nu(B)=\int_B\tau\,d\mu$ and $r=c/\tau$. Put $b=a-F\in(0,\nu(D))$
+and choose
+\begin{equation}
+ u_* =\inf\{v\geq0:\nu(D\cap\{r\leq v\})\geq b\}.
+ \label{eq:c-weighted-quantile}
+\end{equation}
+Because $r\in(0,\infty)$ $\nu$-almost everywhere, $0<u_*<\infty$.
+Continuity of a finite measure along monotone sets gives
+$H:=\nu(D\cap\{r<u_*\})\leq b\leq H+J$, where
+$J:=\nu(D\cap\{r=u_*\})$. Set $\theta=(b-H)/J$ if $J>0$ and $\theta=0$
+otherwise (then $H=b$). The policy
+\begin{equation}
+ \lambda_* =\mathbf1_{\{c=0,\tau>0\}}
+ +\mathbf1_{D\cap\{r<u_*\}}+\theta\mathbf1_{D\cap\{r=u_*\}}
+ \label{eq:c-optimal-policy}
+\end{equation}
+achieves reduction $F+H+\theta J=a$ and equality in the pointwise dual bound.
+Its cost equals $u_*a-\mathbb E[(u_*\tau-c)_+]$. It ranks by $\tau/c$ with
+threshold $1/u_*$; fractional ties handle atoms without an atomlessness assumption.
+
+\emph{Full reduction ($a=T>F$).} Feasibility forces
+$\mathbb E[\tau(1-\lambda)]=0$, hence $\lambda=1$ almost surely on $\{\tau>0\}$.
+The minimum cost is $\mathbb E[c\mathbf1_{\{\tau>0\}}]$, attained by revealing
+exactly that set, while
+\[
+ uT-\mathbb E[(u\tau-c)_+]=\mathbb E[\min\{u\tau,c\}]
+ \uparrow\mathbb E[c\mathbf1_{\{\tau>0\}}]
+\]
+by monotone convergence. Thus the dual supremum agrees even without a finite
+maximizer. Its shortfall is $\mathbb E[(c-u\tau)_+\mathbf1_{\{\tau>0\}}]$,
+so a finite optimizer exists exactly when $c\leq u\tau$ almost surely on $\{\tau>0\}$ for
+some finite $u$. Full and free reduction correspond to value-density thresholds
+$0$ and $\infty$. Zero-value locations can always be left unselected; if $F=T$
+the whole frontier is free. These cases exhaust $0\leq a\leq T$.
+\end{proof}
+
+\subsection{From threshold precision to optimized CVaR precision}
+\label{app:optimized-width}
+Denote the endpoints in Proposition~\ref{prop:c-sharp-endpoints} by
+$\underline\rho^{\rm ret}_{\alpha,\Gamma,\lambda}(f)$ and
+$\overline\rho^{\rm ret}_{\alpha,\Gamma,\lambda}(f)$, and their difference by
+$I^{\rm ret}_{\Gamma,\lambda}(f)$.
+\begin{proposition}[Controlling the optimized CVaR interval]\label{prop:c-optimized-width}
+For the fixed predictor,
+\begin{equation}
+ 0\leq I^{\rm ret}_{\Gamma,\lambda}(f)
+ \leq\sup_{\eta\in[0,1]}W_{f,\eta}(\lambda)=W_{f,0}(\lambda).
+ \label{eq:c-optimized-width}
+\end{equation}
+Theorem~\ref{thm:cert-frontier} at $\eta=0$ therefore minimizes cost for the
+sufficient condition $W_{f,0}(\lambda)\leq\varepsilon$.
+\end{proposition}
+\begin{proof}
+If $\eta_L$ minimizes $L$, then
+$\min_\eta U-\min_\eta L\leq U_{f,\eta_L}-L_{f,\eta_L}=W_{f,\eta_L}$;
+nonnegativity follows from ordered endpoints. For
+$v=\max_y\ell(f(x),y)$ and $w=\min_y\ell(f(x),y)$,
+\[
+ |d_{f,\eta}(x)|=(v-\eta)_+-(w-\eta)_+=(v-\max\{w,\eta\})_+.
+\]
+This decreases in $\eta$ and equals $v-w$ at zero. Integration against
+$(1-\lambda)(1-\pi)s_\Gamma/\beta\geq0$ proves the supremum identity.
+\end{proof}
+
+\paragraph{Direct optimized-width design.}
+Fix an admissible set $\Lambda_{\rm adm}$ of measurable revelation intensities and
+a specified family of population audit laws
+$\{P^\lambda:\lambda\in\Lambda_{\rm adm}\}$ sharing one $(X,S,Y)$-marginal.
+Each $P^\lambda$ has intensity $\lambda$ and satisfies
+Definition~\ref{def:c-retained-class}. Set
+$p_A^\lambda(x)=P^\lambda(Y=1\mid X=x,A=1)$, with an extension within the
+sensitivity bounds on zero-mass regions.
+Write $I^{\mathrm{ret}}_{\Gamma,\lambda}(f;p_A^\lambda)$ for the width obtained
+using this kernel in \eqref{eq:c-known-contribution}, retaining the original
+free residual bounds. For the cost density $c$ above and $\varepsilon\geq0$, define
+\begin{equation}
+ \operatorname{Cost}^{\mathrm{CVaR}}_f(\varepsilon)
+ :=\inf_{\lambda\in\Lambda_{\rm adm}}
+ \left\{\mathbb E[c\lambda]:
+ I^{\mathrm{ret}}_{\Gamma,\lambda}(f;p_A^\lambda)\leq\varepsilon\right\},
+ \label{eq:c-direct-optimized-cost}
+\end{equation}
+with $\inf\varnothing=+\infty$. The audited contribution can affect the separate
+threshold minima even though it cancels from $W_{f,\eta}(\lambda)$.
+
+\paragraph{Strictness of the sufficient bound.}
+Take constant $X$, zero-one loss, $f=0$, $\pi=p_1=p_A=1/2$, $\lambda=1/2$,
+$\Gamma=2$, and $\beta=1/4$. The original bounds are $[1/3,2/3]$.
+Under the retained lower and upper endpoint laws, the probabilities $r_L$ and
+$r_U$ of unit loss $L_f=1$ are
+\[
+ r_L=\tfrac14+\tfrac18+\tfrac1{12}=\tfrac{11}{24},\qquad
+ r_U=\tfrac14+\tfrac18+\tfrac16=\tfrac{13}{24}.
+\]
+Both exceed $\beta$, so \eqref{eq:a:bernoulli-cvar} gives optimized endpoints
+one and $I^{\rm ret}_{\Gamma,\lambda}(f)=0$, although
+$W_{f,0}(\lambda)=\{(1/2)(1/2)/(1/4)\}(2/3-1/3)=1/3$.
+Thus the sufficient criterion can require revelation when optimized risk is
+already identified. Predictor reoptimization and estimated acquisition values
+require their own statistical or sequential analysis.
+
+\subsection{Finite-cell computation and operational cost units}
+\label{app:finite-cell}
+For cells $j=1,\ldots,K$ with masses $\mu_j>0$, write
+$\tau_j=\tau_{f,\eta}(j)$, $c_j=c(j)$, and set
+$v_j=\mu_j\tau_j$, $w_j=\mu_jc_j$, $T=\sum_jv_j$, $a=(T-\varepsilon)_+$,
+and $F=\sum_{j:c_j=0}v_j$. The exact fractional algorithm is:
+\begin{enumerate}
+\item If $a=0$, reveal nothing. If $0<a\leq F$, reveal fraction $a/F$ of the
+zero-cost, positive-value component; both cases cost zero.
+\item Otherwise reveal all useful free cells. Order the positive-cost,
+positive-value cells by decreasing $\tau_j/c_j$; set
+$R_k=\sum_{j\leq k}v_j$, $C_k=\sum_{j\leq k}w_j$, and $R_0=C_0=0$.
+\item For $b=a-F$, let $k=\min\{j:R_j\geq b\}$. Reveal the cells before $k$,
+fraction $\theta=(b-R_{k-1})/v_k$ of cell $k$, and none after it. Then
+\begin{equation}
+ \operatorname{Cert}_{f,\eta}(\varepsilon)
+ =C_{k-1}+\theta w_k
+ =C_{k-1}+\frac{b-R_{k-1}}{\tau_k/c_k}.
+ \label{eq:c-finite-frontier}
+\end{equation}
+\end{enumerate}
+Tied ratios may be ordered arbitrarily; full reduction gives $\theta=1$ in the
+last useful cell. If there are no positive-cost useful cells, the first step
+covers every feasible target. This is Theorem~\ref{thm:cert-frontier}'s policy,
+so the frontier is piecewise linear. For fixed cell policies and audited laws,
+the piecewise-affine argument of Proposition~\ref{prop:b:threshold-search}
+optimizes both retained objectives over
+$\{0,1\}\cup\{\ell(f(j),y):1\leq j\leq K,\ y\in\{0,1\}\}$.
+
+If a hidden label costs $\kappa(x)\geq0$, the target-population cost density and
+operational value density are
+\begin{align}
+ c(x)&=(1-\pi(x))\kappa(x),\qquad
+ \mathbb E[c\lambda]=\mathbb E[(1-\pi)\lambda\kappa],\label{eq:c-label-cost}\\
+ \frac{\tau_{f,\eta}(x)}{c(x)}
+ &=\frac{s_\Gamma(x)|d_{f,\eta}(x)|}{\beta\kappa(x)}
+ \quad\text{when }(1-\pi)\kappa>0.\label{eq:c-operational-density}
+\end{align}
+The hidden-mass factor cancels; unit label cost ranks already-hidden cases by
+$s_\Gamma|d|/\beta$. Cell masses likewise cancel from $v_j/w_j$.
+The algorithm allocates divisible population mass. Whole-individual batches add
+integer constraints and sampling variation. Sequential retraining changes losses
+and acquisition values; confidence guarantees across adaptive rounds additionally
+require control of newly revealed contributions, acquisition history, and stopping.

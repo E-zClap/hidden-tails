@@ -1,0 +1,126 @@
+% Selected geometric concept, refined from concept_candidates/concept_geometry.tex.
+% All surfaces are schematic: no plotted densities, physical geometry, or axes.
+\documentclass[tikz,border=0pt]{standalone}
+\input{figures/figure_style.tex}
+\usetikzlibrary{shadings}
+\definecolor{geomslate}{HTML}{7896A8}
+\definecolor{geomdeep}{HTML}{164D6B}
+\definecolor{geomshade}{HTML}{D3E1E9}
+\colorlet{riskA}{figblue}
+\colorlet{riskB}{figorange!85!black}
+\renewcommand{\figsmall}{\sffamily\fontsize{8.2}{9.7}\selectfont}
+\newcommand{\geomlabel}{\sffamily\fontsize{8.5}{10}\selectfont}
+
+% One parameterization supplies each silhouette, section, and generator.
+% Both lofts have the identical front ellipse (7 x 19 pt).
+\pgfmathdeclarefunction{cap}{1}{\pgfmathparse{sqrt(max(0,1-(max(0,(#1-.8)/.2))^2))}}
+\pgfmathdeclarefunction{radA}{1}{\pgfmathparse{19*(1+.10*sin(180*#1)-.18*sin(360*#1))*cap(#1)}}
+\pgfmathdeclarefunction{radB}{1}{\pgfmathparse{19*(1+.55*sin(180*#1))*cap(#1)}}
+\pgfmathdeclarefunction{bendA}{1}{\pgfmathparse{3.5*sin(360*#1)+#1}}
+\pgfmathdeclarefunction{bendB}{1}{\pgfmathparse{11*sin(180*#1)+#1}}
+\newcommand{\loft}[2]{%
+  \begin{scope}[yshift=#2pt]
+  \path[shade,top color=white,bottom color=geomshade,shading angle=8,
+        draw=geomslate!70,line width=.65pt]
+    plot[domain=0:1,samples=91] ({56+139*\x},{bend#1(\x)+rad#1(\x)})
+    -- plot[domain=1:0,samples=91] ({56+139*\x},{bend#1(\x)-rad#1(\x)}) -- cycle;
+  \begin{scope}
+    \clip plot[domain=0:1,samples=91] ({56+139*\x},{bend#1(\x)+rad#1(\x)})
+      -- plot[domain=1:0,samples=91] ({56+139*\x},{bend#1(\x)-rad#1(\x)}) -- cycle;
+    % Longitudinal generators on the visible side of the same loft.
+    \foreach \theta in {28,57,90,123,152} {
+      \draw[geomslate!63,line width=.45pt]
+        plot[domain=0:.998,samples=91]
+          ({56+139*\x+7/19*rad#1(\x)*sin(\theta)},
+           {bend#1(\x)+rad#1(\x)*cos(\theta)});
+    }
+    % Projected cross-sections, kept sparse to preserve the silhouette.
+    \foreach \u in {.23,.49,.74} {
+      \draw[geomslate!46,line width=.45pt]
+        plot[domain=0:180,samples=41]
+          ({56+139*\u+7/19*rad#1(\u)*sin(\x)},
+           {bend#1(\u)+rad#1(\u)*cos(\x)});
+    }
+  \end{scope}
+  \shade[left color=figblue!8,right color=figblue!28,draw=figblue,line width=.9pt]
+    (56,0) ellipse (7pt and 19pt);
+  \draw[figblue!65,line width=.6pt]
+    (56,-16.5) .. controls (62,-11) and (62,11) .. (56,16.5);
+  \draw[white,line width=1pt]
+    (53,-13) .. controls (49,-7) and (49,7) .. (53,13);
+  \end{scope}%
+}
+\begin{document}
+\begin{tikzpicture}[x=1pt,y=1pt,line cap=round,line join=round]
+\path[use as bounding box] (0,35) rectangle (397.485,220);
+\node[anchor=north west,font=\figtitle,inner sep=0] at (1,216)
+  {(a) Same observations, different tails};
+\node[anchor=north west,font=\figtitle,inner sep=0] at (253,216)
+  {(b) Finite-sample certificate};
+
+\loft{A}{160}
+\loft{B}{65}
+\node[font=\geomlabel,align=right,anchor=east,text=geomdeep,inner sep=0]
+  at (53,112.5) {Same\\observed law};
+\draw[figblue!60,line width=.65pt] (31,128) -- (31,160) -- (45,160);
+\draw[figblue!60,line width=.65pt] (31,97) -- (31,65) -- (45,65);
+\node[font=\figfont\bfseries,text=geomdeep,anchor=west,inner sep=0] at (78,195)
+  {World A: CVaR \textcolor{riskA}{0.36}};
+\node[font=\figfont\bfseries,text=geomdeep,anchor=west,inner sep=0] at (78,119)
+  {World B: CVaR \textcolor{riskB}{0.54}};
+
+% A transparent sleeve expresses containment of a one-dimensional risk interval.
+% Only longitudinal end extensions denote statistical enlargement;
+% radial thickness and perspective are illustrative depth cues.
+\begin{scope}[shift={(261,99)},rotate=19]
+  % The shaded far wall remains visible through the transparent near wall.
+  \path[shade,top color=white,bottom color=geomshade!65,
+        draw=geomslate!60,line width=.65pt]
+    (0,17) .. controls (39,20) and (86,20) .. (124,17)
+    .. controls (117.3,17) and (117.3,-17) .. (124,-17)
+    .. controls (86,-20) and (39,-20) .. (0,-17)
+    .. controls (-6.7,-17) and (-6.7,17) .. (0,17) -- cycle;
+  % Thin lips and sparse ruling match the population lofts' visual language.
+  \draw[white,line width=1.2pt]
+    (0,16.3) .. controls (39,19.3) and (86,19.3) .. (124,16.3);
+  \draw[geomslate!40,line width=.45pt]
+    (-4.1,10) .. controls (37,12) and (83,12) .. (119.9,10);
+  \draw[geomslate!42,line width=.45pt]
+    (-4.1,-10) .. controls (37,-12) and (83,-12) .. (119.9,-10);
+  \foreach \u in {0,124} {
+    \draw[geomslate!70,line width=.65pt]
+      (\u,17) .. controls (\u-6.7,17) and (\u-6.7,-17) .. (\u,-17);
+    % Continuous front semicircle closes each elliptical end rim.
+    \draw[geomslate!45,line width=.55pt]
+      (\u,17) .. controls (\u+6.7,17) and (\u+6.7,-17) .. (\u,-17);
+  }
+  % Pale longitudinal allowances extend the same scalar interval at both ends.
+  \draw[figblue!32,line width=1.5pt] (0,0) -- (23,0) (100,0) -- (124,0);
+  \draw[figblue!45,line width=.65pt] (0,-2.5) -- (0,2.5) (124,-2.5) -- (124,2.5);
+  % A visible thin fiber, not a solid volume, is the compatible scalar range.
+  \draw[geomdeep,line width=2.4pt] (23,0) -- (100,0);
+  \draw[figblue!60,line width=.55pt] (23,.55) -- (100,.55);
+\end{scope}
+
+% Existing left-panel anchors are preserved. Curves map to the fiber endpoints.
+\draw[riskA!60,line width=.75pt]
+  (201,161) .. controls (230,162) and (253,127) .. (282.747,106.488);
+\draw[riskB!60,line width=.75pt]
+  (201,66) .. controls (235,61) and (251,85) .. (277,94)
+  .. controls (302,102) and (337,105) .. (355.552,131.557);
+\fill[riskA] (282.747,106.488) circle (2.0pt);
+\fill[riskB] (355.552,131.557) circle (2.0pt);
+\node[font=\figsmall\bfseries,text=riskA,inner sep=0] at (279,119) {A};
+\node[font=\figsmall\bfseries,text=riskB,inner sep=0] at (357,144) {B};
+
+\node[font=\geomlabel,text=geomdeep,inner sep=0] at (339,85)
+  {Compatible CVaR};
+\node[font=\rmfamily\fontsize{10.5}{12}\selectfont,text=geomdeep,inner sep=0]
+  at (339,68) {$[\,\textcolor{riskA}{0.36},\;\textcolor{riskB}{0.54}\,]$};
+\node[font=\figsmall,text=geomdeep!80,inner sep=0] at (322,180)
+  {Statistical enlargement};
+\draw[geomslate!65,line width=.6pt]
+  (363,174) -- (371,174) -- (371,137);
+\fill[geomslate!65] (371,137) circle (.9pt);
+\end{tikzpicture}
+\end{document}

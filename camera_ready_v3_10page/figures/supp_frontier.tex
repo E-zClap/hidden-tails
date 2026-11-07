@@ -1,0 +1,40 @@
+% Exact synthetic frontier and complete baseline cost-to-target comparison.
+\documentclass[tikz,border=0pt]{standalone}
+\input{figures/figure_style.tex}
+\begin{document}
+\begin{tikzpicture}[x=1pt,y=1pt]
+\path[use as bounding box] (0,0) rectangle (397.48499,230);
+\begin{axis}[paperaxis,at={(39pt,67pt)},anchor=south west,width=137pt,height=135pt,
+ xmin=0,xmax=100,ymin=0,ymax=105,xtick={0,25,50,75,100},ytick={0,25,50,75,100},
+ xlabel={Full audit cost (\%)},xlabel style={at={(axis description cs:.5,-.15)},anchor=north},
+ ylabel={Remaining fixed gap (\%)},ylabel style={at={(axis description cs:-.16,.5)},anchor=south}]
+\addplot[draw=none,fill=figblue,fill opacity=.13,forget plot] table[x=budget,y=value,col sep=comma]{figures/frontier_tiv_band.csv} \closedcycle;
+\addplot[baseline,mark repeat=10] table[x=budget,y=median,col sep=comma]{figures/frontier_random.csv};
+\addplot[scarcity,mark repeat=10,mark phase=5] table[x=budget,y=median,col sep=comma]{figures/frontier_low_propensity.csv};
+\addplot[primary,mark repeat=10] table[x=budget,y=median,col sep=comma]{figures/frontier_tiv.csv};
+\addplot[only marks,mark=o,mark size=2.4pt,mark options={draw=figink,fill=white,line width=.8pt},mark repeat=10,mark phase=5] table[x=budget,y=median,col sep=comma]{figures/frontier_oracle.csv};
+\end{axis}
+\begin{axis}[paperaxis,at={(283pt,67pt)},anchor=south west,width=107pt,height=135pt,
+ xmin=.9,xmax=2.25,ymin=-.5,ymax=6.5,xtick={1,1.5,2},
+ ytick={6,5,4,3,2,1,0},yticklabels={Random,High density,Low reveal prob.,High pred. loss,Uncertainty,Width only,Contrast only},
+ ymajorgrids=false,xmajorgrids=true,xlabel={Cost / TIV cost},
+ xlabel style={at={(axis description cs:.5,-.15)},anchor=north},
+ tick label style={font=\figsmall}]
+\draw[figgray,dashed,line width=.8pt] (axis cs:1,-.5)--(axis cs:1,6.5);
+\addplot[figink,only marks,mark=*,mark size=2.5pt,error bars/.cd,x dir=both,x explicit,error bar style={line width=1.1pt},error mark options={rotate=90,mark size=3pt,line width=.8pt}]
+ table[x=median,y=y,x error minus=minus,x error plus=plus,col sep=comma]{figures/frontier_target_costs.csv};
+\end{axis}
+\node[anchor=west,font=\figtitle,inner sep=0] at (3,220) {(a) Exact revelation frontier};
+\node[anchor=west,font=\figtitle,inner sep=0] at (210,220) {(b) Cost to 25\% of initial gap};
+\draw[figblue,line width=1.6pt] (20,29)--(37,29);\fill[figblue] (28.5,29) circle(2pt);
+\node[anchor=west,font=\figsmall,inner sep=0] at (41,29) {TIV / cost};
+\draw[figink,fill=white,line width=.8pt] (151.5,29) circle(2.4pt);
+\node[anchor=west,font=\figsmall,inner sep=0] at (164,29) {Exact frontier};
+\draw[figgray,dashed,line width=1.15pt] (20,11)--(37,11);\fill[figgray] (26.5,9) rectangle(30.5,13);
+\node[anchor=west,font=\figsmall,inner sep=0] at (41,11) {Random};
+\draw[figorange,dashdotted,line width=1.15pt] (143,11)--(160,11);\fill[figorange] (149.5,9.4)--(153.5,9.4)--(151.5,13.2)--cycle;
+\node[anchor=west,font=\figsmall,inner sep=0] at (164,11) {Low reveal probability};
+\draw[figink,line width=1.1pt] (280,22)--(298,22);\fill[figink] (289,22) circle(2.5pt);
+\node[anchor=west,font=\figsmall,inner sep=0] at (303,22) {Median and IQR};
+\end{tikzpicture}
+\end{document}

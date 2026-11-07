@@ -1,0 +1,84 @@
+\section{Estimating and Using Tail-Risk Certificates}
+\label{sec:learning}
+The observed distribution must be estimated from a finite sample. We control endpoint error uniformly across the candidate class so that the same certificate event supports comparison and selection after examining the data.
+
+\subsection{Cross-fitted endpoint estimation}
+\label{sec:estimation}
+The auxiliary functions \(p=p_1\) and \(\pi\) describe the outcome among historically observed cases and the probability of historical observation. They are fitted to estimate the risk of \(f\). Substituting an estimated \(p\) into the sensitivity bounds introduces estimation bias. We correct its leading effect using observed outcome residuals.
+
+Write \(\dot b^\sigma=\partial b^\sigma/\partial p\), for \(\sigma\in\{L,U\}\). The locally robust score combines observed excess loss, the sensitivity-bounded hidden contribution, and the residual correction:
+\begin{equation}
+ \begin{aligned}
+ \phi^\sigma_{f,\eta}(O;p,\pi)
+ ={}&S a^{Y^{\mathrm{obs}}}_{f,\eta}(X)
+ +(1-S)b^\sigma_{f,\eta}(X;p(X))\\
+ &+S\frac{1-\pi(X)}{\pi(X)}
+ \dot b^\sigma_{f,\eta}(X;p(X))\{Y^{\mathrm{obs}}-p(X)\}.
+ \end{aligned}
+\label{eq:robust-score}
+\end{equation}
+At the true auxiliary functions, its expectation equals \(m^\sigma_{f,\eta}\). The correction leaves quadratic and product error terms, quantified in Section~\ref{sec:uniform-certificates} and Appendix~\ref{app:score-bias}.
+
+Split the sample into \(K\) balanced folds. Fit \(p,\pi\) outside each evaluation fold, then clip their predictions to \([0,1]\) and \([\pi_{\min}/2,1]\), respectively. Thus each score uses auxiliary fits trained without its evaluation observations. Let \(n_{\min}\) be the smallest fold size and \(k(i)\) the fold containing observation \(i\). Define
+\begin{equation}
+ \widehat\rho^\sigma(f)
+ =\inf_{\eta\in[0,1]}
+ \left\{\eta+\frac1{n\beta}\sum_{i=1}^n
+ \phi^\sigma_{f,\eta}\!\left(
+ O_i;\widehat p^{(-k(i))},\widehat\pi^{(-k(i))}
+ \right)\right\}.
+\label{eq:crossfit-endpoint}
+\end{equation}
+The endpoints share auxiliary fits and minimize their cutoffs separately. For each fixed \(f\) and realized auxiliary fits, exact cutoff minimization checks \(0,1\), and \(\ell(f(X_i),y)\) for every \(i=1,\ldots,n\) and \(y\in\{0,1\}\) (Proposition~\ref{prop:b:threshold-search}).
+
+\subsection{Uniform certificates and decision guarantees}
+\label{sec:uniform-certificates}
+Write \(\rho^L=\underline\rho_{\alpha,\Gamma}\) and \(\rho^U=\overline\rho_{\alpha,\Gamma}\).
+
+\begin{theorem}[Uniform statistical certification]
+\label{thm:learning}
+Fix \(\alpha\in(0,1)\), \(1\le\Gamma<\infty\), \(\delta\in(0,1)\), and \(\delta_\nu\in[0,1-\delta)\). Assume the bounded-loss, overlap, and sampling conditions of Section~\ref{sec:setup} and the cross-fitting and measurability conventions of Appendix~\ref{app:b}. Suppose that, with probability at least \(1-\delta_\nu\), the clipped auxiliary fits satisfy jointly
+\[
+ \max_k\|\widehat p^{(-k)}-p\|_{L^2(P_X)}\le r_p,
+ \qquad
+ \max_k\|\widehat\pi^{(-k)}-\pi\|_{L^2(P_X)}\le r_\pi.
+\]
+For the calibrated radius \(r_n(\delta)\) in \eqref{eq:b:radius}, with probability at least \(1-\delta-\delta_\nu\),
+\begin{equation}
+ \sup_{f\in\mathcal F}\max_{\sigma\in\{L,U\}}
+ |\widehat\rho^\sigma(f)-\rho^\sigma(f)|\le r_n(\delta).
+\label{eq:uniform-endpoints}
+\end{equation}
+\end{theorem}
+
+Allocate \(\delta+\delta_\nu\le\delta_{\mathrm{tot}}\) to obtain the confidence level specified in
+Section~\ref{sec:setup}. Here \(\delta\) covers sample fluctuation and \(\delta_\nu\) covers failure
+of the joint auxiliary-error bounds. The \(L^2(P_X)\) bounds measure prediction error across the
+target covariate distribution, including regions with few observed outcomes. Computing the
+calibrated radius requires valid bounds on these errors and on score complexity
+(Appendix~\ref{app:uniform-estimation}).
+
+The radius separates sample fluctuation from auxiliary-estimation bias. Smaller tail mass \(\beta\)
+amplifies both; weak observation overlap and larger sensitivity levels also enlarge the bound. The
+remaining bias contains a squared outcome-regression error \(r_p^2\) and the product \(r_pr_\pi\).
+At \(\Gamma=1\), the squared-error coefficient vanishes. For \(\Gamma>1\), accurate outcome
+regression remains important even when the observation model is known. Cross-fitting supplies the
+conditional independence used for concentration; the auxiliary-error bounds are established
+separately.
+
+\paragraph{Outer certificates and decisions.}\label{cor:certificate}
+Write \(r_n=r_n(\delta)\). On the same event, simultaneously for all predictors,
+\begin{equation}
+ [\underline\rho_{\alpha,\Gamma}(f),\overline\rho_{\alpha,\Gamma}(f)]
+ \subseteq
+ \widehat C_{n,\Gamma}(f)
+ :=
+ [\max\{0,\widehat\rho^L(f)-r_n\},
+  \min\{1,\widehat\rho^U(f)+r_n\}].
+\label{eq:outer-certificate}
+\end{equation}
+The certificate's width lies between \(I_\Gamma(f)\) and \(I_\Gamma(f)+4r_n\). Its upper limit can certify a chosen risk limit. If \(\widehat\rho^U(f)+r_n<\widehat\rho^L(g)-r_n\), then \(f\) has lower CVaR than \(g\) under every compatible law. Minimizing \(\widehat\rho^U\) targets the smallest compatible upper risk in \(\mathcal F\); Appendix~\ref{app:decision-guarantees} gives a \(2r_n\) selection-error bound with an additional term for optimization tolerance.
+
+These decisions retain their guarantee after predictor selection within \(\mathcal F\). As sampling
+error shrinks, the identification width remains. Additional labels can reduce that remaining
+ambiguity.

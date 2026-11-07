@@ -1,0 +1,130 @@
+% Compact main paper with an integrated guide and five technical appendices.
+% Acknowledgments and checklist await author completion.
+% Figures are editable TikZ/PGFPlots sources under figures/.
+\documentclass{article}
+
+% Pass natbib options before loading the official NeurIPS style file.
+\PassOptionsToPackage{numbers,sort&compress}{natbib}
+\usepackage[main, final]{neurips_2026}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{array,tabularx}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{placeins}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{url}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!50!black,
+  citecolor=blue!50!black,
+  urlcolor=blue!50!black
+}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{assumption}{Assumption}
+\newtheorem{corollary}{Corollary}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\theoremstyle{plain}
+\newtheorem{repeatedtheorem}{Theorem}
+\newenvironment{mainrestatement}[2]{%
+  \renewcommand{\therepeatedtheorem}{#1}%
+  \begin{repeatedtheorem}[#2; restated]}{\end{repeatedtheorem}}
+
+\DeclareMathOperator{\CVaR}{CVaR}
+\DeclareMathOperator{\odds}{odds}
+\DeclareMathOperator{\diam}{diam}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\one}{\mathbf{1}}
+\newcommand{\obs}{\mathrm{obs}}
+\newcommand{\argmin}{\mathop{\mathrm{arg\,min}}}
+\newcommand{\esssup}{\mathop{\mathrm{ess\,sup}}}
+\newcommand{\rad}{\mathfrak{R}}
+\newcommand{\Yobs}{Y^{\mathrm{obs}}}
+\newcommand{\rhoU}{\overline\rho_{\alpha,\Gamma}}
+\newcommand{\rhoL}{\underline\rho_{\alpha,\Gamma}}
+
+\title{Hidden Tails: Certifying Tail-Risk Claims under Selective Labels}
+\author{%
+  El Mustapha Mansouri \\
+  School of Engineering, Institute of Science Tokyo \\
+  Yokohama, Kanagawa 226-8501, Japan \\
+  \texttt{mansouri.e.2224@m.isct.ac.jp}
+}
+\date{}
+
+\begin{document}
+\maketitle
+\input{abstract}
+\input{sections/01_introduction}
+\input{sections/02_setup}
+\input{sections/03_population}
+\input{sections/04_learning}
+\input{sections/05_revelation}
+\input{sections/06_experiments}
+\input{sections/07_limitations}
+\input{sections/08_conclusion}
+\label{main-text-end}
+\FloatBarrier
+\clearpage
+% Author to complete funding and acknowledgment disclosures before submission:
+% \begin{ack}
+% \end{ack}
+\bibliographystyle{plainnat}
+\bibliography{references}
+\clearpage
+\appendix
+\numberwithin{theorem}{section}
+\numberwithin{equation}{section}
+% Auxiliary statements share one appendix-local sequence; restatements keep
+% the corresponding main theorem number through mainrestatement.
+\makeatletter
+\let\c@lemma\c@theorem
+\let\c@proposition\c@theorem
+\let\c@corollary\c@theorem
+\let\c@definition\c@theorem
+\let\c@example\c@theorem
+\let\c@remark\c@theorem
+\makeatother
+\renewcommand{\thelemma}{\thetheorem}
+\renewcommand{\theproposition}{\thetheorem}
+\renewcommand{\thecorollary}{\thetheorem}
+\renewcommand{\thedefinition}{\thetheorem}
+\renewcommand{\theexample}{\thetheorem}
+\renewcommand{\theremark}{\thetheorem}
+\renewcommand{\theHlemma}{\theHtheorem}
+\renewcommand{\theHproposition}{\theHtheorem}
+\renewcommand{\theHcorollary}{\theHtheorem}
+\renewcommand{\theHdefinition}{\theHtheorem}
+\renewcommand{\theHexample}{\theHtheorem}
+\renewcommand{\theHremark}{\theHtheorem}
+\allowdisplaybreaks[2]
+\setlist{itemsep=2pt,topsep=4pt,parsep=0pt}
+\input{appendices/00_guide}
+\input{appendices/A_population}
+\input{appendices/B_statistics}
+\input{appendices/C_revelation}
+\input{appendices/D_experiments}
+\input{appendices/E_scope}
+\FloatBarrier
+\clearpage
+% Author to complete checklist.tex before including it in the submission:
+% \input{checklist}
+\end{document}

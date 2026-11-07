@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "Please cite the accompanying manuscript when using this code or its results."
+title: "Hidden Tails: Certifying Tail-Risk Claims under Selective Labels"
+type: software
+authors:
+  - family-names: Mansouri
+    given-names: El Mustapha
+    affiliation: Institute of Science Tokyo
+repository-code: "https://github.com/E-zClap/hidden-tails"
+url: "https://github.com/E-zClap/hidden-tails"
+license: MIT
+version: "1.0.0"
+date-released: "2026-11-07"
+preferred-citation:
+  type: unpublished
+  title: "Hidden Tails: Certifying Tail-Risk Claims under Selective Labels"
+  authors:
+    - family-names: Mansouri
+      given-names: El Mustapha
+  year: 2026
+  url: "https://github.com/E-zClap/hidden-tails"

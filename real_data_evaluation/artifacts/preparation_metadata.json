@@ -1,0 +1,45 @@
+{
+  "cohort_year": 2012,
+  "accepted_source_name": "accepted_2007_to_2018Q4.csv.gz",
+  "rejected_source_name": "rejected_2007_to_2018Q4.csv.gz",
+  "accepted_schema_mapping": {
+    "requested_amount": "loan_amnt",
+    "dti": "dti",
+    "risk_score_low": "fico_range_low",
+    "risk_score_high": "fico_range_high",
+    "employment_length": "emp_length",
+    "state": "addr_state",
+    "zip3": "zip_code",
+    "purpose": "purpose",
+    "policy_code": "policy_code",
+    "date": "issue_d",
+    "loan_status": "loan_status"
+  },
+  "rejected_schema_mapping": {
+    "requested_amount": "Amount Requested",
+    "dti": "Debt-To-Income Ratio",
+    "risk_score": "Risk_Score",
+    "employment_length": "Employment Length",
+    "state": "State",
+    "zip3": "Zip Code",
+    "purpose": "Loan Title",
+    "policy_code": "Policy Code",
+    "date": "Application Date"
+  },
+  "cohort_date_caveat": "accepted rows filtered by issue date; rejected rows filtered by application date",
+  "calendar_month_excluded_from_model_features": true,
+  "accepted_mature_count": 53367,
+  "rejected_count": 337277,
+  "total_count": 390644,
+  "default_count_among_accepted": 8644,
+  "feature_missing_fraction": {
+    "requested_amount": 5.1197509753125605e-06,
+    "dti": 0.010818033810835442,
+    "risk_score": 0.059125444138397105,
+    "employment_years": 0.014102354061498448,
+    "state": 0.0,
+    "zip3": 0.0,
+    "purpose": 0.0
+  },
+  "policy_code_stored_but_excluded_from_model_features": true
+}

@@ -1,0 +1,242 @@
+\section{Population Identification and Sensitivity}
+\label{app:a}
+
+\subsection{Compatible full-data laws and sensitivity bounds}
+\label{app:compatibility}\label{app:target-outcomes}
+
+The target outcome and population are fixed across predictors and compatible laws. In a decision problem, $Y=Y(a^\star)$ is the outcome under a specified action (e.g., default under loan issuance), and $S$ records its availability \citep{lakkaraju2017selective,kleinberg2015prediction,kleinberg2018human}. Using an observed outcome requires consistency with that action and outcome definition. Comparing prediction rules holds $a^\star$ and $P_X$ fixed; changing the action, recovering an outcome under an untaken action, or transferring to a new population requires an additional causal or transport argument. The sensitivity model supplies neither exchangeability nor causal identification. Passive revelation recovers an already-realized target outcome, as in record linkage or controlled masking. Thus mature issued loans supply the masking target, whereas repayment under issuance remains a potential outcome for rejected applicants in the historical analysis.
+
+Let $\mathcal X$ be standard Borel, and let $P_{\mathrm{obs}}$ be the law of $O=(X,S,Y^{\mathrm{obs}})$ with $Y^{\mathrm{obs}}=SY$. Use measurable versions
+\[
+\pi(x)=P_{\mathrm{obs}}(S=1\mid X=x),\qquad
+p_1(x)=P_{\mathrm{obs}}(Y^{\mathrm{obs}}=1\mid X=x,S=1),
+\]
+and losses $z_f^y(x)=\ell(f(x),y)\in[0,1]$. Assumption~\ref{ass:regularity} gives $\pi\geq\pi_{\min}>0$, so $\pi\,dP_X$ and $P_X$ have the same null sets and $p_1$ is identified $P_X$-almost surely. All unqualified almost-sure statements use $P_X$. Write $H=\{\pi<1\}$. For a measurable $q:\mathcal X\to[0,1]$ and its Bernoulli kernel $K_q$, define
+\begin{equation}
+\begin{split}
+P^q(dx,\{1\},dy)&=P_X(dx)\pi(x)K_{p_1}(x,dy),\\
+P^q(dx,\{0\},dy)&=P_X(dx)[1-\pi(x)]K_q(x,dy).
+\end{split}
+\label{eq:a:law-construction}
+\end{equation}
+Set $q=p_1$ on $H^c$, where its value carries zero hidden mass.
+
+\begin{lemma}[Kernel representation of compatible laws]
+\label{lemma:a:kernels}
+Every full-data law inducing $P_{\mathrm{obs}}$ has the form \eqref{eq:a:law-construction}, with $q(x)=P(Y=1\mid X=x,S=0)$ on $H$. Conversely, every measurable $q:\mathcal X\to[0,1]$ in \eqref{eq:a:law-construction} induces $P_{\mathrm{obs}}$. With $q=p_1$ on $H^c$, these kernels identify the compatible laws up to $P_X$-null sets.
+\end{lemma}
+
+\begin{proof}
+Standard Borel disintegration fixes the $(X,S)$ law and selected-label kernel, leaving one binary probability on $S=0$. Conversely, the two displayed measures sum to one and have the prescribed pushforward under $(x,s,y)\mapsto(x,s,sy)$. Equal full-data laws have equal hidden kernels $(1-\pi)dP_X$-almost surely, equivalently $P_X$-almost surely on $H$; the canonical assignment settles $H^c$.
+\end{proof}
+
+For finite $\Gamma\geq1$, the odds restriction is equivalent, at interior $p_1$, to the bounds $\underline p_\Gamma=q_-(p_1;\Gamma)$ and $\overline p_\Gamma=q_+(p_1;\Gamma)$, where
+\begin{equation}
+q_-(p;\Gamma)=\frac{p}{p+\Gamma(1-p)},\qquad
+q_+(p;\Gamma)=\frac{\Gamma p}{1-p+\Gamma p}.
+\label{eq:a:sensitivity-maps}
+\end{equation}
+Their denominators are at least one. Thus $p_1=0$ forces $q=0$ and $p_1=1$ forces $q=1$ at every finite $\Gamma$; these substantive boundary restrictions merit scrutiny when apparent certainty comes from a fitted model. For interior $p_1$, the endpoints tend to zero and one as $\Gamma\to\infty$. Let $\mathcal Q_\Gamma$ contain measurable kernels within these bounds on $H$, canonically assigned on $H^c$. Then
+\begin{equation}
+\mathcal P_\Gamma(P_{\mathrm{obs}})=\{P^q:q\in\mathcal Q_\Gamma\}.
+\label{eq:a:compatible-class}
+\end{equation}
+It is nonempty since $\underline p_\Gamma\leq p_1\leq\overline p_\Gamma$; at $\Gamma=1$ it is the single law satisfying $Y\perp S\mid X$.
+
+For $\beta=1-\alpha\in(0,1)$, the CVaR representation \citep{rockafellar2002conditional} reduces to
+\begin{equation}
+\rho_{\alpha,P}(f)=\inf_{\eta\in\mathbb R}\{\eta+\beta^{-1}\mathbb E_P(L_f-\eta)_+\}
+=\min_{\eta\in[0,1]}\{\eta+\beta^{-1}\mathbb E_P(L_f-\eta)_+\}.
+\label{eq:a:ru}
+\end{equation}
+For $\eta<0$, the objective is $\beta^{-1}\mathbb E_PL_f+(1-\beta^{-1})\eta$ and exceeds its value at zero; for $\eta>1$, it equals $\eta>1$. Continuity on $[0,1]$ gives attainment, including distributions with atoms.
+
+\subsection{Observational equivalence and motivating constructions}
+\label{app:examples}
+
+\begin{theorem}[Observational equivalence with reversed CVaR rankings]
+\label{thm:main:reversal}
+For every $\alpha\in(0,1)$, there exist an observed law satisfying strict overlap, two predictors $f,g$ with identical selected-loss distributions, and two full-data laws $P^\star,Q^\star$ inducing that observed law such that
+\[
+\rho_{\alpha,P^\star}(f)<\rho_{\alpha,P^\star}(g),
+\qquad
+\rho_{\alpha,Q^\star}(f)>\rho_{\alpha,Q^\star}(g).
+\]
+\end{theorem}
+
+\begin{proof}
+Take constant $X$, $0<\pi<\min\{1,2\beta\}$, $S\sim\operatorname{Bernoulli}(\pi)$, and $Y\mid S=1\sim\operatorname{Bernoulli}(1/2)$. Under zero-one loss, the constant predictors $f=0,g=1$ have the same selected-loss law. Set $Y=0$ on $S=0$ under $P^\star$ and $Y=1$ there under $Q^\star$. Both yield observed masses $\pi/2,\pi/2,1-\pi$ on $(S,Y^{\mathrm{obs}})=(1,1),(1,0),(0,0)$ and satisfy overlap with $\pi_{\min}=\pi$.
+
+For $B\sim\operatorname{Bernoulli}(r)$, the threshold objective is $r/\beta+\eta(1-r/\beta)$ on $[0,1]$, hence
+\begin{equation}
+\operatorname{CVaR}_\alpha(B)=\min\{r/\beta,1\}.
+\label{eq:a:bernoulli-cvar}
+\end{equation}
+Under $P^\star$, the loss probabilities are $\pi/2$ and $1-\pi/2$, so $\rho_{\alpha,P^\star}(f)=\pi/(2\beta)<\min\{(1-\pi/2)/\beta,1\}=\rho_{\alpha,P^\star}(g)$. Under $Q^\star$ they exchange.
+\end{proof}
+This construction concerns the unrestricted compatible class: its hidden probabilities zero and one lie outside the finite-$\Gamma$ interval $[1/(1+\Gamma),\Gamma/(1+\Gamma)]$ when $p_1=1/2$.
+
+\paragraph{Figure~\ref{fig:framework}.}
+For squared loss, $f=1/5$, $\pi=1/2$, $p_1=1/3$, $\Gamma=2$, and $\alpha=1/2$, the loss is $1/25+(3/5)B$ with $B\sim\operatorname{Bernoulli}(1/6+q/2)$ and $q\in[1/5,1/2]$. Translation and positive scaling of~\eqref{eq:a:ru}, followed by~\eqref{eq:a:bernoulli-cvar}, give
+\begin{equation}
+\begin{gathered}
+\rho_{1/2,P^q}(f)=\frac1{25}+\frac65\left(\frac16+\frac q2\right),\\
+\rho_{1/2,P^{1/5}}(f)=\frac9{25}=0.36,\quad
+\rho_{1/2,P^{1/2}}(f)=\frac{27}{50}=0.54.
+\end{gathered}
+\label{eq:a:figure-one}
+\end{equation}
+These endpoints describe the risk of one fixed predictor under the same observed law.
+
+\subsection{Conditional excess-loss envelopes and common extremal laws}
+\label{app:extremal}
+
+Write $a^y_{f,\eta}=(z_f^y-\eta)_+$, $d_{f,\eta}=a^1_{f,\eta}-a^0_{f,\eta}$, $d_+=(d_{f,\eta})_+$, and $d_-=(-d_{f,\eta})_+$. The hidden conditional excess loss is $a^0+qd$, with envelopes
+\begin{equation}
+\begin{split}
+b^U_{f,\eta}&=a^0_{f,\eta}+\overline p_\Gamma d_+-\underline p_\Gamma d_-,\\
+b^L_{f,\eta}&=a^0_{f,\eta}+\underline p_\Gamma d_+-\overline p_\Gamma d_-.
+\end{split}
+\label{eq:a:conditional-envelopes}
+\end{equation}
+The observable objectives are
+\begin{equation}
+\begin{split}
+m^\sigma_{f,\eta}&=\mathbb E_{\mathrm{obs}}[S a^{Y^{\mathrm{obs}}}_{f,\eta}(X)+(1-S)b^\sigma_{f,\eta}(X)],\quad\sigma\in\{L,U\},\\
+L_{f,\eta}&=\eta+\beta^{-1}m^L_{f,\eta},\qquad U_{f,\eta}=\eta+\beta^{-1}m^U_{f,\eta}.
+\end{split}
+\label{eq:a:population-objectives}
+\end{equation}
+
+\begin{lemma}[Common extremal kernels and threshold regularity]
+\label{lemma:a:common-extrema}\label{lemma:a:threshold-regularity}
+On $H$, define
+\begin{equation}
+\begin{split}
+q_f^U(x)&=\overline p_\Gamma(x)\mathbf{1}\{z_f^1(x)\geq z_f^0(x)\}
+ +\underline p_\Gamma(x)\mathbf{1}\{z_f^1(x)<z_f^0(x)\},\\
+q_f^L(x)&=\underline p_\Gamma(x)\mathbf{1}\{z_f^1(x)\geq z_f^0(x)\}
+ +\overline p_\Gamma(x)\mathbf{1}\{z_f^1(x)<z_f^0(x)\},
+\end{split}
+\label{eq:a:common-kernels}
+\end{equation}
+and set both kernels to $p_1$ on $H^c$. These kernels belong to $\mathcal Q_\Gamma$. For every $q\in\mathcal Q_\Gamma$ and every $\eta\in[0,1]$,
+\begin{equation}
+m^L_{f,\eta}
+\leq\mathbb E_{P^q}[(L_f-\eta)_+]
+\leq m^U_{f,\eta},
+\qquad
+\mathbb E_{P^{q_f^\sigma}}[(L_f-\eta)_+]=m^\sigma_{f,\eta}.
+\label{eq:a:simultaneous-attainment}
+\end{equation}
+The objectives $L_{f,\eta},U_{f,\eta}$ are convex and $(1+\beta^{-1})$-Lipschitz in $\eta$, and attain their minima on $[0,1]$.
+\end{lemma}
+
+\begin{proof}
+The kernels are measurable and satisfy the bounds. Since $z\mapsto(z-\eta)_+$ is nondecreasing, thresholding preserves the ordering of $z_f^1,z_f^0$; it can create a tie but cannot reverse the sign. Thus the same kernels extremize the affine expression $a^0+qd$ at every threshold, including ties. Disintegration gives
+\begin{equation}
+\begin{split}
+\mathbb E_{P^q}(L_f-\eta)_+
+={}&\mathbb E_{\mathrm{obs}}[S a^{Y^{\mathrm{obs}}}_{f,\eta}(X)]\\
+&+\mathbb E_{P_X}[(1-\pi)(a^0_{f,\eta}+qd_{f,\eta})],
+\end{split}
+\label{eq:a:excess-disintegration}
+\end{equation}
+proving~\eqref{eq:a:simultaneous-attainment}, with zero contribution from $H^c$. Each endpoint objective is therefore the CVaR objective of one fixed law. Convexity and the Lipschitz bound follow from the convex, 1-Lipschitz hinge; compactness gives attainment.
+\end{proof}
+
+\subsection{Sharpness, endpoint attainment, and interval filling}
+\label{app:sharpness}
+
+\begin{proof}[Proof of Theorem~\ref{thm:cvar-sharp}]
+Put $G_f(q,\eta)=\eta+\beta^{-1}\mathbb E_{P^q}(L_f-\eta)_+$. Lemma~\ref{lemma:a:common-extrema} gives $L_{f,\eta}=G_f(q_f^L,\eta)\leq G_f(q,\eta)\leq G_f(q_f^U,\eta)=U_{f,\eta}$ simultaneously for all thresholds. Minimizing these inequalities and choosing the respective common kernels proves
+\begin{equation}
+\underline\rho_{\alpha,\Gamma}(f)=\min_{\eta\in[0,1]}L_{f,\eta},\qquad
+\overline\rho_{\alpha,\Gamma}(f)=\min_{\eta\in[0,1]}U_{f,\eta}.
+\label{eq:a:sharp-endpoints}
+\end{equation}
+Both threshold minima and both optimized endpoints are attained. In particular, the upper equality uses one kernel attaining the supremum at every threshold, without an abstract minimax interchange.
+
+For functions with finite infima on a common domain,
+\begin{equation}
+\left|\inf_\eta F(\eta)-\inf_\eta G(\eta)\right|
+\leq\sup_\eta|F(\eta)-G(\eta)|,
+\label{eq:a:infimum-stability}
+\end{equation}
+because each function is bounded below by the other minus their uniform distance. Equation~\eqref{eq:a:excess-disintegration} and $|d_{f,\eta}|\leq1$ therefore imply
+\[
+|\rho_{\alpha,P^q}(f)-\rho_{\alpha,P^{\widetilde q}}(f)|
+\leq\sup_\eta|G_f(q,\eta)-G_f(\widetilde q,\eta)|
+\leq\beta^{-1}\mathbb E[(1-\pi)|q-\widetilde q|].
+\]
+The mixture $q_t=(1-t)q_f^L+tq_f^U$, $t\in[0,1]$, remains measurable and compatible, and satisfies
+\begin{equation}
+|\rho_{\alpha,P^{q_t}}(f)-\rho_{\alpha,P^{q_s}}(f)|
+\leq\frac{|t-s|}{\beta}\mathbb E[(1-\pi)|q_f^U-q_f^L|]
+\leq\frac{|t-s|}{\beta}.
+\label{eq:a:mixture-lipschitz}
+\end{equation}
+This continuous path joins the two attained endpoints. The intermediate value theorem, including the singleton case, yields
+\begin{equation}
+\{\rho_{\alpha,P}(f):P\in\mathcal P_\Gamma(P_{\mathrm{obs}})\}
+=[\underline\rho_{\alpha,\Gamma}(f),\overline\rho_{\alpha,\Gamma}(f)].
+\label{eq:a:sharp-interval}
+\end{equation}
+\end{proof}
+
+\subsection{Sensitivity analysis and population decision criteria}
+\label{app:sensitivity}\label{app:comparison-scope}
+
+\begin{proposition}[Nested classes and continuous endpoint curves]
+\label{prop:a:sensitivity}
+If $1\leq\Gamma_1\leq\Gamma_2<\infty$, then
+\[
+\mathcal P_{\Gamma_1}(P_{\mathrm{obs}})\subseteq\mathcal P_{\Gamma_2}(P_{\mathrm{obs}}).
+\]
+For each $f$, the lower endpoint is nonincreasing in $\Gamma$, the upper endpoint is nondecreasing, and the identification width
+$I_\Gamma(f)=\overline\rho_{\alpha,\Gamma}(f)-\underline\rho_{\alpha,\Gamma}(f)$ is nondecreasing. The interval is a singleton at $\Gamma=1$. Moreover, for $\sigma\in\{L,U\}$, writing $\rho^L_{\alpha,\Gamma}=\underline\rho_{\alpha,\Gamma}$ and $\rho^U_{\alpha,\Gamma}=\overline\rho_{\alpha,\Gamma}$,
+\begin{equation}
+|\rho^\sigma_{\alpha,\Gamma_2}(f)-\rho^\sigma_{\alpha,\Gamma_1}(f)|
+\leq\frac{\mathbb E_{P_X}(1-\pi)}{4\beta}|\Gamma_2-\Gamma_1|.
+\label{eq:a:gamma-lipschitz}
+\end{equation}
+In particular, both endpoint curves are continuous at every finite sensitivity level.
+\end{proposition}
+
+\begin{proof}
+For $p\in[0,1]$, $\partial_\Gamma q_-=-p(1-p)/\{p+\Gamma(1-p)\}^2\in[-1/4,0]$ and $\partial_\Gamma q_+=p(1-p)/\{1-p+\Gamma p\}^2\in[0,1/4]$. Their signs prove nesting and endpoint monotonicity; at one both maps equal $p$. Their magnitude bounds and the $\Gamma$-independent loss ordering in~\eqref{eq:a:common-kernels} bound the difference of the extremal kernels by $|\Gamma_2-\Gamma_1|/4$. Apply~\eqref{eq:a:excess-disintegration} and~\eqref{eq:a:infimum-stability} to obtain~\eqref{eq:a:gamma-lipschitz}.
+\end{proof}
+
+\begin{corollary}[Population risk budgets, comparisons, and selection]
+\label{cor:a:decisions}
+For any risk budget $r$,
+\begin{equation}
+\rho_{\alpha,P}(f)\leq r\quad\hbox{for every }P\in\mathcal P_\Gamma(P_{\mathrm{obs}})
+\quad\Longleftrightarrow\quad
+\overline\rho_{\alpha,\Gamma}(f)\leq r.
+\label{eq:a:risk-budget}
+\end{equation}
+For two predictors, the sufficient separation condition
+\begin{equation}
+\overline\rho_{\alpha,\Gamma}(f)<\underline\rho_{\alpha,\Gamma}(g)
+\label{eq:a:dominance}
+\end{equation}
+implies $\rho_{\alpha,P}(f)<\rho_{\alpha,P}(g)$ under every compatible law. If $\overline\rho_{\alpha,\Gamma}(f_\varepsilon)\leq\inf_{g\in\mathcal F}\overline\rho_{\alpha,\Gamma}(g)+\varepsilon$, then every such law satisfies $\rho_{\alpha,P}(f_\varepsilon)\leq\inf_{g\in\mathcal F}\overline\rho_{\alpha,\Gamma}(g)+\varepsilon$. A nonempty finite class permits $\varepsilon=0$.
+\end{corollary}
+
+\begin{proof}
+Use the attained upper endpoint for~\eqref{eq:a:risk-budget}, the chain $\rho_P(f)\leq\overline\rho(f)<\underline\rho(g)\leq\rho_P(g)$ for comparison, and $\rho_P(f_\varepsilon)\leq\overline\rho(f_\varepsilon)$ for selection.
+\end{proof}
+If $\underline\rho(f)>r$, every law violates the budget; if $\underline\rho(f)\leq r<\overline\rho(f)$, the two extremal laws respectively satisfy and violate it. Thus sharpness covers all budget and equality cases.
+
+\paragraph{Common-law comparisons.}
+Define $D_{f,g}(\Gamma)=\overline\rho_{\alpha,\Gamma}(f)-\underline\rho_{\alpha,\Gamma}(g)$. Marginal extrema can use different hidden kernels, whereas the direct contrast is
+\begin{equation}
+\Delta_\Gamma(f,g)=\sup_{P\in\mathcal P_\Gamma(P_{\mathrm{obs}})}
+\{\rho_{\alpha,P}(f)-\rho_{\alpha,P}(g)\}\leq D_{f,g}(\Gamma).
+\label{eq:e:common-law-comparison}
+\end{equation}
+Consequently, $D_{f,g}<0$ proves common-law dominance, but overlapping marginal intervals leave its sign unresolved by this criterion. Determining $\Delta_\Gamma$ requires joint optimization under one hidden kernel. The uniform event of Appendix~\ref{app:decision-guarantees} makes the marginal comparison and selection rules valid simultaneously over the stipulated predictor class using the same observations.
+
+\paragraph{First breakdown of an interval-certified comparison.}
+Set $\Gamma_{\mathrm{break}}(f,g)=\inf\{\Gamma\geq1:D_{f,g}(\Gamma)\geq0\}$, with $\inf\varnothing=\infty$. The gap is continuous and nondecreasing. If $D_{f,g}(1)\geq0$, breakdown is one and no strict interval certificate holds. If $D_{f,g}(1)<0$, breakdown exceeds one; when finite, continuity forces $D_{f,g}(\Gamma_{\mathrm{break}})=0$ and strict separation holds exactly on $[1,\Gamma_{\mathrm{break}})$. A nonzero gap at that boundary would persist across it, contradicting first failure. Infinite breakdown means separation at every finite level. Differences between two nondecreasing upper endpoints need not be monotone, so the upper-endpoint minimizer may change independently of these pairwise breakdown values.

@@ -1,0 +1,75 @@
+\section{Resolving Tail Ambiguity through Revelation}
+\label{sec:revelation}
+\subsection{Tail identification value}
+\label{sec:tiv}
+Fix \(f,\Gamma\), and a cutoff \(\eta\in[0,1]\). Throughout this section, expectations are over the target covariate distribution \(P_X\). An audit reveals existing outcomes: its indicator \(A\le1-S\) and intensity \(\lambda(x)=P(A=1\mid X=x,S=0)\) specify the share of originally hidden outcomes recovered at \(x\).
+
+We hold the historical observed law and the audited population contribution fixed; the remaining
+hidden outcomes retain the specified sensitivity bounds. Formally, let \(p_A(x)=P(Y=1\mid X=x,A=1)\)
+and \(q(x)=P(Y=1\mid X=x,S=0,A=0)\). We impose the original interval \([\underline
+p_\Gamma(x),\overline p_\Gamma(x)]\) separately on these audited and still-hidden outcome
+probabilities wherever their component has positive mass; \(q\) is otherwise free within it. This
+defines the retained-sensitivity information model (Appendix~\ref{app:retained-class}).
+Identification treats the audited population contribution as known; finite audited samples require
+estimation of that contribution.
+
+The retained lower and upper objectives, \(L_{f,\eta}(\lambda)\) and \(U_{f,\eta}(\lambda)\), share the known contribution and differ only on the remaining hidden mass (Appendix~\ref{app:tiv}). Write \(s_\Gamma=\overline p_\Gamma-\underline p_\Gamma\). Their gap is
+\begin{equation}
+\begin{aligned}
+\tau_{f,\eta}(x)&:=\frac{1-\pi(x)}{\beta}s_\Gamma(x)|d_{f,\eta}(x)|,\\
+W_{f,\eta}(\lambda)&:=U_{f,\eta}(\lambda)-L_{f,\eta}(\lambda)\\
+&=\mathbb E[(1-\lambda)\tau_{f,\eta}]
+=W_{f,\eta}(0)-\mathbb E[\lambda\tau_{f,\eta}].
+\end{aligned}
+\label{eq:tiv-identity}
+\end{equation}
+The tail identification value (TIV) density \(\tau_{f,\eta}\) combines three quantities: the population share with hidden outcomes, the allowed range of their outcome probability, and the change in excess loss between the two labels. It measures ambiguity per unit target-population mass. Revealing a fraction \(\lambda\) removes exactly \(\mathbb E[\lambda\tau_{f,\eta}]\), a value calculable before seeing the audited labels. When both labels produce the same excess loss, this value is zero even if the outcome is uncertain.
+
+\subsection{Minimum-cost revelation and certificate precision}
+\label{sec:frontier}
+Let \(c(x)\ge0\) be an integrable cost density per unit target-population mass, so allocation \(\lambda\) costs \(\mathbb E[c\lambda]\). If one already-hidden label costs \(\kappa(x)\), then \(c=(1-\pi)\kappa\). For a target gap \(\varepsilon\ge0\), the minimum cost is
+\begin{equation}
+ \operatorname{Cert}_{f,\eta}(\varepsilon)
+ :=\inf_{0\le\lambda\le1}
+ \{\mathbb E[c\lambda]:W_{f,\eta}(\lambda)\le\varepsilon\}.
+\label{eq:cert-frontier}
+\end{equation}
+
+\begin{theorem}[Minimum-cost fixed-threshold revelation]
+\label{thm:cert-frontier}
+Under the retained-sensitivity model, this infimum is attained. An optimum reveals zero-cost positive-TIV locations first and, on \(c>0\), satisfies
+\[
+ \lambda^\star(x)=
+ \begin{cases}
+ 1,&\tau_{f,\eta}(x)/c(x)>t,\\
+ 0,&\tau_{f,\eta}(x)/c(x)<t,
+ \end{cases}
+\]
+with fractional revelation on ties, for some \(t\in[0,\infty]\).
+\end{theorem}
+
+Thus acquisition follows decreasing ambiguity reduction per unit cost until the target is reached, using a partial terminal tie group when needed. This is the fractional-knapsack rule \citep{dantzig1957discrete}. Appendices~\ref{app:frontier} and~\ref{app:finite-cell} give the proof, boundary cases, and finite-cell computation. Among already-hidden candidates with positive label cost, its operational score is
+\[
+ \frac{\tau_{f,\eta}(x)}{c(x)}
+ =\frac{s_\Gamma(x)|d_{f,\eta}(x)|}{\beta\kappa(x)}.
+\]
+The hidden-population fraction cancels because the candidate is already known to be hidden.
+
+\label{sec:sequential}
+The retained endpoints minimize their cutoffs separately. Their optimized width satisfies
+\begin{equation}
+ I^{\mathrm{ret}}_{\Gamma,\lambda}(f)
+ :=\min_{\eta\in[0,1]}U_{f,\eta}(\lambda)
+   -\min_{\eta\in[0,1]}L_{f,\eta}(\lambda)
+ \le W_{f,0}(\lambda).
+\label{prop:uniform-threshold}
+\end{equation}
+Theorem~\ref{thm:cert-frontier} at \(\eta=0\) therefore minimizes cost for the sufficient requirement \(W_{f,0}(\lambda)\le\varepsilon\), which guarantees optimized width at most \(\varepsilon\). Appendix~\ref{app:optimized-width} proves this bound and formulates direct optimization of the optimized interval width.
+
+Our sequential audit procedure retrains the predictor after each batch, uses the current
+upper-endpoint minimizing cutoff in the retained plug-in objective, and refreshes TIV scores. Its
+historical outcome fit remains fixed, preserving the original sensitivity bounds. Audited labels
+enter through their observed losses. Candidates are ranked by estimated
+\(s_\Gamma|d_{f,\eta}|/(\beta\kappa)\), a batch is revealed, and the procedure repeats.
+Figure~\ref{fig:revelation-results} evaluates the fixed and sequential protocols;
+Appendix~\ref{app:repayment-audits} specifies fitting and evaluation splits.

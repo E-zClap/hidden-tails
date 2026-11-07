@@ -1,0 +1,48 @@
+\section{Tail Risk under Selective Labels}
+\label{sec:setup}
+\subsection{Target population and observation process}
+\label{sec:target}
+Let \(\mathcal F\) be the candidate predictor class and \(P\) the full-data distribution of \((X,S,Y)\), with covariate marginal \(P_X\). We evaluate \(f\in\mathcal F\) using loss \(\ell(f(X),Y)\), where \(Y\in\{0,1\}\). In decision settings, \(Y\) denotes \(Y(a^\star)\) under one specified action held fixed across the target population and predictor comparisons. The indicator \(S\in\{0,1\}\) equals one when the outcome is observed. We observe \(n\) independent copies of \(O=(X,S,Y^{\mathrm{obs}})\), where \(Y^{\mathrm{obs}}=SY\). The observed law \(P_{\mathrm{obs}}\) identifies \(P_X\) and
+\[
+ \pi(x)=P(S=1\mid X=x),
+ \qquad p_1(x)=P(Y=1\mid X=x,S=1),
+\]
+while \(p_0(x)=P(Y=1\mid X=x,S=0)\) is hidden wherever \(\pi(x)<1\). Here \(\pi\) is the historical observation probability and \(p_1\) the outcome probability among observed cases; both are auxiliary to the predictor \(f\) being assessed.
+
+\begin{assumption}[Bounded loss and population overlap]
+\label{ass:regularity}
+For every \(f\in\mathcal F\) and \(y\in\{0,1\}\), the map \(x\mapsto\ell(f(x),y)\) is measurable and takes values in \([0,1]\), and \(0<\pi_{\min}\le\pi(X)\le1\) almost surely.
+\end{assumption}
+
+Population overlap means every target covariate region has a positive chance of yielding an observed label. Technical regularity and target-label conventions are in Appendix~\ref{app:compatibility}. Write \(z_+=\max\{z,0\}\) and \(L_f=\ell(f(X),Y)\). At level \(\alpha\in(0,1)\), \(\beta=1-\alpha\) is the upper-tail fraction. The threshold \(\eta\) is a candidate loss cutoff, and \((L_f-\eta)_+\) is the excess above it. At \(\alpha=.95\), CVaR averages the worst 5\% of population losses, allowing fractional mass at a tied cutoff:
+\begin{equation}
+ \rho_{\alpha,P}(f)=\operatorname{CVaR}_{\alpha,P}(L_f)
+ =\inf_{\eta\in[0,1]}\left\{\eta+\beta^{-1}\mathbb E_P[(L_f-\eta)_+]\right\}.
+\label{eq:cvar-definition}
+\end{equation}
+The expectation includes both observed and hidden cases.
+
+\subsection{Sensitivity model and certification objective}
+\label{sec:sensitivity}
+For a finite, externally specified \(\Gamma\ge1\), impose the outcome-odds restriction \citep{scharfstein1999adjusting,tan2006distributional,zhao2019sensitivity}
+\begin{equation}
+\begin{gathered}
+ p_0(x)\in[\underline p_\Gamma(x),\overline p_\Gamma(x)]
+ =[q_-(p_1(x)),q_+(p_1(x))],\qquad \pi(x)<1,\\
+ q_-(p)=\frac{p}{p+\Gamma(1-p)},
+ \qquad q_+(p)=\frac{\Gamma p}{1-p+\Gamma p}.
+\end{gathered}
+\label{eq:sensitivity-model}
+\end{equation}
+For interior probabilities, hidden-to-observed outcome odds lie between \(\Gamma^{-1}\) and \(\Gamma\); the formulas also cover \(p_1\in\{0,1\}\). At \(\Gamma=1\), \(p_0(x)=p_1(x)\): hidden and observed outcomes have the same conditional distribution given \(X\), called conditional ignorability. For example, \(p_1(x)=.5\) and \(\Gamma=2\) allow \(p_0(x)\in[1/3,2/3]\). Larger \(\Gamma\) permits greater departure. The chosen \(\Gamma\) defines a declared sensitivity scenario, supported by domain knowledge or additional outcome information (Appendix~\ref{app:gamma-calibration}).
+
+Let \(\mathcal P_\Gamma(P_{\mathrm{obs}})\) contain all full-data laws with observed marginal \(P_{\mathrm{obs}}\) and hidden regression satisfying this restriction. Their risk endpoints are
+\begin{equation}
+ \underline\rho_{\alpha,\Gamma}(f)
+ =\inf_{P\in\mathcal P_\Gamma}\rho_{\alpha,P}(f),
+ \qquad
+ \overline\rho_{\alpha,\Gamma}(f)
+ =\sup_{P\in\mathcal P_\Gamma}\rho_{\alpha,P}(f).
+\label{eq:population-endpoints}
+\end{equation}
+For fixed \(\alpha\) and \(\Gamma\), our statistical objective is an interval covering every compatible risk simultaneously for every \(f\in\mathcal F\), with probability at least \(1-\delta_{\mathrm{tot}}\) over the observed sample. Here \(\delta_{\mathrm{tot}}\in(0,1)\) is the total failure budget; Section~\ref{sec:learning} accounts for sample fluctuation and auxiliary-estimation error within this budget. Thus \(\Gamma\) specifies the admissible hidden outcomes, while \(\delta_{\mathrm{tot}}\) specifies the statistical guarantee.

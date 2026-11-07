@@ -1,0 +1,87 @@
+{
+  "script": "assessment_extract.py",
+  "sources": {
+    "learning": {
+      "path": "experiments/results/finite_sample_summary.csv",
+      "sha256": "2ac977529f427f4b710575e2c008d19900fcb1c29b1408471d95a2a97ac532f8"
+    },
+    "historical": {
+      "path": "real_data_evaluation/artifacts/tables/part_a_certificates.csv",
+      "sha256": "afa9c7c61c751624bd461afead9dea0473b62d854034ee06b82b1ae10f8d8416"
+    },
+    "masking": {
+      "path": "real_data_evaluation/artifacts/tables/part_b_masking_certificates.csv",
+      "sha256": "177e828121128af8bdfcbec8cde27bf4a390c9f118acc2906bc9eaf957349a41"
+    }
+  },
+  "learning": {
+    "rows": 5,
+    "replications_per_n": 4800,
+    "identification_floor": "0.09494406222838257",
+    "reference_guide": "sqrt_n_ref = 0.055 * sqrt(1000/n); a visual n^(-1/2) guide normalized to 0.055 at n = 1000, not a fit or uncertainty bound",
+    "transformations": "Original mean width and endpoint RMSE columns copied without rounding or smoothing. Any fill between cert_width and id_width denotes their difference, not a confidence band.",
+    "width_enlargement_polygon": "learning_width_enlargement.csv contains the five cert_width coordinates in increasing n, the five id_width coordinates in decreasing n, and the initial coordinate repeated to close the polygon; it encodes only the difference between the saved mean widths."
+  },
+  "historical": {
+    "population_filter": "subset_type == all and subset == all",
+    "source_population_n": [
+      390644
+    ],
+    "source_selected_n": [
+      53367
+    ],
+    "main_figure_filter": {
+      "alpha": 0.95,
+      "gamma": 2.0
+    },
+    "interval_columns": [
+      "lower",
+      "upper"
+    ],
+    "point_column": "accepted_only_cvar",
+    "row_order_top_to_bottom": [
+      "gradient_boosting",
+      "logistic",
+      "conservative_logistic"
+    ],
+    "conservative_logistic_label": "Default-weighted logistic regression",
+    "supplemental_alpha_values": [
+      0.9,
+      0.95
+    ],
+    "gamma_values": [
+      1.0,
+      1.25,
+      1.5,
+      2.0,
+      3.0,
+      5.0,
+      8.0,
+      12.0
+    ],
+    "sensitivity_polygon": "Each assessment_sensitivity_polygon_{model}_{90|95}.csv has eight upper endpoint coordinates in increasing Gamma, eight lower endpoint coordinates in decreasing Gamma, and the initial coordinate repeated to close the polygon. Shading spans the linearly connected plotting coordinates of the saved sensitivity endpoints; it is not an uncertainty band."
+  },
+  "masking": {
+    "alpha_main": 0.95,
+    "masks": 20,
+    "predictors": 3,
+    "rows_per_gamma_main": 60,
+    "aggregation": "Unweighted mean of covered or enlarged_covered over 20 masking repetitions times three predictors at each Gamma; equivalently mean across mask-level averages, because each mask has all three predictors.",
+    "supplemental_aggregation": "Unweighted mean across 20 masking repetitions separately for each predictor and alpha.",
+    "dependence": "The three predictors share each masking repetition; 60 rows are not 60 independent masks. No uncertainty bands are computed.",
+    "enlargement_method": "crossfit_fold_t",
+    "true_gamma": 3.0,
+    "gamma_values": [
+      1.0,
+      1.25,
+      1.5,
+      2.0,
+      3.0,
+      5.0,
+      8.0,
+      12.0
+    ],
+    "validation": "Every Boolean coverage flag was recomputed from its saved interval and true_cvar and matched exactly; all model-mask-alpha-Gamma keys are unique."
+  },
+  "checks": "Original source hashes are recorded. No experiment was rerun. Source data were only read; derived CSV outputs retain original decimal values where copied. All expected counts and Gamma grids are asserted."
+}

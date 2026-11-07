@@ -1,0 +1,2 @@
+predictor,alpha,gamma,mean_test_brier,true_test_cvar,estimated_retained_lower,estimated_retained_upper,estimated_retained_width,tiv
+constant_half,0.95,3.0,0.25,0.25,0.25,0.25,0.0,0.0

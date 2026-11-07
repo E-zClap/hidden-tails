@@ -1,0 +1,9 @@
+{
+  "cohort_year": 2012,
+  "n": 390644,
+  "accepted": 53367,
+  "rejected": 337277,
+  "outcome_definition": "Y=1 for Charged Off/Default; Y=0 for Fully Paid; non-mature statuses excluded",
+  "loss": "Brier loss (f(X)-Y)^2",
+  "cross_fitting_folds": 5
+}

@@ -1,0 +1,61 @@
+\section{Sharp Population CVaR Bounds}
+\label{sec:population}
+\label{sec:sharp-intervals}
+For binary outcomes, both possible prediction losses can be computed from \(f(x)\), even when the actual label is hidden. Sensitivity bounds constrain the probability assigned to these two losses. This reduces population identification to two scalar convex minimizations.
+
+Fix a predictor \(f\) and a cutoff \(\eta\in[0,1]\). Write
+\[
+ a^y_{f,\eta}(x)=(\ell(f(x),y)-\eta)_+,
+ \qquad
+ d_{f,\eta}(x)=a^1_{f,\eta}(x)-a^0_{f,\eta}(x).
+\]
+Here \(a^y\) is the excess loss if the label is \(y\), and \(d\) is its change when the label changes from zero to one. A hidden outcome probability \(q\) gives expected excess loss \((1-q)a^0+qa^1=a^0+qd\). With \(d_+=(d_{f,\eta})_+\) and \(d_-=(-d_{f,\eta})_+\), its largest and smallest allowed values are
+\begin{equation}
+\begin{aligned}
+ b^U_{f,\eta}&=a^0_{f,\eta}+\overline p_\Gamma d_+-\underline p_\Gamma d_-,\\
+ b^L_{f,\eta}&=a^0_{f,\eta}+\underline p_\Gamma d_+-\overline p_\Gamma d_-.
+\end{aligned}
+\label{eq:endpoint-values}
+\end{equation}
+All quantities are evaluated at the same covariate value. The upper bound assigns the greatest allowed probability to the label with larger loss; the lower bound reverses the assignment. Averaging the historically observed and hidden contributions gives
+\[
+ m^\sigma_{f,\eta}
+ =\mathbb E_{\mathrm{obs}}\!\left[
+ S a^{Y^{\mathrm{obs}}}_{f,\eta}(X)+(1-S)b^\sigma_{f,\eta}(X)
+ \right],
+ \qquad \sigma\in\{L,U\},
+\]
+where \(\mathbb E_{\mathrm{obs}}\) integrates over the observed-data law. Adding the cutoff term forms the CVaR objectives
+\[
+ L_{f,\eta}=\eta+\beta^{-1}m^L_{f,\eta},
+ \qquad U_{f,\eta}=\eta+\beta^{-1}m^U_{f,\eta}.
+\]
+Dependence on \(\Gamma\) is implicit.
+
+\begin{theorem}[Sharp population CVaR interval]
+\label{thm:cvar-sharp}
+Under Assumption~\ref{ass:regularity}, for every \(f\in\mathcal F\) and finite \(\Gamma\ge1\),
+\[
+ \underline\rho_{\alpha,\Gamma}(f)=\min_{\eta\in[0,1]}L_{f,\eta},
+ \qquad
+ \overline\rho_{\alpha,\Gamma}(f)=\min_{\eta\in[0,1]}U_{f,\eta}.
+\]
+Both endpoints and every intermediate value are attained by compatible full-data laws. Consequently, the set of risks \(\{\rho_{\alpha,P}(f):P\in\mathcal P_\Gamma(P_{\mathrm{obs}})\}\) is exactly \([\underline\rho_{\alpha,\Gamma}(f),\overline\rho_{\alpha,\Gamma}(f)]\).
+\end{theorem}
+
+The key mechanism is that thresholding preserves the ordering of the two label-specific losses. For
+each endpoint, the same hidden-outcome distribution is therefore extremal at every cutoff, including
+the optimizing cutoff. Appendices~\ref{app:extremal}--\ref{app:sharpness} give the construction and
+sharpness proof, including discrete losses and ties.
+
+The identification width
+\[
+ I_\Gamma(f)=\overline\rho_{\alpha,\Gamma}(f)-\underline\rho_{\alpha,\Gamma}(f)
+\]
+is the unresolved range of population risk even when the observed distribution is known exactly. Sharpness means that narrowing this range requires additional information or stronger assumptions. Increasing \(\Gamma\) expands the compatible class and can only widen the interval; at \(\Gamma=1\), the population risk is identified under conditional ignorability.
+
+For a chosen acceptable risk level \(r\), \(\overline\rho_{\alpha,\Gamma}(f)\le r\) certifies that
+every compatible risk meets the limit. If
+\(\overline\rho_{\alpha,\Gamma}(f)<\underline\rho_{\alpha,\Gamma}(g)\), the ordering holds under
+every compatible law. Precision and risk level are distinct: a narrow interval can still lie above
+the acceptable limit. Section~\ref{sec:learning} adds sampling uncertainty to these decisions.

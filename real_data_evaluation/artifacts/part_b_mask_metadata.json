@@ -1,0 +1,162 @@
+[
+  {
+    "gamma0": 3.0,
+    "delta": -1.0986122886681096,
+    "intercept": -0.04237443702880414,
+    "target_selected_fraction": 0.45,
+    "realized_selected_fraction": 0.4501283564749752,
+    "repetition": 0
+  },
+  {
+    "gamma0": 3.0,
+    "delta": -1.0986122886681096,
+    "intercept": -0.04237443702880414,
+    "target_selected_fraction": 0.45,
+    "realized_selected_fraction": 0.4496411640152154,
+    "repetition": 1
+  },
+  {
+    "gamma0": 3.0,
+    "delta": -1.0986122886681096,
+    "intercept": -0.04237443702880414,
+    "target_selected_fraction": 0.45,
+    "realized_selected_fraction": 0.45093409785073174,
+    "repetition": 2
+  },
+  {
+    "gamma0": 3.0,
+    "delta": -1.0986122886681096,
+    "intercept": -0.04237443702880414,
+    "target_selected_fraction": 0.45,
+    "realized_selected_fraction": 0.4475237506324133,
+    "repetition": 3
+  },
+  {
+    "gamma0": 3.0,
+    "delta": -1.0986122886681096,
+    "intercept": -0.04237443702880414,
+    "target_selected_fraction": 0.45,
+    "realized_selected_fraction": 0.45067176344932264,
+    "repetition": 4
+  },
+  {
+    "gamma0": 3.0,
+    "delta": -1.0986122886681096,
+    "intercept": -0.04237443702880414,
+    "target_selected_fraction": 0.45,
+    "realized_selected_fraction": 0.4494725204714524,
+    "repetition": 5
+  },
+  {
+    "gamma0": 3.0,
+    "delta": -1.0986122886681096,
+    "intercept": -0.04237443702880414,
+    "target_selected_fraction": 0.45,
+    "realized_selected_fraction": 0.4511589559090824,
+    "repetition": 6
+  },
+  {
+    "gamma0": 3.0,
+    "delta": -1.0986122886681096,
+    "intercept": -0.04237443702880414,
+    "target_selected_fraction": 0.45,
+    "realized_selected_fraction": 0.44784229954841004,
+    "repetition": 7
+  },
+  {
+    "gamma0": 3.0,
+    "delta": -1.0986122886681096,
+    "intercept": -0.04237443702880414,
+    "target_selected_fraction": 0.45,
+    "realized_selected_fraction": 0.4487979462964004,
+    "repetition": 8
+  },
+  {
+    "gamma0": 3.0,
+    "delta": -1.0986122886681096,
+    "intercept": -0.04237443702880414,
+    "target_selected_fraction": 0.45,
+    "realized_selected_fraction": 0.45466299398504695,
+    "repetition": 9
+  },
+  {
+    "gamma0": 3.0,
+    "delta": -1.0986122886681096,
+    "intercept": -0.04237443702880414,
+    "target_selected_fraction": 0.45,
+    "realized_selected_fraction": 0.4482920156651114,
+    "repetition": 10
+  },
+  {
+    "gamma0": 3.0,
+    "delta": -1.0986122886681096,
+    "intercept": -0.04237443702880414,
+    "target_selected_fraction": 0.45,
+    "realized_selected_fraction": 0.4506342871062642,
+    "repetition": 11
+  },
+  {
+    "gamma0": 3.0,
+    "delta": -1.0986122886681096,
+    "intercept": -0.04237443702880414,
+    "target_selected_fraction": 0.45,
+    "realized_selected_fraction": 0.4530702494050631,
+    "repetition": 12
+  },
+  {
+    "gamma0": 3.0,
+    "delta": -1.0986122886681096,
+    "intercept": -0.04237443702880414,
+    "target_selected_fraction": 0.45,
+    "realized_selected_fraction": 0.4522645080293065,
+    "repetition": 13
+  },
+  {
+    "gamma0": 3.0,
+    "delta": -1.0986122886681096,
+    "intercept": -0.04237443702880414,
+    "target_selected_fraction": 0.45,
+    "realized_selected_fraction": 0.44969737852980307,
+    "repetition": 14
+  },
+  {
+    "gamma0": 3.0,
+    "delta": -1.0986122886681096,
+    "intercept": -0.04237443702880414,
+    "target_selected_fraction": 0.45,
+    "realized_selected_fraction": 0.44720520171641653,
+    "repetition": 15
+  },
+  {
+    "gamma0": 3.0,
+    "delta": -1.0986122886681096,
+    "intercept": -0.04237443702880414,
+    "target_selected_fraction": 0.45,
+    "realized_selected_fraction": 0.44825453932205295,
+    "repetition": 16
+  },
+  {
+    "gamma0": 3.0,
+    "delta": -1.0986122886681096,
+    "intercept": -0.04237443702880414,
+    "target_selected_fraction": 0.45,
+    "realized_selected_fraction": 0.4529765585474169,
+    "repetition": 17
+  },
+  {
+    "gamma0": 3.0,
+    "delta": -1.0986122886681096,
+    "intercept": -0.04237443702880414,
+    "target_selected_fraction": 0.45,
+    "realized_selected_fraction": 0.4504094290479135,
+    "repetition": 18
+  },
+  {
+    "gamma0": 3.0,
+    "delta": -1.0986122886681096,
+    "intercept": -0.04237443702880414,
+    "target_selected_fraction": 0.45,
+    "realized_selected_fraction": 0.44900406618322186,
+    "repetition": 19
+  }
+]

@@ -1,0 +1,47 @@
+{
+  "checks_passed": true,
+  "rows": 1080,
+  "repetitions": 20,
+  "policies": 6,
+  "rounds_per_policy": 9,
+  "terminal_comparison": {
+    "estimated_retained_width": {
+      "tiv_median": 0.0347775958964793,
+      "random_median": 0.06706864578169544,
+      "paired_mean": -0.03288704855797448,
+      "paired_median": -0.03316641002486185
+    },
+    "mean_test_brier": {
+      "tiv_median": 0.13615888875376395,
+      "random_median": 0.13470637294168225,
+      "paired_mean": 0.0014242455313757591,
+      "paired_median": 0.0014142662600171996
+    },
+    "true_test_cvar": {
+      "tiv_median": 0.8540644686373535,
+      "random_median": 0.8681665488466679,
+      "paired_mean": -0.014762947062435966,
+      "paired_median": -0.013757059802346483
+    }
+  },
+  "output_hashes_match": {
+    "constant_reference.csv": true,
+    "sequential_plugin_runs.csv": true,
+    "terminal_comparison.csv": true,
+    "terminal_pairs.csv": true,
+    "trajectory_summary.csv": true
+  },
+  "original_sources_unchanged": {
+    "real_data_evaluation\\src\\real_cvar\\certificates.py": true,
+    "real_data_evaluation\\src\\real_cvar\\models.py": true,
+    "real_data_evaluation\\src\\real_cvar\\config.py": true,
+    "real_data_evaluation\\src\\real_cvar\\part_b.py": true,
+    "real_data_evaluation\\config.yaml": true,
+    "real_data_evaluation\\requirements.txt": true,
+    "real_data_evaluation\\src\\real_cvar\\data.py": true
+  },
+  "original_audited_labels_match": true,
+  "original_unaffected_cvar_max_abs_difference": 0.001957624794841961,
+  "total_fit_seconds": 2137.6820915999997,
+  "prepared_sha256": "fcd06d383adff616699ab4a79130a38cd4e5ce1f7821867697b1679aff3d952e"
+}

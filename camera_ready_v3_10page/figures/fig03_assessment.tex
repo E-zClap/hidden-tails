@@ -1,0 +1,51 @@
+% Editable PGFPlots master. Compile from camera_ready_v2.
+\documentclass[tikz,border=0pt]{standalone}
+\input{figures/figure_style.tex}
+\begin{document}
+\begin{tikzpicture}[x=1pt,y=1pt]
+\path[use as bounding box] (0,0) rectangle (397.48499,201);
+\node[anchor=north west,font=\figtitle] at (0,199) {(a)\quad Historical applicants};
+\node[anchor=north west,font=\figsmall,text=figgray] at (0,184) {$\alpha=0.95,\ \Gamma=2$};
+\node[anchor=north west,font=\figtitle] at (249,199) {(b)\quad Controlled masking};
+\node[anchor=north west,font=\figsmall,text=figgray] at (249,184) {Issued loans, $\alpha=0.95$};
+\begin{axis}[paperaxis,at={(96pt,53pt)},anchor=south west,width=141pt,height=112pt,
+ xmin=.64,xmax=.855,ymin=.45,ymax=3.55,
+ xtick={.65,.70,.75,.80,.85},xticklabels={.65,.70,.75,.80,.85},
+ ytick={1,2,3},yticklabels={\shortstack[l]{Default-weighted\\logistic regression},\shortstack[l]{Logistic\\regression},\shortstack[l]{Gradient\\boosting}},
+ yticklabel style={align=left,anchor=east,text width=87pt},ytick style={draw=none},
+ axis y line*=left,y axis line style={draw=none},ymajorgrids=false,xlabel={Applicant CVaR}]
+% Endpoint caps use source rows directly; all models share the same blue.
+\pgfplotstableread[col sep=comma]{figures/assessment_historical.csv}\historical
+\pgfplotsinvokeforeach{0,1,2}{%
+ \pgfplotstablegetelem{#1}{lower}\of\historical\edef\lo{\pgfplotsretval}%
+ \pgfplotstablegetelem{#1}{upper}\of\historical\edef\hi{\pgfplotsretval}%
+ \pgfplotstablegetelem{#1}{y}\of\historical\edef\rowy{\pgfplotsretval}%
+ \edef\drawinterval{\noexpand\draw[figblue,line width=1.8pt] (axis cs:\lo,\rowy) -- (axis cs:\hi,\rowy);}\drawinterval
+}
+\addplot[only marks,mark=|,mark size=3pt,mark options={draw=figblue,line width=1.2pt}] table[x=lower,y=y,col sep=comma]{figures/assessment_historical.csv};
+\addplot[only marks,mark=|,mark size=3pt,mark options={draw=figblue,line width=1.2pt}] table[x=upper,y=y,col sep=comma]{figures/assessment_historical.csv};
+\addplot[only marks,mark=*,mark size=2.7pt,mark options={draw=figgray,fill=white,line width=1.1pt}] table[x=accepted,y=y,col sep=comma]{figures/assessment_historical.csv};
+\end{axis}
+\draw[figgray,line width=1.1pt,fill=white] (6,12) circle (2.7pt);
+\node[anchor=west,font=\figsmall] at (14,12) {Accepted only};
+\draw[figblue,line width=1.8pt] (111,12) -- (128,12);
+\draw[figblue,line width=1.2pt] (111,9) -- (111,15) (128,9) -- (128,15);
+\node[anchor=west,font=\figsmall] at (135,12) {Sensitivity interval};
+\begin{axis}[paperaxis,at={(282pt,53pt)},anchor=south west,width=109pt,height=112pt,
+ xmode=log,log basis x=10,xmin=.95,xmax=13.5,ymin=-.035,ymax=1.075,
+ xtick={1,2,3,5,12},xticklabels={1,2,3,5,12},ytick={0,.5,1},yticklabels={0,0.5,1},
+ xlabel={Assumed $\Gamma$},ylabel={Empirical coverage}]
+\addplot[figgray!45,line width=.7pt,no marks,forget plot] coordinates {(3,-.035) (3,1.075)};
+\addplot[baseline,mark options={fill=white,solid}] table[x=gamma,y=plugin,col sep=comma]{figures/assessment_coverage.csv};
+\addplot[primary] table[x=gamma,y=fold,col sep=comma]{figures/assessment_coverage.csv};
+\node[anchor=south west,font=\figsmall,text=figgray,inner sep=1pt] at (axis cs:3.35,.54) {$\Gamma_0=3$};
+\end{axis}
+\draw[figgray,dashed,line width=1.15pt] (277,18) -- (295,18);
+\draw[figgray,fill=white,line width=1.1pt] (284,16) rectangle (288,20);
+\node[anchor=west,font=\figsmall] at (301,18) {Plug-in};
+\draw[figblue,line width=1.6pt] (277,5) -- (295,5);
+\fill[figblue] (286,5) circle (2pt);
+\node[anchor=west,font=\figsmall] at (301,5) {Fold-enlarged};
+\end{tikzpicture}
+\end{document}
+

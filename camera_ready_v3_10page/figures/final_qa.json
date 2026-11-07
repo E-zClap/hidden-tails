@@ -1,0 +1,74 @@
+[
+  {
+    "name": "fig01_concept",
+    "width_pdf_bp": 396.0,
+    "height_pdf_bp": 184.3090057373047,
+    "smallest_font_including_math_scripts": 8.169400215148926,
+    "text_spans_outside_page": [],
+    "embedded_raster_images": 0
+  },
+  {
+    "name": "fig02_learning",
+    "width_pdf_bp": 396.0,
+    "height_pdf_bp": 189.2899932861328,
+    "smallest_font_including_math_scripts": 5.890900135040283,
+    "text_spans_outside_page": [],
+    "embedded_raster_images": 0
+  },
+  {
+    "name": "fig03_assessment",
+    "width_pdf_bp": 396.0,
+    "height_pdf_bp": 200.24899291992188,
+    "smallest_font_including_math_scripts": 5.890900135040283,
+    "text_spans_outside_page": [],
+    "embedded_raster_images": 0
+  },
+  {
+    "name": "fig04_revelation",
+    "width_pdf_bp": 396.0,
+    "height_pdf_bp": 210.21200561523438,
+    "smallest_font_including_math_scripts": 8.069700241088867,
+    "text_spans_outside_page": [],
+    "embedded_raster_images": 0
+  },
+  {
+    "name": "supp_frontier",
+    "width_pdf_bp": 396.0,
+    "height_pdf_bp": 229.14100646972656,
+    "smallest_font_including_math_scripts": 8.069700241088867,
+    "text_spans_outside_page": [],
+    "embedded_raster_images": 0
+  },
+  {
+    "name": "supp_diagnostics",
+    "width_pdf_bp": 396.0,
+    "height_pdf_bp": 336.73699951171875,
+    "smallest_font_including_math_scripts": 8.069700241088867,
+    "text_spans_outside_page": [],
+    "embedded_raster_images": 0
+  },
+  {
+    "name": "supp_sensitivity",
+    "width_pdf_bp": 396.0,
+    "height_pdf_bp": 431.3819885253906,
+    "smallest_font_including_math_scripts": 8.069700241088867,
+    "text_spans_outside_page": [],
+    "embedded_raster_images": 0
+  },
+  {
+    "name": "supp_coverage",
+    "width_pdf_bp": 396.0,
+    "height_pdf_bp": 431.3819885253906,
+    "smallest_font_including_math_scripts": 5.890900135040283,
+    "text_spans_outside_page": [],
+    "embedded_raster_images": 0
+  },
+  {
+    "name": "supp_revelation",
+    "width_pdf_bp": 396.0,
+    "height_pdf_bp": 238.10699462890625,
+    "smallest_font_including_math_scripts": 8.069700241088867,
+    "text_spans_outside_page": [],
+    "embedded_raster_images": 0
+  }
+]

@@ -1,0 +1,2 @@
+# Python 3.12 is used for release checks. Scientific packages match the lending run.
+-r real_data_evaluation/requirements.txt

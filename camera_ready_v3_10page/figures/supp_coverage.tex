@@ -1,0 +1,32 @@
+% Per-predictor coverage: twenty shared masking runs at every Gamma.
+\documentclass[tikz,border=0pt]{standalone}
+\input{figures/figure_style.tex}
+\newcommand{\coveragepanel}[7]{%
+\node[anchor=north west,font=\figtitle] at (#1,#2) {#3};
+\begin{axis}[paperaxis,at={(#4pt,#5pt)},anchor=south west,width=145pt,height=90pt,
+ xmode=log,log basis x=10,xmin=.95,xmax=13.5,ymin=-.035,ymax=1.075,
+ xtick={1,2,3,5,12},xticklabels={1,2,3,5,12},ytick={0,.5,1},yticklabels={0,0.5,1},
+ xlabel={Assumed $\Gamma$},ylabel={Empirical coverage}]
+\addplot[figgray!45,line width=.7pt,no marks,forget plot] coordinates {(3,-.035) (3,1.075)};
+\addplot[baseline,mark options={fill=white,solid}] table[x=gamma,y=plugin,col sep=comma]{figures/assessment_coverage_#6_#7.csv};
+\addplot[primary] table[x=gamma,y=fold,col sep=comma]{figures/assessment_coverage_#6_#7.csv};
+\node[anchor=west,font=\figsmall,text=figgray,inner sep=1pt] at (axis cs:3.45,.5) {$\Gamma_0=3$};
+\end{axis}}
+\begin{document}
+\begin{tikzpicture}[x=1pt,y=1pt]
+\path[use as bounding box] (0,0) rectangle (397.48499,433);
+\coveragepanel{0}{431}{(a)\quad Gradient boosting, $\alpha=.90$}{42}{320}{gradient_boosting}{90}
+\coveragepanel{210}{431}{(b)\quad Gradient boosting, $\alpha=.95$}{247}{320}{gradient_boosting}{95}
+\coveragepanel{0}{296}{(c)\quad Logistic regression, $\alpha=.90$}{42}{185}{logistic}{90}
+\coveragepanel{210}{296}{(d)\quad Logistic regression, $\alpha=.95$}{247}{185}{logistic}{95}
+\coveragepanel{0}{161}{(e)\quad Default-weighted, $\alpha=.90$}{42}{50}{conservative_logistic}{90}
+\coveragepanel{210}{161}{(f)\quad Default-weighted, $\alpha=.95$}{247}{50}{conservative_logistic}{95}
+\draw[figgray,dashed,line width=1.15pt] (105,11) -- (126,11);
+\draw[figgray,fill=white,line width=1.1pt] (113.5,9) rectangle (117.5,13);
+\node[anchor=west,font=\figsmall] at (133,11) {Plug-in};
+\draw[figblue,line width=1.6pt] (215,11) -- (236,11);
+\fill[figblue] (225.5,11) circle (2pt);
+\node[anchor=west,font=\figsmall] at (243,11) {Fold-enlarged};
+\end{tikzpicture}
+\end{document}
+

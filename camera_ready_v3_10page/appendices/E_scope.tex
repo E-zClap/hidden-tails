@@ -1,0 +1,55 @@
+\section{Sensitivity Calibration and Extensions}
+\label{app:e}\label{app:discussion}
+
+\subsection{Choosing and calibrating the sensitivity range}
+\label{app:gamma-calibration}
+
+For interior probabilities, $\gamma=\log\Gamma$ bounds the hidden--selected log-odds discrepancy:
+\begin{equation}
+\begin{aligned}
+|\operatorname{logit}p_0(x)-\operatorname{logit}p_1(x)|&\leq\gamma,\\
+p_0(x)&\in[\operatorname{expit}\{\operatorname{logit}p_1(x)-\gamma\},
+\operatorname{expit}\{\operatorname{logit}p_1(x)+\gamma\}].
+\end{aligned}
+\label{eq:e:log-odds-sensitivity}
+\end{equation}
+Overlap identifies the reference $p_1$; substantive knowledge or additional outcomes inform the allowed discrepancy, as in sensitivity analysis for nonignorable observation \citep{rosenbaum2002observational,scharfstein1999adjusting,tan2006distributional,zhao2019sensitivity}.
+
+\paragraph{Probability-scale elicitation.}
+For a reference probability $p\in(0,1)$ and elicited hidden range $[l,u]\subset(0,1)$, the smallest symmetric odds bound containing that range is
+\begin{equation}
+\Gamma_{\rm elic}(p,[l,u])=
+\max\left\{1,\frac{\operatorname{odds}(u)}{\operatorname{odds}(p)},
+\frac{\operatorname{odds}(p)}{\operatorname{odds}(l)}\right\},
+\qquad\operatorname{odds}(v)=\frac{v}{1-v}.
+\label{eq:e:elicited-gamma}
+\end{equation}
+For $p=.10$ and $[l,u]=[.05,.20]$, this gives $9/4$. A common $\Gamma$ must cover the whole target covariate support; uncertainty in $p$ can be included by maximizing over its confidence set.
+
+\paragraph{Pilot calibration and covariate resolution.}
+Declare a finite-cell model $X=g\in\mathcal G$, and write $p_{sg}=\Pr(Y=1\mid X=g,S=s)$ in cells with originally hidden mass. A pilot identifies $p_{0g}$ only when its design identifies that original hidden distribution: conditional random sampling suffices, while unequal probabilities require adjustment. An arbitrarily selected audited subset instead identifies its own law $p_A$ (Appendix~\ref{app:retained-class}). Suppose confidence sets satisfy $\Pr\{p_{sg}\in C_{sg}\text{ for all relevant }(s,g)\}\geq1-\delta_{\rm cal}$. For sets contained in $(0,1)$, define
+\begin{equation}
+\Gamma_{\rm cal}=\exp\left\{\max_{g\in\mathcal G}
+\sup_{\substack{u\in C_{0g}\\v\in C_{1g}}}
+|\operatorname{logit}u-\operatorname{logit}v|\right\}.
+\label{eq:e:pilot-gamma}
+\end{equation}
+On the simultaneous coverage event this bounds every cell's true discrepancy. The supremum can be infinite as admissible probabilities approach incompatible boundaries. Clipping confidence sets to an interior interval preserves coverage only under a justified probability restriction or a confidence construction already supplying it. The finite-$\Gamma$ restrictions at $p_1=0,1$ are specified in Appendix~\ref{app:compatibility}.
+
+Calibration in~\eqref{eq:e:pilot-gamma} controls the model with $X=g$. Cell averages do not control discrepancies at finer covariate resolution: either analyze with these cells or justify explicit within-cell homogeneity of the relevant probabilities. A certificate using finer covariates needs control at that finer resolution.
+
+\paragraph{Joint error control.}
+With an independent pilot, condition on it and apply the certificate at the chosen finite $\Gamma_{\rm cal}$ with valid conditional failure probability $\delta_{\rm cert}$, including nuisance estimation. A union bound gives total failure probability at most $\delta_{\rm cal}+\delta_{\rm cert}$ under the two procedures' assumptions. Reusing labels for calibration and revelation requires joint control of the sensitivity choice, audited contribution, and endpoint estimates; their dependence must enter the analysis. For a prespecified finite sensitivity grid, allocate error across its points, each already controlling the stipulated predictor class. A continuum requires uniform control in sensitivity. Let $\Gamma_{\max}$ be the largest sensitivity level under consideration. Population nesting implies that risk-limit or strict-separation claims valid at $\Gamma_{\max}$ hold throughout $[1,\Gamma_{\max}]$. Compare the calibrated range with the breakdown definition in Appendix~\ref{app:sensitivity}; Appendix~\ref{app:historical-lending} estimates breakdown numerically by interpolation on a log-sensitivity grid.
+
+\subsection{Extensions of the outcome model}
+\label{app:outcome-extensions}
+
+Binary outcomes provide two label-specific losses whose ordering supplies one extremal hidden kernel for every threshold. A multiclass extension needs a sensitivity set for the hidden class-probability vector and a new extremality and threshold-optimization argument. Continuous outcomes require conditional-distribution sensitivity sets; unbounded losses additionally require tail conditions for finite statistical control. Population overlap and nuisance-error requirements remain those of Appendix~\ref{app:b}; the historical extension and masking calibration are specified in Appendices~\ref{app:historical-lending} and~\ref{app:controlled-masking}.
+
+\subsection{Connections to related approaches}
+\label{app:connections}
+
+Selective-label evaluation concerns outcomes observed through historical decisions \citep{chen2025selective,coston2021fairness,lakkaraju2017selective}. Missing-data analysis and partial identification organize the resulting uncertainty through compatible laws \citep{little2019statistical,manski1989anatomy,manski1990nonparametric,manski2003partial}; here every point of the tail-risk interval has such a law. The CVaR representation accommodates discrete losses \citep{acerbi2002expected,artzner1999coherent,rockafellar2000optimization,rockafellar2002conditional}. As in distributionally robust learning \citep{blanchet2019quantifying,delage2010distributionally,duchi2021uniform,mohajerin2018data}, the upper endpoint is a worst-case risk; the lower endpoint records the remaining identification information. Orthogonalization and cross-fitting control nuisance bias \citep{chernozhukov2018double,kallus2024localized,robins1994estimation}, and Rademacher complexity and contraction control uniform fluctuation \citep{bartlett2002rademacher,maurer2016vector,van1996weak}.
+
+Active learning links queries to a learning objective \citep{cohn1996active}; TIV links acquisition to the precision of a specified risk claim. Its exact allocation theorem fixes $f,\eta,\Gamma$. The sequential study (Appendix~\ref{app:repayment-audits}) refreshes acquisition values after retraining while keeping the historical outcome regression fixed in the retained objective. Auxiliary fits to current known-label status or outcomes serve the corresponding acquisition baselines. The study evaluates interval trajectories and held-out predictive risk. Inference across adaptive rounds or at data-dependent stopping requires control of the acquisition history, newly revealed contributions, and stopping rule, beyond the fixed-sample uniform theorem.
+\FloatBarrier

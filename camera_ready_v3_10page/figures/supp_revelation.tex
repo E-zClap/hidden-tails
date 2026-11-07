@@ -1,0 +1,49 @@
+% Editable supplement; all six acquisition rules retained as separate traces.
+\documentclass[tikz,border=0pt]{standalone}
+\input{figures/figure_style.tex}
+\definecolor{figpurple}{HTML}{7A5195}
+\definecolor{figteal}{HTML}{278272}
+\pgfplotsset{predloss/.style={figpurple,densely dotted,line width=1pt,mark=o,mark size=2.3pt,mark repeat=3,mark phase=2},
+ predunc/.style={figteal,dashed,line width=1pt,mark=diamond*,mark size=2.2pt,mark repeat=3,mark phase=3},
+ senswidth/.style={figink,dashdotted,line width=.9pt,mark=x,mark size=2.6pt,mark repeat=3,mark phase=1}}
+\newcommand{\auditband}[3]{%
+\addplot[draw=none,fill=#3,fill opacity=.12,forget plot] table[x=budget,y=value,col sep=comma]{figures/revelation_band_#1_#2.csv} \closedcycle;}
+\newcommand{\auditcurves}[1]{%
+\addplot[predloss] table[x=sequential_budget,y=#1_median,col sep=comma]{figures/revelation_predicted_loss.csv};
+\addplot[predunc] table[x=sequential_budget,y=#1_median,col sep=comma]{figures/revelation_uncertainty.csv};
+\addplot[senswidth] table[x=sequential_budget,y=#1_median,col sep=comma]{figures/revelation_sensitivity_width.csv};
+\addplot[scarcity,mark repeat=2] table[x=sequential_budget,y=#1_median,col sep=comma]{figures/revelation_low_propensity.csv};
+\addplot[baseline,mark repeat=2] table[x=sequential_budget,y=#1_median,col sep=comma]{figures/revelation_random.csv};
+\addplot[primary,mark repeat=2] table[x=sequential_budget,y=#1_median,col sep=comma]{figures/revelation_tiv_per_cost.csv};}
+\begin{document}
+\begin{tikzpicture}[x=1pt,y=1pt]
+\path[use as bounding box] (0,0) rectangle (397.48499,239);
+\begin{axis}[paperaxis,at={(39pt,77pt)},anchor=south west,width=145pt,height=132pt,
+ xmin=0,xmax=16.5,ymin=0,ymax=.12,xtick={0,4,8,12,16},ytick={0,.03,.06,.09,.12},yticklabels={0,.03,.06,.09,.12},
+ ylabel={Estimated retained width},ylabel style={at={(axis description cs:-.15,.5)},anchor=south}]
+\auditband{tiv_per_cost}{width}{figblue}\auditband{random}{width}{figgray}\auditband{low_propensity}{width}{figorange}
+\auditcurves{width}
+\end{axis}
+\begin{axis}[paperaxis,at={(245pt,77pt)},anchor=south west,width=145pt,height=132pt,
+ xmin=0,xmax=16.5,ymin=.84,ymax=.92,xtick={0,4,8,12,16},ytick={.84,.86,.88,.90,.92},yticklabels={.84,.86,.88,.90,.92},
+ ylabel={Held-out predictive CVaR},ylabel style={at={(axis description cs:-.23,.5)},anchor=south}]
+\auditband{tiv_per_cost}{cvar}{figblue}\auditband{random}{cvar}{figgray}\auditband{low_propensity}{cvar}{figorange}
+\auditcurves{cvar}
+\end{axis}
+\node[anchor=west,font=\figtitle,inner sep=0] at (3,228) {(a) Sequential interval width};
+\node[anchor=west,font=\figtitle,inner sep=0] at (222,228) {(b) Predictive risk};
+\node[font=\figfont] at (214,53) {Initial hidden training pool revealed (\%)};
+\draw[figblue,line width=1.6pt] (20,29)--(37,29);\fill[figblue] (28.5,29) circle(2pt);
+\node[anchor=west,font=\figsmall,inner sep=0] at (41,29) {TIV / label cost};
+\draw[figgray,dashed,line width=1.15pt] (143,29)--(160,29);\fill[figgray] (149.5,27) rectangle(153.5,31);
+\node[anchor=west,font=\figsmall,inner sep=0] at (164,29) {Random};
+\draw[figorange,dashdotted,line width=1.15pt] (254,29)--(271,29);\fill[figorange] (260.5,27.4)--(264.5,27.4)--(262.5,31.2)--cycle;
+\node[anchor=west,font=\figsmall,inner sep=0] at (275,29) {Lowest propensity};
+\draw[figpurple,densely dotted,line width=1pt] (20,11)--(37,11);\draw[figpurple,fill=white,line width=1pt] (28.5,11) circle(2.3pt);
+\node[anchor=west,font=\figsmall,inner sep=0] at (41,11) {Predicted loss};
+\draw[figteal,dashed,line width=1pt] (143,11)--(160,11);\fill[figteal] (151.5,13.5)--(154,11)--(151.5,8.5)--(149,11)--cycle;
+\node[anchor=west,font=\figsmall,inner sep=0] at (164,11) {Uncertainty};
+\draw[figink,dashdotted,line width=1pt] (254,11)--(271,11);\draw[figink,line width=1pt] (260.5,9)--(264.5,13) (260.5,13)--(264.5,9);
+\node[anchor=west,font=\figsmall,inner sep=0] at (275,11) {Sensitivity width};
+\end{tikzpicture}
+\end{document}
