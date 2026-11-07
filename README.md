@@ -11,6 +11,8 @@ This repository accompanies *Hidden Tails: Certifying Tail-Risk Claims under Sel
 
 The framework bounds population CVaR under selective labels, estimates the compatible risk interval, and uses tail identification value to allocate additional outcome observations.
 
+For camera-ready submission, `main.pdf` is the complete single manuscript PDF, including all Appendices A–F and the NeurIPS checklist. `supplement.pdf` is a companion reading copy of the appendices. The portable ZIP provides the reproducibility materials and editable sources.
+
 ## Start here
 
 ```bash
@@ -24,9 +26,9 @@ The verification uses only Python's standard library. It checks the release chec
 | Goal | What to run | What is needed |
 |---|---|---|
 | Read the paper | Open [`main.pdf`](camera_ready_v3_10page/main.pdf) | PDF viewer |
-| Read the supplement | Open [`supplement.pdf`](camera_ready_v3_10page/supplement.pdf) | PDF viewer; keep beside `main.pdf` |
+| Read the companion supplement | Open [`supplement.pdf`](camera_ready_v3_10page/supplement.pdf) | PDF viewer; keep beside `main.pdf` |
 | Build the supplement | `python scripts/build.py --supplement` | Python, pdfLaTeX, BibTeX |
-| Package all supplemental material | `python scripts/package_supplement.py` | Python; unmodified release checkout |
+| Package the reproducibility archive | `python scripts/package_supplement.py` | Python; unmodified release checkout |
 | Compile the manuscript | `python scripts/build.py --paper` | Python, pdfLaTeX, BibTeX |
 | Rebuild all nine figures and the paper | `python scripts/build.py --figures --paper` | Above, plus TikZ/PGFPlots and standalone |
 | Regenerate plotting tables | Follow [the figure guide](docs/figures.md) | Python dependencies; bundled results |
@@ -48,7 +50,7 @@ For LaTeX on Ubuntu, install `texlive-latex-extra texlive-science texlive-fonts-
 
 ## What is included
 
-- [`camera_ready_v3_10page/`](camera_ready_v3_10page/): the current 43-page manuscript (including the three-page NeurIPS checklist), a standalone 35-page supplement with five additional experimental tables, LaTeX sources, four main figures, five supplementary figures, plotting tables, and extraction scripts.
+- [`camera_ready_v3_10page/`](camera_ready_v3_10page/): the complete camera-ready manuscript with Appendices A–F and the NeurIPS checklist, a companion supplement sharing those appendices (including the five additional experimental tables), LaTeX sources, four main figures, five supplementary figures, plotting tables, and extraction scripts.
 - [`experiments/`](experiments/): finite-sample simulations, population diagnostics, learning illustrations, and synthetic revelation experiments, with saved outputs.
 - [`real_data_evaluation/`](real_data_evaluation/): historical LendingClub assessment, controlled masking, fixed-predictor audits, source preparation, tests, and the original results archive.
 - [`camera_ready_v3_10page/revision_experiments/sequential_plugin/`](camera_ready_v3_10page/revision_experiments/sequential_plugin/): the current sequential retained plug-in experiment, tests, all 1,080 round-level results, checkpoints, and paired summaries.

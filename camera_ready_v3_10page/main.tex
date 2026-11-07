@@ -1,5 +1,5 @@
-% Compact main paper with an integrated guide and five technical appendices.
-% Funding and acknowledgment disclosures await author completion.
+% Camera-ready main paper with all six technical appendices and official checklist.
+% Funding and competing interests confirmed by the author on 7 November 2026.
 % Figures are editable TikZ/PGFPlots sources under figures/.
 \documentclass{article}
 
@@ -84,9 +84,10 @@
 \label{main-text-end}
 \FloatBarrier
 \clearpage
-% Author to complete funding and acknowledgment disclosures before submission:
-% \begin{ack}
-% \end{ack}
+\begin{ack}
+This work was supported by JST FOREST Program (Grant No. JPMJFR2547).
+The author declares no competing interests.
+\end{ack}
 \bibliographystyle{plainnat}
 \bibliography{references}
 \clearpage
@@ -123,6 +124,9 @@
 \input{appendices/C_revelation}
 \input{appendices/D_experiments}
 \input{appendices/E_scope}
+\FloatBarrier
+\clearpage
+\input{appendices/F_additional_experiments}
 \FloatBarrier
 \clearpage
 \input{checklist}

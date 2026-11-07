@@ -1,12 +1,16 @@
 # Supplementary material and reproducibility archive
 
-The [standalone supplement](../camera_ready_v3_10page/supplement.pdf) accompanies
-the [main paper](../camera_ready_v3_10page/main.pdf). It contains the existing
-Appendices A–E plus Appendix F, which brings additional saved experiments into
-the supplementary presentation. The main paper and supplement share the proof
-and experimental-method sources. Additional tables are generated from the
-released results; no new simulation or GPU run is implied by this presentation
-update.
+The [main paper](../camera_ready_v3_10page/main.pdf) is the complete single-PDF
+camera-ready manuscript: it includes all Appendices A–F and the NeurIPS checklist.
+Use this PDF for the manuscript submission so that all textual supplementary
+material is included in the submitted paper.
+
+The [standalone supplement](../camera_ready_v3_10page/supplement.pdf) is a companion
+reading copy of Appendices A–F. Both documents share the proof, experimental-method,
+and additional-experiment sources. Keep the companion PDF for convenient reading;
+use the reproducibility ZIP for the code, saved results, and editable sources.
+Additional tables are generated from the released results; no new simulation or
+GPU run is implied by this presentation update.
 
 ## Reading and evidence map
 

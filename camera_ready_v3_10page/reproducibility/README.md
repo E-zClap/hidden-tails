@@ -12,6 +12,6 @@ python scripts/build.py --supplement
 
 Use [the experiment guide](../../docs/experiments.md) for full reruns, recorded environments, and distinctions between current and archived outputs. The current sequential experiment is `camera_ready_v3_10page/revision_experiments/sequential_plugin/results/optimized/`. Its full 1,080 rows, paired summaries, checkpoints, unoptimized benchmark checkpoint, and validation helpers are included.
 
-`implementation_inventory.tex` is a portable companion inventory, not an additional appendix input. The standalone PDF reuses Appendices A–E and adds Appendix F; its tables are generated from released CSVs. Current experiment 6/7 data match the combined `--main-figure` run. The older full-run frontier and 569-record malignancy summary are archival.
+`implementation_inventory.tex` is a portable companion inventory, not an additional appendix input. The combined submission PDF and standalone companion share Appendices A-F; the Appendix F tables are generated from released CSVs. Current experiment 6/7 data match the combined `--main-figure` run. The older full-run frontier and 569-record malignancy summary are archival.
 
 The release archive uses an explicit SHA-256 file list. Rebuilds can change PDF hashes, so verify the unmodified archive before rebuilding. Public helper changes preserve original numerical implementations and recorded scientific evidence while making paths and verification commands portable; see `docs/provenance_adaptations.json`.
