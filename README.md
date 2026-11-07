@@ -1,9 +1,9 @@
 # Hidden Tails
 
 **Certifying Tail-Risk Claims under Selective Labels**  
-El Mustapha Mansouri · Institute of Science Tokyo
+El Mustapha Mansouri Â· Institute of Science Tokyo
 
-[Paper (PDF)](camera_ready_v3_10page/main.pdf) · [Experiment guide](docs/experiments.md) · [Data preparation](docs/data.md) · [Figure guide](docs/figures.md)
+[Paper (PDF)](camera_ready_v3_10page/main.pdf) Â· [Experiment guide](docs/experiments.md) Â· [Data preparation](docs/data.md) Â· [Figure guide](docs/figures.md)
 
 ![Two compatible outcome distributions and their tail-risk interval](docs/assets/concept.png)
 
@@ -45,7 +45,7 @@ For LaTeX on Ubuntu, install `texlive-latex-extra texlive-science texlive-fonts-
 
 ## What is included
 
-- [`camera_ready_v3_10page/`](camera_ready_v3_10page/): the current 39-page manuscript, LaTeX sources, four main figures, five supplementary figures, plotting tables, and extraction scripts.
+- [`camera_ready_v3_10page/`](camera_ready_v3_10page/): the current 42-page manuscript (including the three-page NeurIPS checklist), LaTeX sources, four main figures, five supplementary figures, plotting tables, and extraction scripts.
 - [`experiments/`](experiments/): finite-sample simulations, population diagnostics, learning illustrations, and synthetic revelation experiments, with saved outputs.
 - [`real_data_evaluation/`](real_data_evaluation/): historical LendingClub assessment, controlled masking, fixed-predictor audits, source preparation, tests, and the original results archive.
 - [`camera_ready_v3_10page/revision_experiments/sequential_plugin/`](camera_ready_v3_10page/revision_experiments/sequential_plugin/): the current sequential retained plug-in experiment, tests, all 1,080 round-level results, checkpoints, and paired summaries.

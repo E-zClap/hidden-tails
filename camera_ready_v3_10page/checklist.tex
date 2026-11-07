@@ -1,2 +1,120 @@
 \section*{NeurIPS Paper Checklist}
-% TODO: Complete the checklist after the revised manuscript is written.
+\label{sec:checklist}
+% Questions match the official NeurIPS 2026 author kit (checked 7 November 2026).
+% Author confirmed Code of Ethics and institutional secondary-data compliance.
+\raggedbottom
+\begin{enumerate}
+
+\item \begin{minipage}[t]{\linewidth}
+\textbf{Claims}\par
+Question: Do the main claims made in the abstract and introduction accurately reflect the paper's contributions and scope?\par
+Answer: \answerYes{}.\par
+Justification: The abstract and Section~\ref{sec:introduction} distinguish sharp population identification, uniform statistical certificates under stated assumptions, and fixed-predictor, fixed-threshold revelation. Section~\ref{sec:experiments} labels the lending intervals, fold enlargement, and sequential trajectories as empirical assessments; the reported 61\% reduction concerns estimated fixed-threshold ambiguity.
+\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}
+\textbf{Limitations}\par
+Question: Does the paper discuss the limitations of the work performed by the authors?\par
+Answer: \answerYes{}.\par
+Justification: Section~\ref{sec:limitations} discusses sensitivity calibration, overlap, nuisance error, target outcomes, extrapolation, the retained-sensitivity revelation model, and adaptive inference. Appendices~\ref{app:gamma-calibration} and~\ref{app:outcome-extensions} give further scope conditions.
+\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}
+\textbf{Theory assumptions and proofs}\par
+Question: For each theoretical result, does the paper provide the full set of assumptions and a complete (and correct) proof?\par
+Answer: \answerYes{}.\par
+Justification: Sections~\ref{sec:setup}--\ref{sec:revelation} state the assumptions with the main results. Appendices~\ref{app:a}--\ref{app:c} provide the identification, estimation, lower-bound, and revelation proofs, including the distinction between a fixed-threshold gap and separately optimized CVaR endpoints.
+\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}
+\textbf{Experimental result reproducibility}\par
+Question: Does the paper fully disclose all the information needed to reproduce the main experimental results of the paper to the extent that it affects the main claims and/or conclusions of the paper (regardless of whether the code and data are provided or not)?\par
+Answer: \answerYes{}.\par
+Justification: Section~\ref{sec:experiments} and Appendix~\ref{app:experiments} specify the generators, cohorts, preprocessing, estimators, splits, masking mechanisms, and audit protocols. The public repository supplies configurations, seeds, provenance, saved outputs, and reproduction commands; it documents the unresolved original-host trajectory difference and does not promise bitwise equality across GPU platforms.
+\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}
+\textbf{Open access to data and code}\par
+Question: Does the paper provide open access to the data and code, with sufficient instructions to faithfully reproduce the main experimental results, as described in supplemental material?\par
+Answer: \answerYes{}.\par
+Justification: \url{https://github.com/E-zClap/hidden-tails} provides the experiment code, configurations, aggregate results, editable figures, and build and rerun instructions. LendingClub records are obtained separately from the cited public source; \path{docs/data.md} gives acquisition links, source hashes, and preparation checks. No borrower-level records are redistributed.
+\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}
+\textbf{Experimental setting/details}\par
+Question: Does the paper specify all the training and test details (e.g., data splits, hyperparameters, how they were chosen, type of optimizer) necessary to understand the results?\par
+Answer: \answerYes{}.\par
+Justification: Appendix~\ref{app:experiments} specifies predictors and nuisance models, fixed hyperparameters, clipping, cross-fitting, the reserved test split, exact threshold optimization and ties, sensitivity levels, and audit budgets. The current sequential procedure and its frozen historical nuisance information are detailed in Appendix~\ref{app:repayment-audits}.
+\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}
+\textbf{Experiment statistical significance}\par
+Question: Does the paper report error bars suitably and correctly defined or other appropriate information about the statistical significance of the experiments?\par
+Answer: \answerYes{}.\par
+Justification: Appendix~\ref{app:evaluation-targets} defines replication units and aggregation. Figures~\ref{fig:synthetic-frontier} and~\ref{fig:all-revelation} use descriptive interquartile ranges across worlds or masks; Tables~\ref{tab:finite-sample}, \ref{tab:lc-partb}, and~\ref{tab:sequential-performance} report repeated-sampling, masking, and paired results. These summaries and the empirical fold enlargement are distinguished from simultaneous or adaptive confidence guarantees.
+\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}
+\textbf{Experiments compute resources}\par
+Question: For each experiment, does the paper provide sufficient information on the computer resources (type of compute workers, memory, time of execution) needed to reproduce the experiments?\par
+Answer: \answerNo{}.\par
+Justification: The repository records the sequential rerun on one NVIDIA RTX 3060 with 12\,GiB of GPU memory and 2,137.68 seconds of fitting, and records selected simulation runtimes. Complete worker, memory, and execution-time records for every experiment, and a total including preliminary and failed runs, are not available; a complete compute accounting is therefore not claimed.
+\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}
+\textbf{Code of ethics}\par
+Question: Does the research conducted in the paper conform, in every respect, with the NeurIPS Code of Ethics \url{https://neurips.cc/public/EthicsGuidelines}?\par
+Answer: \answerYes{}.\par
+Justification: The author has reviewed the NeurIPS Code of Ethics and confirms compliance, including applicable institutional requirements for secondary use of the public data. This is an offline study with no participant recruitment or lending intervention, and the public release contains code and aggregate experimental results.
+\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}
+\textbf{Broader impacts}\par
+Question: Does the paper discuss both potential positive societal impacts and negative societal impacts of the work performed?\par
+Answer: \answerNo{}.\par
+Justification: The introduction motivates more reliable population risk assessment, and Section~\ref{sec:limitations} explains technical failure modes and limits on interpretation. The manuscript does not provide a fuller analysis of downstream societal benefits and harms, such as disparate effects of risk-based decisions or targeted outcome collection.
+\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}
+\textbf{Safeguards}\par
+Question: Does the paper describe safeguards that have been put in place for responsible release of data or models that have a high risk for misuse (e.g., pre-trained language models, image generators, or scraped datasets)?\par
+Answer: \answerNA{}.\par
+Justification: The release contains analysis code, aggregate experimental results, and manuscript assets. It does not distribute a high-risk pretrained model, scraped personal-content collection, or borrower-level dataset requiring a controlled-access release.
+\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}
+\textbf{Licenses for existing assets}\par
+Question: Are the creators or original owners of assets (e.g., code, data, models), used in the paper, properly credited and are the license and terms of use explicitly mentioned and properly respected?\par
+Answer: \answerYes{}.\par
+Justification: The LendingClub source is credited and its CC0 Public Domain license is recorded~\citep{george2019lendingclub}. The implementation credits scikit-learn (BSD-3-Clause)~\citep{pedregosa2011scikit} and XGBoost (Apache-2.0)~\citep{chen2016xgboost}. Repository data instructions and \path{NOTICE.md} distinguish third-party rights from the MIT license for the released code; source records are obtained separately.
+\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}
+\textbf{New assets}\par
+Question: Are new assets introduced in the paper well documented and is the documentation provided alongside the assets?\par
+Answer: \answerYes{}.\par
+Justification: The repository documents the released experiment code, configurations, aggregate result tables, and editable figure sources, with input/output provenance, checksums, dependency versions, tests, and reproduction commands. Author-owned software and its documentation use the MIT license; manuscript, figure, and third-party rights are distinguished in \path{NOTICE.md}.
+\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}
+\textbf{Crowdsourcing and research with human subjects}\par
+Question: For crowdsourcing experiments and research with human subjects, does the paper include the full text of instructions given to participants and screenshots, if applicable, as well as details about compensation (if any)?\par
+Answer: \answerNA{}.\par
+Justification: No crowdsourcing or direct participant study was performed, so there are no participant instructions, screenshots, or compensation arrangements to report. The lending analysis reuses public historical records.
+\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}
+\textbf{Institutional review board (IRB) approvals or equivalent for research with human subjects}\par
+Question: Does the paper describe potential risks incurred by study participants, whether such risks were disclosed to the subjects, and whether Institutional Review Board (IRB) approvals (or an equivalent approval/review based on the requirements of your country or institution) were obtained?\par
+Answer: \answerNA{}.\par
+Justification: The study involved no participant recruitment, intervention, or new individual-level data collection. It uses synthetic data and secondary analysis of public historical records; the author confirms that the applicable institutional requirements for that secondary use have been checked.
+\end{minipage}
+
+\item \begin{minipage}[t]{\linewidth}
+\textbf{Declaration of LLM usage}\par
+Question: Does the paper describe the usage of LLMs if it is an important, original, or non-standard component of the core methods in this research? Note that if the LLM is used only for writing, editing, or formatting purposes and does \emph{not} impact the core methodology, scientific rigor, or originality of the research, declaration is not required.\par
+Answer: \answerNA{}.\par
+Justification: LLMs are not components of the evaluated estimators, predictors, or acquisition policies. AI assistance was used for manuscript preparation and implementation support; the reported experimental quantities are computed by the released numerical procedures.
+\end{minipage}
+
+\end{enumerate}
