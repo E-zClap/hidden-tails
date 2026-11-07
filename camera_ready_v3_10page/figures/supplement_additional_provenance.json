@@ -1,0 +1,46 @@
+{
+  "description": "Supplement-only recorded mechanism, frontier-diagnostic, and diabetes tables; no experiment rerun.",
+  "source_files": {
+    "experiments/results/experiment1_rank_reversal.csv": "d59b17a85941225691d831f5870e0709ed0c9a3ae789f0f60fe6601842458d82",
+    "experiments/results/experiment2_learning_raw.csv": "354ac6a4c0b750085f88633aa9abcf98b5092213a757d29daae052b68c749341",
+    "experiments/results/experiment2_learning_summary.csv": "55bed6fe0ef964b254ec0dd292afbc21c9c2a12bf9ee0d161db74e0d5401ddd7",
+    "experiments/results/experiment2_choice_frequencies.csv": "dd31584b78fd73338e69af16802f61f50b17534fa4494d3d23387e0b275906e4",
+    "experiments/results/experiment3_region_tiv_scores.csv": "fa172122da73597c3481e01002dd7e76c4dc5205fb16f5a83f22966349d8baf3",
+    "experiments/results/experiment3_tiv_audit.csv": "f1ae9442c0621f8edca7eb54e01f7be492ac6c1b98a0edacbd0bcb3574f188e2",
+    "experiments/results/experiment6_model_selection.csv": "60924f1a483d539713a5d7c5530cac03fd9e2e1fd2dda752c4b1974d701b861c",
+    "experiments/results/experiment6_optimized_bridge.csv": "7962a01d0f8f919f56ae7d90229dc1fe909f8915184f8eebbff5c027d4d130dd",
+    "experiments/results/experiment6_certification_frontier_curves.csv": "856c6bc3fa8035123a45f7fb9d5f28f251706cf90e874791af5f9b0295d6690b",
+    "experiments/results/experiment7_semisynthetic_cells.csv": "bcf61608e65e340ba05af4b6e9d207a82bbd38ceb0150e850b109a1b277410f1",
+    "experiments/results/experiment7_semisynthetic_model_selection.csv": "cc9abf44aeea39970364b47a6b1955ca247f7c44ae0a09f3982780ff7d56b67c",
+    "experiments/results/experiment7_semisynthetic_optimized_bridge.csv": "52bdf7412f8bcf63a6a4f69ded938efc792069c2f9cb5d9666bd883ff53d2520",
+    "experiments/results/experiment7_semisynthetic_certification_curves.csv": "a1aac2e9e84f55e5d464eaf91bc87910e1912e5471f518177ef95ae0abb37899",
+    "experiments/results/run_summary_main_figure.json": "6375755c2cf9c83efda1e0292192925a68c15e13ed4e2ccb9879603a76d9edf1"
+  },
+  "current_frontier_and_diabetes_run": "python experiments/run_tail_observability_experiments.py --main-figure",
+  "current_frontier_and_diabetes_summary": "experiments/results/run_summary_main_figure.json",
+  "mechanism_run": "python experiments/run_tail_observability_experiments.py (full-sequence experiments 1-3)",
+  "archival_summaries_not_used": [
+    "experiments/results/run_summary.json: experiment6",
+    "experiments/results/run_summary_semisynthetic.json: earlier 569-record malignancy example"
+  ],
+  "numeric_checks": {
+    "experiment2_records": 1000,
+    "experiment3_records": 80,
+    "experiment6_worlds": 120,
+    "experiment6_bridge_records": 2520,
+    "diabetes_records": 442,
+    "diabetes_cells": 14,
+    "diabetes_gamma": 72.07655797363533,
+    "diabetes_bridge_records": 21,
+    "current_summary_matches_csvs": true,
+    "all_grid_widths_bounded_by_W_f0": true,
+    "tiv_and_fractional_frontier_match": true
+  },
+  "interpretation": [
+    "Experiment1 is not a pairwise rank reversal.",
+    "Experiment6/7 reference forecasts are specified formulas, not argmin-selected learners.",
+    "Recorded bridge endpoints use a 61-point cutoff grid.",
+    "Diabetes observation is imposed; measured progression is binarized; no held-out clinical validation.",
+    "No finite-sample coverage claim is added."
+  ]
+}

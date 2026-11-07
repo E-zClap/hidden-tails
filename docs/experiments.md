@@ -30,12 +30,16 @@ The standard-library release checks and the current paper/figure builds are desc
 
 | Command | Experiment | Seed and scale |
 |---|---|---|
-| `python experiments/run_tail_observability_experiments.py` | All seven population/learning/revelation studies | Master seed 20260503; constants in the source |
-| `python experiments/run_tail_observability_experiments.py --main-figure` | Conceptual figure, 120-world certification frontier, and diabetes case | Seed 20260503; 120 cells per frontier world |
-| `python experiments/run_tail_observability_experiments.py --semisynthetic` | Diabetes selective-label case only | Seed 20260503; built-in scikit-learn dataset |
+| `python experiments/run_tail_observability_experiments.py` | Full-sequence population/learning/revelation run; source for current experiments 1–5 | Master seed 20260503; constants in the source |
+| `python experiments/run_tail_observability_experiments.py --main-figure` | Combined run corresponding to the current experiment 6/7 CSVs: 120-world frontier and diabetes case | Seed 20260503; 120 cells per frontier world |
+| `python experiments/run_tail_observability_experiments.py --semisynthetic` | New standalone diabetes run; consumes a different random-number stream | Seed 20260503; built-in scikit-learn dataset |
 | `python experiments/finite_sample_certificates.py --out experiments/reproduction` | Finite-cell certificate Monte Carlo | Seed 20261103; 60 worlds, 80 replications per size, 30 cells, five sample sizes |
 
-The first script writes to `experiments/results/` and `experiments/figures/`; rerun it in a separate clone to preserve the published outputs. Its modes consume the random generator differently. Use the relevant mode when comparing its corresponding saved `run_summary*.json`; outputs from different modes need not be byte-identical.
+The first script writes to `experiments/results/` and `experiments/figures/`; rerun it in a separate clone to preserve the published outputs. Its modes consume the random generator differently. The current experiment 6 and 7 CSVs match the corresponding records in `run_summary_main_figure.json` (numerical differences at most 4.45e-16 from CSV/JSON serialization). Reproduce those CSVs with **`--main-figure`**. The experiment 1–5 CSVs correspond to the full-sequence run retained in `run_summary.json`.
+
+Do not substitute the other JSON summaries for the current experiment 6/7 CSVs. The experiment 6 block in `run_summary.json` comes from the earlier full-sequence random-number stream. `run_summary_semisynthetic.json` records an older 569-record malignancy example; the current script's `--semisynthetic` mode generates a standalone diabetes run and does not reproduce that archival artifact. The current diabetes CSVs have 442 records grouped into 14 cells and are part of the combined `--main-figure` run.
+
+The standalone supplement's Appendix F presents additional saved comparisons and the diabetes example; [supplement.md](supplement.md) maps those tables to source files. Its `Certificate` forecast is a fixed upper-probability rule, not a learned minimizer over a predictor class, and its recorded separately optimized widths use a 61-point threshold grid.
 
 The finite-sample command writes a separate output directory, preserving the published CSVs. Its committed settings are alpha .75, Gamma 2, minimum propensity .2, delta .05, and sample sizes 1,000/3,000/10,000/30,000/100,000. `--worlds 2 --reps 2 --n-grid 100 300 --out experiments/reproduction-smoke` is an optional plumbing check, not the reported experiment. `--plot-only --out experiments` redraws the archived summary without simulation and overwrites only that script's figure outputs. Current manuscript figure generation is documented separately in [figures.md](figures.md).
 

@@ -1,0 +1,29 @@
+% Portable implementation inventory accompanying Appendix D.7.
+% This file is documentation and is not input by either manuscript.
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+\toprule
+Study & Source, outputs, and reproduction guide\\
+\midrule
+Finite-cell sampling & \path{experiments/finite_sample_certificates.py}; \path{experiments/results/finite_sample_*}; the recorded numerical environment is listed in \path{experiments/requirements-finite-sample.txt}.\\
+Population diagnostics & \path{experiments/run_tail_observability_experiments.py}; experiments 1--5 follow the full run; current experiments 6--7 follow \texttt{--main-figure}.\\
+Historical and masking & \path{real_data_evaluation/src/real_cvar/}; \path{real_data_evaluation/artifacts/tables/}; configuration, preparation, and mask metadata accompany the outputs.\\
+Corrected sequential audits & \path{camera_ready_v3_10page/revision_experiments/sequential_plugin/}; \path{results/optimized/} holds 1,080 records, 20 checkpoints, and paired summaries. The separate first-repetition checkpoint supports optimization-equivalence verification.\\
+Additional tables & \path{camera_ready_v3_10page/figures/scripts/prepare_additional_experiments.py}; source hashes and aggregation checks are in \path{figures/supplement_additional_provenance.json}.\\
+Documents and package & \path{scripts/build.py}; \path{scripts/verify_release.py}; \path{scripts/package_supplement.py}. The precise instructions and scientific scope are in \path{docs/supplement.md} and \path{docs/experiments.md}.\\
+\bottomrule
+\end{tabularx}
+
+The corrected sequential run used the recorded Python 3.12.4 and XGBoost 2.1.4
+configuration on one NVIDIA RTX 3060 (12 GiB). Recorded fitting time was
+2,137.68 seconds for all 20 optimized repetitions. The first repetition took
+257.06 seconds before, and 112.86 seconds after, removing unused nuisance fits;
+the included checkpoint comparison verifies identical recorded outputs.
+These are recorded measurements, not a new benchmark. The environment needed
+for exact archived finite-sample numerics differs from the shared lending environment.
+
+The restored original cohort and reconstructed issued records match on their
+12 shared columns in their original order; the corresponding hashes and
+20-mask checks are preserved in the cohort evidence. Raw records are acquired
+separately. Historical residual-corrected adaptive outputs and the earlier
+569-record malignancy example remain archival, not replacements for current
+sequential or diabetes outputs.

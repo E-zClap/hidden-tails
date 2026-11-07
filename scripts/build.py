@@ -3,6 +3,7 @@ from pathlib import Path
 import argparse
 import shutil
 import subprocess
+import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 PAPER = ROOT / "camera_ready_v3_10page"
@@ -30,10 +31,12 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--figures", action="store_true", help="Rebuild all nine vector figures")
     parser.add_argument("--paper", action="store_true", help="Compile the complete manuscript")
+    parser.add_argument("--supplement", action="store_true",
+                        help="Compile the standalone supplement (and its main-paper references)")
     args = parser.parse_args()
-    if not (args.figures or args.paper):
-        parser.error("select --figures, --paper, or both")
-    for tool in (["pdflatex", "bibtex"] if args.paper else ["pdflatex"]):
+    if not (args.figures or args.paper or args.supplement):
+        parser.error("select --figures, --paper, --supplement, or a combination")
+    for tool in (["pdflatex", "bibtex"] if args.paper or args.supplement else ["pdflatex"]):
         if not shutil.which(tool):
             raise SystemExit(f"Missing {tool}: install MiKTeX or TeX Live; see README.md")
     if args.figures:
@@ -59,6 +62,14 @@ def main():
             raise SystemExit("Unresolved references in build/main.log")
         shutil.copy2(output / "main.pdf", PAPER / "main.pdf")
         print("Built camera_ready_v3_10page/main.pdf", flush=True)
+    if args.supplement:
+        output = PAPER / "build"
+        output.mkdir(parents=True, exist_ok=True)
+        command = [sys.executable, "build_supplement.py"]
+        if args.paper:
+            command.append("--use-existing-main")
+        run(command, output / "supplement_build.txt")
+        print("Built camera_ready_v3_10page/supplement.pdf", flush=True)
 
 
 if __name__ == "__main__":

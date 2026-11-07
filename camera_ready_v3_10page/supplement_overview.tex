@@ -1,0 +1,48 @@
+\section*{Scope and reading guide}
+This supplement collects the full proofs, experimental protocols, and saved results.
+Appendices A--E share their sources with the paper's integrated appendices. Appendix F
+develops additional finite-population diagnostics from the experimental archive. The
+accompanying ZIP supplies code, configurations, numerical outputs, and reproduction checks.
+
+\paragraph{Revision experiments and checks.}
+The finite-cell study separates oracle interval containment from learned-endpoint
+accuracy. Controlled repayment masks check empirical enlargement and model comparisons
+against known outcomes. The corrected sequential audit uses the retained plug-in
+objective, with the historical outcome fit fixed and the predictor retrained after each
+batch: 20 masks, six policies, and nine recorded rounds, with terminal comparisons paired
+within mask. The code includes cohort-identity and optimization-equivalence checks.
+This edition consolidates completed outputs; no new experiment was run.
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{.64\textwidth}X@{}}
+\toprule
+Question or evidence & Location\\
+\midrule
+Sharpness and compatible population laws & Appendix~\ref{app:a}\\
+Estimation, statistical calibration, and learning lower bound & Appendix~\ref{app:b}\\
+Retained-information revelation and minimum-cost allocation & Appendix~\ref{app:c}\\
+Finite-sample containment and learned-endpoint accuracy & Appendix~\ref{app:finite-sample-experiments}\\
+Lending cohort support and historical assessment & Appendix~\ref{app:historical-lending}\\
+Known-outcome masking and model comparisons & Appendix~\ref{app:controlled-masking}\\
+Synthetic frontier and corrected repayment audits & Appendices~\ref{app:frontier-experiments}--\ref{app:repayment-audits}\\
+Sensitivity calibration and interpretation & Appendix~\ref{app:e}\\
+Additional mechanism, reference-forecast, and diabetes diagnostics & Appendix~\ref{app:additional-experiments}\\
+Commands, environments, and result provenance & \path{docs/supplement.md} in the ZIP\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\paragraph{How to interpret the evidence.}
+Oracle coverage, learned-endpoint error, empirical fold enlargement, and sequential
+retained width answer different questions. The additional diagnostics in Appendix F
+use specified finite populations and, where stated, a finite cutoff grid. They do not
+provide new finite-sample or adaptive confidence guarantees. The diabetes illustration
+uses all known outcomes to define its strata and observation mechanism; it is not a
+held-out clinical prediction evaluation.
+
+\paragraph{Using the companion files.}
+Keep this PDF beside \path{main.pdf} for links to the main text. Shared appendix and
+bibliography numbering is preserved. The experiment guide maps saved results to commands
+and separates current runs from archival procedures. Obtain raw borrower records
+separately using the documented preparation instructions.

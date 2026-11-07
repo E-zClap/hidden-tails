@@ -38,3 +38,4 @@ camera_ready_v3_10page/revision_experiments/sequential_plugin/data/platform_repl
 camera_ready_v3_10page/revision_experiments/sequential_plugin/data/*.manifest.json
 camera_ready_v3_10page/figures/previews/
 camera_ready_v3_10page/figures/figures_overview.pdf
+/dist/

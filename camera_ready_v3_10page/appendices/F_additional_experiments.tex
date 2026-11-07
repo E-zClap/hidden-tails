@@ -1,0 +1,237 @@
+\section{Additional Recorded Experiments}
+\label{app:f}\label{app:additional-experiments}
+\input{figures/supplement_additional_tables}
+
+This appendix collects saved experiments that complement the studies in
+Appendix~\ref{app:experiments}: simple observation mechanisms, finite-candidate
+learning, additional diagnostics for the synthetic revelation frontier, and a
+finite-population illustration constructed from diabetes data. They answer
+questions about how the objectives behave under controlled conditions. Their
+population quantities and empirical trajectories carry no additional
+finite-sample confidence guarantee. No new simulations or model fits were run
+when preparing these tables.
+
+\subsection{Observation mechanisms, candidate learning, and fixed audits}
+\label{app:additional-mechanisms}
+
+\paragraph{Low observed risk can hide high population risk.}
+The two-region example has masses $(.82,.18)$, deterministic outcomes $(0,1)$,
+and observation probabilities $(.95,.04)$. Use absolute loss and $\alpha=.85$.
+For the constant-zero predictor, the saved observed-label CVaR is
+\AdditionalHiddenObserved{}, whereas population CVaR is
+\AdditionalHiddenFull{}. The region-specific predictor $(0,1)$ has zero loss
+under both populations. Thus this example demonstrates a large discrepancy
+between observed and population risk; it does not exhibit a pairwise ranking
+reversal. The saved envelope calculation uses $\Gamma=50$ and clips boundary
+reference probabilities to $[10^{-8},1-10^{-8}]$, producing negligible nonzero
+envelope values for the zero-loss reference.
+
+\paragraph{Finite-candidate selection with known auxiliary functions.}
+Use the five-region population specified under ``Population sweeps'' in
+Appendix~\ref{app:finite-sample-experiments}. Outcomes are sampled from its
+specified Bernoulli probabilities; observation is sampled conditional on the
+outcome. The adverse-label observation probability in region $B$ is $.03$,
+compared with $.60$ for the other label, giving an odds-ratio sensitivity shift
+of $48.5$. Fix $\Gamma=50$, $\alpha=.85$, absolute loss, and
+\[
+ \mathcal F_0=\{(.05,b,.10,.40,.50):b\in\{.05,.25,.65,.85\}\}.
+\]
+Each of 250 independent training samples contains 1,400 records. Four rules
+minimize, over $\mathcal F_0$, empirical full-label CVaR, empirical observed-label
+CVaR, normalized inverse-propensity-weighted observed-label CVaR, or the empirical
+upper sensitivity objective. The propensity rule uses the known marginal
+$\pi(X)$; the upper objective uses known $p_1$ and combines observed excess loss
+with the bounded hidden contribution. It does not estimate auxiliary models or
+add the locally robust residual correction. All cutoff searches use exact loss
+breakpoints. The full-label rule is an oracle benchmark unavailable to a learner
+with selective labels.
+
+Table~\ref{tab:additional-selection} evaluates each chosen predictor under the
+exact population law. Each rule chooses the same candidate in every recorded
+replication, so the table does not attach a sampling-error bar to its repeated
+population evaluation. The difference between observed-label and
+inverse-propensity learning, on one hand, and upper-envelope learning on the
+other illustrates the consequence of outcome-dependent observation in this
+particular candidate class. It is not a universal comparison between learning
+algorithms.
+
+\SupplementFiniteChoiceTable
+
+\paragraph{A single fixed-predictor audit pool.}
+A further sample of 7,000 records from the same population supplies one audit
+pool. Fix the population observed-label-preferred predictor
+$f=(.05,.25,.10,.40,.50)$ and the lower-envelope minimizing cutoff $\eta=.5$.
+Only originally hidden outcomes can be acquired, at unit cost. The five static
+rankings are per-hidden-label TIV $s_\Gamma|d_{f,\eta}|/\beta$, independent
+uniform random scores, region mass, uncertainty $-|f-.5|$, and expected absolute
+loss at the midpoint $(q_-+q_+)/2$ of the sensitivity interval. The implementation
+sorts each score in decreasing order using NumPy's default \texttt{argsort}; it
+does not impose a separate stable tie rule. The 16 recorded budgets range from
+zero to 1,800 labels in increments of 120. The predictor and rankings remain
+fixed throughout.
+
+Revealed outcomes enter the known empirical contribution. The remaining hidden
+outcomes retain the original sensitivity bounds. Table~\ref{tab:additional-audit}
+separately reports the reduction of the fixed-cutoff gap and of the empirical
+interval whose endpoints minimize their cutoffs independently. Both reductions
+are normalized by their respective initial value in this one pool. The two
+objectives need not favor the same allocation at every budget: random revelation
+removes slightly more optimized width at 600 labels, although TIV removes more
+fixed-cutoff ambiguity. Prediction uncertainty is also distinct from label-sensitive
+tail ambiguity: the region with $f=.5$ has identical absolute loss under both
+labels, hence zero TIV at every cutoff. These are mechanism observations from
+one realized pool, without replication-based inference or a claim of adaptive
+learning optimality.
+
+\SupplementFixedAuditTable
+\FloatBarrier
+
+\subsection{Additional diagnostics for the synthetic frontier}
+\label{app:additional-frontier}
+
+Use the same 120 synthetic worlds, each with 120 cells, described in
+Appendix~\ref{app:frontier-experiments}. The loss is absolute, $\alpha=.85$, and
+$\Gamma=12$. The additional saved outputs compare three specified forecasts:
+$p_1$, the upper sensitivity probability $q_+(p_1)$, and
+$p_{\rm full}=\pi p_1+(1-\pi)p_0$. The CSV names for these rows are
+``Observed-selected,'' ``Certificate,'' and ``Oracle.'' In this experiment they
+are formulas fixed by the generator, not the results of minimizing empirical
+risk or an upper endpoint over a candidate class. The full-label forecast uses
+information unavailable from the observed law. Table~\ref{tab:additional-forecasts}
+reports mean population evaluations over the 120 worlds, alongside the
+single finite population introduced below. In particular, the $q_+(p_1)$ row
+is not evidence that the risk-minimizing forecast has been found.
+
+\paragraph{From a common cutoff to separately minimized endpoints.}
+For each world, fix $f=p_1$ and acquire along the TIV-per-cost ordering at
+$\eta=.5$. Cost is $\sum_j\mu_jc_j\lambda_j$, with a fractional terminal cell;
+budget fractions divide by the full population cost $\sum_j\mu_jc_j$.
+The known audited contribution is evaluated with the generative $p_0$, while the
+remaining outcomes retain their sensitivity bounds. This isolates the retained
+population objective from estimation of the newly audited contribution.
+
+The saved diagnostic evaluates 21 cost fractions from zero to one. Its endpoint
+search uses the grid
+$\mathcal G=\{0,1/60,\ldots,1\}$, giving
+\[
+ I^{\mathcal G}_{\Gamma,\lambda}(f)
+ =\min_{\eta\in\mathcal G}U_{f,\eta}(\lambda)
+  -\min_{\eta\in\mathcal G}L_{f,\eta}(\lambda).
+\]
+This recorded \emph{grid-minimized width} is distinct from the exact
+breakpoint-minimized width in Appendix~\ref{app:optimized-width}. The companion
+bound maximizes the common-cutoff gap on the same grid. Because binary
+absolute-loss contrasts satisfy $|d_{f,\eta}|\leq|d_{f,0}|$ and $0\in\mathcal G$,
+that maximum equals $W_{f,0}(\lambda)$. All 2,520 saved world--budget rows satisfy
+$0\leq I^{\mathcal G}_{\Gamma,\lambda}(f)\leq W_{f,0}(\lambda)$ to numerical
+precision. Table~\ref{tab:additional-bridge} gives selected budgets. This check
+illustrates the sufficient-width connection; it neither makes the $.5$-cutoff
+allocation optimal for optimized width nor turns the finite grid into exact
+threshold minimization. The gap bound can exceed one because it is not itself
+a bounded-loss CVaR.
+
+\subsection{A diabetes-derived finite-population illustration}
+\label{app:additional-diabetes}
+
+\paragraph{Measured outcomes and imposed observation.}
+The construction uses all 442 records in the diabetes dataset distributed with
+scikit-learn \citep{pedregosa2011scikit}. It binarizes the measured disease-progression
+outcome at its empirical 75th percentile, assigning $Y=1$ at or above that
+cutoff. A standardized logistic regression, fitted to all these outcomes with a
+5,000-iteration limit and the recorded software defaults, supplies scores $r_i$.
+Fourteen empirical-quantile score cells define the finite covariate population.
+The score is used to construct strata, not evaluated as a held-out predictive
+model. In particular, the construction has access to outcomes subsequently
+called hidden.
+
+For each record, impose the observation probability
+\[
+ s_i=\operatorname{clip}_{[.03,.95]}
+ \{.85-.25r_i-.55Y_i-.20Y_i r_i+\epsilon_i\},
+ \qquad \epsilon_i\sim N(0,.01^2).
+\]
+The saved construction integrates these probabilities; it does not draw a new
+binary observation mask. For a cell $j$ with $n_j$ records, set
+\[
+ \mu_j=\frac{n_j}{442},\qquad
+ \pi_j=\frac{1}{n_j}\sum_{i\in j}s_i,\qquad
+ p_{1j}=\frac{\sum_{i\in j}Y_i s_i}{\sum_{i\in j}s_i},\qquad
+ p_{0j}=\frac{\sum_{i\in j}Y_i(1-s_i)}{\sum_{i\in j}(1-s_i)}.
+\]
+Before evaluation, the implementation clips $p_{1j}$ and $p_{0j}$ to
+$[10^{-4},1-10^{-4}]$ and uses the resulting Bernoulli mixture
+$p_{{\rm full},j}=\pi_jp_{1j}+(1-\pi_j)p_{0j}$. Consequently, the reported full
+risks refer to this smoothed finite-cell law. The measured progression outcomes
+and covariates define the construction; the observation channel and acquisition
+costs are imposed. The population observation share is
+\AdditionalDiabetesSelected{}.
+
+\paragraph{Sensitivity, loss, and costs.}
+Use absolute loss and $\alpha=.85$. The sensitivity level is chosen with oracle
+knowledge of both cell kernels:
+\[
+ \Gamma=\max\!\left\{2,\;1.10\exp\!\left(
+ \max_j|\operatorname{logit}p_{0j}-\operatorname{logit}p_{1j}|\right)\right\}
+ =\AdditionalDiabetesGamma{}\quad\text{(rounded)}.
+\]
+This construction ensures compatibility for the known cell law. It is not a
+calibration procedure justified using observed labels alone, and it supplies no
+simultaneous or data-dependent-$\Gamma$ confidence statement. With zero-based
+cell indices, the imposed population cost density is
+$c_j=.65+1.15\bar r_j+.20\mathbf1\{j\bmod3=0\}$, where $\bar r_j$ is the
+cell's mean fitted score.
+
+The three reference forecasts and their population risk evaluations follow
+Appendix~\ref{app:additional-frontier}. For the acquisition comparison fix
+$f=p_1$ and $\eta=.5$, use divisible cell allocations, and evaluate 51 fractions
+of full cost in increments of $.02$. The acquisition rules are the seven
+baselines and TIV-per-cost/frontier ordering described in
+Appendix~\ref{app:frontier-experiments}. Random acquisition averages the remaining
+gap over 100 independent uniform-random cell orderings. The 21-budget width
+diagnostic uses the same 61-point cutoff grid as the synthetic study.
+
+\SupplementReferenceForecastTable
+\SupplementGridBridgeTable
+\FloatBarrier
+
+Table~\ref{tab:additional-diabetes-cost} reports the first recorded cost fraction
+at which each curve reaches 25\% of its initial fixed-cutoff gap. For random
+acquisition, this is the crossing of the mean gap curve, rather than the mean of
+100 individual crossing costs. TIV and the exact fractional-knapsack frontier
+coincide by their common ordering. The data illustrate how observation and costs
+shape a retained population certificate when all relevant quantities are known;
+they do not establish clinical effectiveness, generalization to a new patient
+population, or finite-sample coverage. They also do not convert passive revelation
+into identification of outcomes under untaken actions.
+
+\SupplementDiabetesCostTable
+\FloatBarrier
+
+\subsection{Saved-output provenance and reproduction order}
+\label{app:additional-provenance}
+
+The numerical sources are the \texttt{experiment1}, \texttt{experiment2}, and
+\texttt{experiment3} CSVs, and the \texttt{experiment6} and
+\texttt{experiment7\_semisynthetic} CSVs under \path{experiments/results/}.
+The mechanism examples use the full-sequence random stream with master seed
+20260503. The current frontier and diabetes CSVs instead match
+\path{run_summary_main_figure.json}, generated by running
+\path{experiments/run_tail_observability_experiments.py} with
+\texttt{--main-figure}. The full-run summary's older frontier output uses a different random-stream
+position. The archived \path{run_summary_semisynthetic.json} instead records an
+earlier 569-record malignancy example, with malignancy-rate fields; it is not
+the 442-record diabetes construction in this appendix. Neither archived output
+is substituted for the current CSVs.
+Reproductions should use separate output copies or follow the documented run
+order so that one entry point does not silently overwrite another run's saved
+results.
+
+The standard-library extraction script
+\path{figures/scripts/prepare_additional_experiments.py} regenerates these tables
+from the saved CSVs. Its \texttt{--check} mode verifies the generated tables,
+source checksums, agreement with the matching run summary, repeated-sample
+aggregation, TIV/frontier equality, and the recorded width inequalities.
+\path{figures/supplement_additional_provenance.json} records those checks and the
+source-to-entry-point mapping. The corrected lending sequential experiment,
+original-cohort verification, and finite-sample endpoint study remain documented
+in Appendix~\ref{app:experiments} and the accompanying reproduction material.

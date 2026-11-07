@@ -3,7 +3,7 @@
 **Certifying Tail-Risk Claims under Selective Labels**  
 El Mustapha Mansouri Â· Institute of Science Tokyo
 
-[Paper (PDF)](camera_ready_v3_10page/main.pdf) Â· [Experiment guide](docs/experiments.md) Â· [Data preparation](docs/data.md) Â· [Figure guide](docs/figures.md)
+[Paper (PDF)](camera_ready_v3_10page/main.pdf) · [Supplement (PDF)](camera_ready_v3_10page/supplement.pdf) Â· [Experiment guide](docs/experiments.md) Â· [Data preparation](docs/data.md) Â· [Figure guide](docs/figures.md)
 
 ![Two compatible outcome distributions and their tail-risk interval](docs/assets/concept.png)
 
@@ -24,6 +24,9 @@ The verification uses only Python's standard library. It checks the release chec
 | Goal | What to run | What is needed |
 |---|---|---|
 | Read the paper | Open [`main.pdf`](camera_ready_v3_10page/main.pdf) | PDF viewer |
+| Read the supplement | Open [`supplement.pdf`](camera_ready_v3_10page/supplement.pdf) | PDF viewer; keep beside `main.pdf` |
+| Build the supplement | `python scripts/build.py --supplement` | Python, pdfLaTeX, BibTeX |
+| Package all supplemental material | `python scripts/package_supplement.py` | Python; unmodified release checkout |
 | Compile the manuscript | `python scripts/build.py --paper` | Python, pdfLaTeX, BibTeX |
 | Rebuild all nine figures and the paper | `python scripts/build.py --figures --paper` | Above, plus TikZ/PGFPlots and standalone |
 | Regenerate plotting tables | Follow [the figure guide](docs/figures.md) | Python dependencies; bundled results |
@@ -45,13 +48,15 @@ For LaTeX on Ubuntu, install `texlive-latex-extra texlive-science texlive-fonts-
 
 ## What is included
 
-- [`camera_ready_v3_10page/`](camera_ready_v3_10page/): the current 43-page manuscript (including the three-page NeurIPS checklist), LaTeX sources, four main figures, five supplementary figures, plotting tables, and extraction scripts.
+- [`camera_ready_v3_10page/`](camera_ready_v3_10page/): the current 43-page manuscript (including the three-page NeurIPS checklist), a standalone 35-page supplement with five additional experimental tables, LaTeX sources, four main figures, five supplementary figures, plotting tables, and extraction scripts.
 - [`experiments/`](experiments/): finite-sample simulations, population diagnostics, learning illustrations, and synthetic revelation experiments, with saved outputs.
 - [`real_data_evaluation/`](real_data_evaluation/): historical LendingClub assessment, controlled masking, fixed-predictor audits, source preparation, tests, and the original results archive.
 - [`camera_ready_v3_10page/revision_experiments/sequential_plugin/`](camera_ready_v3_10page/revision_experiments/sequential_plugin/): the current sequential retained plug-in experiment, tests, all 1,080 round-level results, checkpoints, and paired summaries.
 - [`RELEASE_MANIFEST.json`](RELEASE_MANIFEST.json): SHA-256 checksums for the published files.
 
 The established directory names are retained so the manuscript, extraction scripts, and experimental provenance agree. Raw borrower records, prepared cohorts, cached predictions, model binaries, private Git history, and manuscript review drafts are excluded.
+
+The [supplement guide](docs/supplement.md) maps the revision and additional studies to their saved outputs and commands. The portable release ZIP includes both PDFs, editable sources, code, results, and all verification inputs. Appendix F distinguishes fixed reference forecasts and grid-based population diagnostics from statistical guarantees.
 
 ## Reproducibility scope
 
